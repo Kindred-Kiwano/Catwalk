@@ -9,6 +9,7 @@ reactDOM
 jQuery
 webPack
 babel presets (for es6)
+TO DECIDE ON: testing libraries
 
 
 # Server/API info:
