@@ -1,0 +1,28 @@
+client
+  src
+    components
+      index.jsx
+      - one folder per component -
+        - files/folders for all subcomponents relating to that component -
+    sendRequest.js (for sending axios/ajx requests to the API)
+server
+  index.js (serve static files here)
+
+
+
+example:
+header (folder)
+  header.jsx
+  headerSubComponents (folder)
+    title.jsx
+    logo.jsx
+    searchbar.jsx
+
+-- OR --
+
+example:
+header (folder)
+  headerMain.jsx
+  title.jsx
+  logo.jsx
+  searchbar.jsx
