@@ -1,0 +1,42 @@
+{
+  "name": "project_catwalk",
+  "version": "1.0.0",
+  "description": "Develop a front-end user interface for a clothing vendor",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./server/index.js",
+    "build": "webpack -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kindred-Kiwano/KindredKiwano.git"
+  },
+  "keywords": [
+    "react",
+    "react-dom",
+    "e-tail"
+  ],
+  "author": "David Deaton, Samuel Dudley, Victor Duenas, Elliot Lichtenberg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kindred-Kiwano/KindredKiwano/issues"
+  },
+  "homepage": "https://github.com/Kindred-Kiwano/KindredKiwano#readme",
+  "dependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-react": "^7.14.5",
+    "axios": "^0.24.0",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.5.0",
+    "express": "^4.17.1",
+    "jquery": "^3.6.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14",
+    "webpack": "^5.60.0",
+    "webpack-cli": "^4.9.1"
+  }
+}
