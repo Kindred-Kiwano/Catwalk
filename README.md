@@ -14,6 +14,7 @@ webpack-cli
 @babel/core
 babel-loader
 nodemon
+TO DECIDE ON: testing libraries
 
 
 # Server/API info:
