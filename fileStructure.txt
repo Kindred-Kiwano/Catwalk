@@ -17,12 +17,3 @@ header (folder)
     title.jsx
     logo.jsx
     searchbar.jsx
-
--- OR --
-
-example:
-header (folder)
-  headerMain.jsx
-  title.jsx
-  logo.jsx
-  searchbar.jsx
