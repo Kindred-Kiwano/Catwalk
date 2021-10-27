@@ -5,10 +5,15 @@ Develop a front-end user interface for a clothing vendor
 # Proposed dependencies via npm:
 axios
 react
-reactDOM
-jQuery
-webPack
-babel presets (for es6)
+react-dom
+jquery
+webpack
+webpack-cli
+@babel/presets-env
+@babel/presets-react
+@babel/core
+babel-loader
+nodemon
 TO DECIDE ON: testing libraries
 
 
