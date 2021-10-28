@@ -268,33 +268,46 @@ class Card extends React.Component {
     };
   }
 
-  add(id, list) {
-    // update global state for corresponding list
-  }
-
-  remove(id, list) {
-    // splice global state for corresponding list
-  }
-
   render() {
+
+    let product = {
+      'id': 48451,
+      'campus': 'hr-sfo',
+      'name': 'Raymundo Skirt',
+      'slogan': 'Quibusdam magni sunt vitae distinctio ad id nihil vero ducimus.',
+      'description': 'Et est id repudiandae numquam incidunt nam. Consequatur iste fugiat asperiores quos et reiciendis laudantium. Debitis rem ipsum iste. Exercitationem quia explicabo quam. Consequatur nihil similique vitae nam rerum perspiciatis recusandae. Ut sint natus.',
+      'category': 'Skirt',
+      'default_price': '963.00',
+      'created_at': '2021-09-09T19:03:37.525Z',
+      'updated_at': '2021-09-09T19:03:37.525Z'
+    };
+
+    let imgSrc = 'https://images.unsplash.com/photo-1477420143023-6a0e0b04b69a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80';
+
+
+
+
     // eslint-disable-next-line camelcase
-    let { id, name, original_price, sale_price, style } = this.props;
+    let { id, name, default_price, sale_price, style, category } = product;
     // eslint-disable-next-line camelcase
     if (sale_price) {
       //change CSS, display two prices
+    }
+    if (default_price - sale_price) {
+      //display range of prices
     }
 
     return (
 
       <div className={'card-outfit/card-related'} id={'this.props.id'}>
         <span className='header'>
-          <img src={''} classNaem={'thumbnail-card'}/>
+          <img src={imgSrc} className={'thumbnail-card'}/>
           <button className={'this.props.button.type'}></button>
         </span>
         <span className={'desc'}>
-          <div className='category'> {'category'} </div>
+          <div className='category'> {category.toUpperCase()} </div>
           <div className='name' id='id'> {'name'} </div>
-          <div className='price' sale={'true/false'} range={['min', 'max']}> {'price'} </div>
+          <div className='price' sale={false} range={['min', 'max']}> {`$${ default_price.split('.')[0] }`} </div>
           <Rating product_id={'id'} type={'OUTFIT'}/>
         </span>
       </div>
