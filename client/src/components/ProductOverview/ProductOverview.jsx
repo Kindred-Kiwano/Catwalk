@@ -1,13 +1,21 @@
-// head of the product overview tree
+// this file is the head component of the "product overview" tree
+
 import React from 'react';
-import ProductInfo from './ProductInfo.jsx';
+// main subcomponents:
+import CategoryAndName from './CategoryAndName/CategoryAndName.jsx';
+import ProductInfo from './ProductInfo/ProductInfo.jsx';
+import Share from './Share/Share.jsx';
+import Images from './Images/Images.jsx';
+import StyleSelect from './StyleSelect/StyleSelect.jsx';
 
 var ProductOverview = () => {
   return (
     <div>
-      <a href="https://shop.lululemon.com/c/mens-polos/_/N-8kx" >Shoes</a>
-      <span> {'>'} super fashionable</span>
+      <CategoryAndName />
       <ProductInfo />
+      <Share />
+      <Images />
+      <StyleSelect />
     </div>
   );
 };

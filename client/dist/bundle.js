@@ -16,17 +16,47 @@
   \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nvar Dummy = function Dummy(props) {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"h1\", null, \"Hello world!\"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"p\", null, \"webpack is working well oWo\"));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Dummy);\n\n//# sourceURL=webpack://project_catwalk/./client/src/components/Dummy.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _ProductOverview_ProductOverview_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ProductOverview/ProductOverview.jsx */ \"./client/src/components/ProductOverview/ProductOverview.jsx\");\n\n\n\nvar Dummy = function Dummy(props) {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"h1\", null, \"Hello world!\"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"p\", null, \"webpack is working well oWo\"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ProductOverview_ProductOverview_jsx__WEBPACK_IMPORTED_MODULE_1__[\"default\"], null));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Dummy);\n\n//# sourceURL=webpack://project_catwalk/./client/src/components/Dummy.jsx?");
 
 /***/ }),
 
-/***/ "./client/src/components/ProductOverview/ProductInfo.jsx":
-/*!***************************************************************!*\
-  !*** ./client/src/components/ProductOverview/ProductInfo.jsx ***!
-  \***************************************************************/
+/***/ "./client/src/components/ProductOverview/CategoryAndName/CategoryAndName.jsx":
+/*!***********************************************************************************!*\
+  !*** ./client/src/components/ProductOverview/CategoryAndName/CategoryAndName.jsx ***!
+  \***********************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nvar ProductInfo = function ProductInfo(props) {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    id: \"info-header\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"span\", null, \"Read all x reviews \"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"span\", null, \"x in stock\")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"p\", {\n    id: \"product description\"\n  }, \"Be the next cool kid on the block.\"));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ProductInfo);\n\n//# sourceURL=webpack://project_catwalk/./client/src/components/ProductOverview/ProductInfo.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nvar CategoryAndName = function CategoryAndName() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, \"CATEGORY AND NAME SUBCOMPONENT\", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"a\", {\n    href: \"https://shop.lululemon.com/c/mens-polos/_/N-8kx\"\n  }, \"Shoes\"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"span\", null, \" \", '>', \" super fashionable\"));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CategoryAndName);\n\n//# sourceURL=webpack://project_catwalk/./client/src/components/ProductOverview/CategoryAndName/CategoryAndName.jsx?");
+
+/***/ }),
+
+/***/ "./client/src/components/ProductOverview/Images/Images.jsx":
+/*!*****************************************************************!*\
+  !*** ./client/src/components/ProductOverview/Images/Images.jsx ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nvar Images = function Images() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, \"IMAGES SUBCOMPONENT\");\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Images);\n\n//# sourceURL=webpack://project_catwalk/./client/src/components/ProductOverview/Images/Images.jsx?");
+
+/***/ }),
+
+/***/ "./client/src/components/ProductOverview/ProductInfo/Header.jsx":
+/*!**********************************************************************!*\
+  !*** ./client/src/components/ProductOverview/ProductInfo/Header.jsx ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nvar Header = function Header(props) {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"span\", null, \"Read all x reviews \"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"span\", null, \"x in stock\"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"p\", {\n    id: \"product description\"\n  }, \"Be the next cool kid on the block.\"));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Header);\n\n//# sourceURL=webpack://project_catwalk/./client/src/components/ProductOverview/ProductInfo/Header.jsx?");
+
+/***/ }),
+
+/***/ "./client/src/components/ProductOverview/ProductInfo/ProductInfo.jsx":
+/*!***************************************************************************!*\
+  !*** ./client/src/components/ProductOverview/ProductInfo/ProductInfo.jsx ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _Header_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Header.jsx */ \"./client/src/components/ProductOverview/ProductInfo/Header.jsx\");\n// head of ProductInfo subcomponent\n\n\n\nvar ProductInfo = function ProductInfo(props) {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, \"PRODUCT INFO SUBCOMPONENT\", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Header_jsx__WEBPACK_IMPORTED_MODULE_1__[\"default\"], null));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ProductInfo);\n\n//# sourceURL=webpack://project_catwalk/./client/src/components/ProductOverview/ProductInfo/ProductInfo.jsx?");
 
 /***/ }),
 
@@ -36,7 +66,27 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*******************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _ProductInfo_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ProductInfo.jsx */ \"./client/src/components/ProductOverview/ProductInfo.jsx\");\n// head of the product overview tree\n\n\n\nvar ProductOverview = function ProductOverview() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"a\", {\n    href: \"https://shop.lululemon.com/c/mens-polos/_/N-8kx\"\n  }, \"Shoes\"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"span\", null, \" \", '>', \" super fashionable\"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ProductInfo_jsx__WEBPACK_IMPORTED_MODULE_1__[\"default\"], null));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ProductOverview);\n\n//# sourceURL=webpack://project_catwalk/./client/src/components/ProductOverview/ProductOverview.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _CategoryAndName_CategoryAndName_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CategoryAndName/CategoryAndName.jsx */ \"./client/src/components/ProductOverview/CategoryAndName/CategoryAndName.jsx\");\n/* harmony import */ var _ProductInfo_ProductInfo_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ProductInfo/ProductInfo.jsx */ \"./client/src/components/ProductOverview/ProductInfo/ProductInfo.jsx\");\n/* harmony import */ var _Share_Share_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Share/Share.jsx */ \"./client/src/components/ProductOverview/Share/Share.jsx\");\n/* harmony import */ var _Images_Images_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Images/Images.jsx */ \"./client/src/components/ProductOverview/Images/Images.jsx\");\n/* harmony import */ var _StyleSelect_StyleSelect_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./StyleSelect/StyleSelect.jsx */ \"./client/src/components/ProductOverview/StyleSelect/StyleSelect.jsx\");\n// this file is the head component of the \"product overview\" tree\n // main subcomponents:\n\n\n\n\n\n\n\nvar ProductOverview = function ProductOverview() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_CategoryAndName_CategoryAndName_jsx__WEBPACK_IMPORTED_MODULE_1__[\"default\"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ProductInfo_ProductInfo_jsx__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Share_Share_jsx__WEBPACK_IMPORTED_MODULE_3__[\"default\"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Images_Images_jsx__WEBPACK_IMPORTED_MODULE_4__[\"default\"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_StyleSelect_StyleSelect_jsx__WEBPACK_IMPORTED_MODULE_5__[\"default\"], null));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ProductOverview);\n\n//# sourceURL=webpack://project_catwalk/./client/src/components/ProductOverview/ProductOverview.jsx?");
+
+/***/ }),
+
+/***/ "./client/src/components/ProductOverview/Share/Share.jsx":
+/*!***************************************************************!*\
+  !*** ./client/src/components/ProductOverview/Share/Share.jsx ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nvar Share = function Share() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, \"SHARE SUBCOMPONENT\");\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Share);\n\n//# sourceURL=webpack://project_catwalk/./client/src/components/ProductOverview/Share/Share.jsx?");
+
+/***/ }),
+
+/***/ "./client/src/components/ProductOverview/StyleSelect/StyleSelect.jsx":
+/*!***************************************************************************!*\
+  !*** ./client/src/components/ProductOverview/StyleSelect/StyleSelect.jsx ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nvar StyleSelect = function StyleSelect() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, \"STYLE SELECT SUBCOMPONENT\");\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (StyleSelect);\n\n//# sourceURL=webpack://project_catwalk/./client/src/components/ProductOverview/StyleSelect/StyleSelect.jsx?");
 
 /***/ }),
 
@@ -46,7 +96,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _components_Dummy_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Dummy.jsx */ \"./client/src/components/Dummy.jsx\");\n/* harmony import */ var _components_ProductOverview_ProductOverview_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/ProductOverview/ProductOverview.jsx */ \"./client/src/components/ProductOverview/ProductOverview.jsx\");\n// babel should compile anything imported here and anything imported to those files\n\n\n\n\nreact_dom__WEBPACK_IMPORTED_MODULE_0__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_components_ProductOverview_ProductOverview_jsx__WEBPACK_IMPORTED_MODULE_3__[\"default\"], null), document.getElementById('app'));\n\n//# sourceURL=webpack://project_catwalk/./client/src/index.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _components_Dummy_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Dummy.jsx */ \"./client/src/components/Dummy.jsx\");\n// babel should compile anything imported here and anything imported to those files\n\n // add Dummy.jsx to the gitignore so everyone can use a local copy as the head of their react components\n\n\nreact_dom__WEBPACK_IMPORTED_MODULE_0__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_components_Dummy_jsx__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null), document.getElementById('app'));\n\n//# sourceURL=webpack://project_catwalk/./client/src/index.jsx?");
 
 /***/ }),
 
