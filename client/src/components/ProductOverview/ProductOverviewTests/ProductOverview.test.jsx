@@ -7,4 +7,4 @@ test('should add two numbers', () => {
   expect((1 + 2)).toBe(3);
 });
 
-// this is buggy, think of new things to add
+// this is buggy, find required packages for jest or change test libraries

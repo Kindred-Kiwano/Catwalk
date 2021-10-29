@@ -3,6 +3,7 @@ import React from 'react';
 const ProductInfo = (props) => {
   return (
     <div>
+      {/* make this its own <Header /> component */}
       <div id="info-header">
         {/* <StarReview /> */}
         <span>Read all x reviews </span>
