@@ -20,13 +20,33 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./client/src/components/ProductOverview/ProductInfo.jsx":
+/*!***************************************************************!*\
+  !*** ./client/src/components/ProductOverview/ProductInfo.jsx ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nvar ProductInfo = function ProductInfo(props) {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    id: \"info-header\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"span\", null, \"Read all x reviews \"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"span\", null, \"x in stock\")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"p\", {\n    id: \"product description\"\n  }, \"Be the next cool kid on the block.\"));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ProductInfo);\n\n//# sourceURL=webpack://project_catwalk/./client/src/components/ProductOverview/ProductInfo.jsx?");
+
+/***/ }),
+
+/***/ "./client/src/components/ProductOverview/ProductOverview.jsx":
+/*!*******************************************************************!*\
+  !*** ./client/src/components/ProductOverview/ProductOverview.jsx ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _ProductInfo_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ProductInfo.jsx */ \"./client/src/components/ProductOverview/ProductInfo.jsx\");\n// head of the product overview tree\n\n\n\nvar ProductOverview = function ProductOverview() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"a\", {\n    href: \"https://shop.lululemon.com/c/mens-polos/_/N-8kx\"\n  }, \"Shoes\"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"span\", null, \" \", '>', \" super fashionable\"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ProductInfo_jsx__WEBPACK_IMPORTED_MODULE_1__[\"default\"], null));\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ProductOverview);\n\n//# sourceURL=webpack://project_catwalk/./client/src/components/ProductOverview/ProductOverview.jsx?");
+
+/***/ }),
+
 /***/ "./client/src/index.jsx":
 /*!******************************!*\
   !*** ./client/src/index.jsx ***!
   \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _components_Dummy_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Dummy.jsx */ \"./client/src/components/Dummy.jsx\");\nObject(function webpackMissingModule() { var e = new Error(\"Cannot find module './components/ProductOverview/ProductOverview.jsx'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\n// babel should compile anything imported here and anything imported to those files\n\n\n\n\nreact_dom__WEBPACK_IMPORTED_MODULE_0__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(Object(function webpackMissingModule() { var e = new Error(\"Cannot find module './components/ProductOverview/ProductOverview.jsx'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), null), document.getElementById('app'));\n\n//# sourceURL=webpack://project_catwalk/./client/src/index.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _components_Dummy_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Dummy.jsx */ \"./client/src/components/Dummy.jsx\");\n/* harmony import */ var _components_ProductOverview_ProductOverview_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/ProductOverview/ProductOverview.jsx */ \"./client/src/components/ProductOverview/ProductOverview.jsx\");\n// babel should compile anything imported here and anything imported to those files\n\n\n\n\nreact_dom__WEBPACK_IMPORTED_MODULE_0__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_components_ProductOverview_ProductOverview_jsx__WEBPACK_IMPORTED_MODULE_3__[\"default\"], null), document.getElementById('app'));\n\n//# sourceURL=webpack://project_catwalk/./client/src/index.jsx?");
 
 /***/ }),
 
