@@ -10,4 +10,3 @@ app.use(express.static(path.join(__dirname, '..', 'client', 'dist')));
 app.listen(PORT, () => {
   console.log(`Serving static files at port ${PORT}`);
 });
-
