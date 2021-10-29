@@ -1,6 +1,7 @@
 // head of the product overview tree
+
 import React from 'react';
-import ProductInfo from './ProductInfo.jsx';
+import ProductInfo from './ProductInfo/ProductInfo.jsx';
 
 var ProductOverview = () => {
   return (
