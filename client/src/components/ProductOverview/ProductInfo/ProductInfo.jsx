@@ -6,6 +6,7 @@ import Header from './Header.jsx';
 var ProductInfo = (props) => {
   return (
     <div>
+      PRODUCT INFO SUBCOMPONENT
       <Header />
 
     </div>
