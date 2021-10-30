@@ -7,17 +7,22 @@ import './styles/style.css';
 
 import productList from '../../../../fakeData/productList.js';
 
-var Related = {};
+const RelatedProducts = () => {};
 
-Related.get = (id) => {
-  return axios.get(`/products/${id}/related`); //returns a promise
+RelatedProducts.getRelated = (id) => {
+  return axios.get(`/products/${id}/related`)
+    .catch(e => console.log(e));
 };
 
-Related.getFeatures
+RelatedProducts.getFeatures = (id) => {
+  return axios.get(`/products/${id}`)
+    .catch(e => console.log(e));
+};
+
+RelatedProducts.populateAsync = (arr, cb) => {
+  return Promise.all(arr.map(a => cb(a)))
+    .catch(e => console.log(e));
+};
 
 
-
-
-export const RelatedProducts = () => (
-  <Carousel list={productList} />
-);
+export default RelatedProducts;
