@@ -17,33 +17,23 @@ module.exports = {
         test: /\.?(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
             presets: [
-              "@babel/preset-env",
-              "@babel/preset-react"
+              '@babel/preset-env',
+              '@babel/preset-react'
             ]
           }
         }
       },
       {
-        // Loading CSS with webpack
-        test: /\.css$/i,
-        use: [
-          "style-loader",
-          {
-            loader: "css-loader",
-            options: {
-              importLoaders: 1,
-            },
-          },
-          {
-            loader: "postcss-loader",
-            options: { plugins: () => [postcssPresetEnv({ stage: 0 })] },
-          }
-        ],
+        test: /\.?css$/i,
+        use: [ 'style-loader', 'css-loader' ],
       }
     ]
+  },
+  resolve: {
+    extensions: ['css', '...']
   }
 };
 
