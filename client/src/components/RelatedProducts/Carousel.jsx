@@ -1,48 +1,21 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import ReactDOM from 'react-dom';
+import Product from '../../../../fakeData/product.js';
+import productList from '../../../../fakeData/productList.js';
+let { info } = Product;
 import Card from './Card.jsx';
 
-class Carousel extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      list: [ {}, {}, {} ],
-      start: 0, //index of array to start render
-      last: false, //if last index is at rightmost spot in DOM carousel rendering
-      width: 3
-    };
-  }
+const Carousel = (props) => {
 
-  scroll(e) {
+  //props is a state value - array of objects
 
-  }
-
-  sticky() {
-
-  }
-
-  calculatePosition(css) {
-    // get CSS position of card relative to container
-  }
-
-  
-
-  add(id, list) {
-    // update global state for corresponding list
-  }
-
-  remove(id, list) {
-    // splice global state for corresponding list
-  }
-
-  render() {
-    let {type, list} = this.props;
-    return (
-      <div className="carousel">
-        {/* For each item in list, render a card Component */}
-      </div>
-    );
-  }
-}
+  return (
+    <div className="carousel">
+      <Card product={info} click={props.click}/>
+      <Card product={info}/>
+      <Card product={info}/>
+    </div>
+  );
+};
 
 export default Carousel;
