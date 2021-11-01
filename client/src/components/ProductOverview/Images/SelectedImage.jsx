@@ -1,13 +1,14 @@
 import React from 'react';
 import { FakeProduct } from '../ProductOverview.jsx';
+import '../styles.css';
 
-var Description = () => {
+var SelectedImage = () => {
   var prod = React.useContext(FakeProduct);
   return (
     <div>
-      <p>{prod.info.description}</p>
+      <img className="selected" src={prod.styles.results[0].photos[0].url} />
     </div>
   );
 };
 
-export default Description;
+export default SelectedImage;
