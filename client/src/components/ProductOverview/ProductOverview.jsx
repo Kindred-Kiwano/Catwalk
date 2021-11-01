@@ -8,14 +8,21 @@ import Share from './Share/Share.jsx';
 import Images from './Images/Images.jsx';
 import StyleSelect from './StyleSelect/StyleSelect.jsx';
 
+// dummydata
+import Product from '../../../../fakeData/product.js';
+export var FakeProduct = React.createContext('FORGOT TO PROVIDE CONTEXT, CAN MAKE A DEAFULT THO!');
+
 var ProductOverview = () => {
+
   return (
     <div>
-      <CategoryAndName />
-      <ProductInfo />
-      <Share />
-      <Images />
-      <StyleSelect />
+      <FakeProduct.Provider value={Product}>
+        <CategoryAndName />
+        <ProductInfo />
+        <Share />
+        <Images />
+        <StyleSelect />
+      </FakeProduct.Provider>
     </div>
   );
 };
