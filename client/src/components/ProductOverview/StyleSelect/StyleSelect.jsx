@@ -3,7 +3,7 @@ import React from 'react';
 var StyleSelect = () => {
   return (
     <div>
-      STYLE SELECT SUBCOMPONENT
+      <h4>STYLE SELECT SUBCOMPONENT</h4>
     </div>
   );
 };
