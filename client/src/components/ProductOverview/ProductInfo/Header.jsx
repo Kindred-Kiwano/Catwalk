@@ -1,13 +1,19 @@
 import React from 'react';
 
+// dummy data
+import { FakeProduct } from '../ProductOverview.jsx';
+import Reviews from '../../../../../fakeData/reviews.js';
+import FakeRating from '../../RelatedProducts/FakeRating.jsx';
+
 var Header = (props) => {
+  var prod = React.useContext(FakeProduct);
+
   return (
     <div>
-      <span>Read all x reviews </span>
-      <span>x in stock</span>
-      <p id="product description">
-        Be the next cool kid on the block.
-      </p>
+      <FakeRating />
+      <span>Read all {Reviews.productExample.count} reviews </span>
+      <span>TODO - dynamically  get amt stock from selected style</span>
+      <span>TODO - dynamically get price from selected style</span>
     </div>
   );
 };

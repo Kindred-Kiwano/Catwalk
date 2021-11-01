@@ -2,13 +2,14 @@
 
 import React from 'react';
 import Header from './Header.jsx';
+import Description from './Description.jsx';
 
 var ProductInfo = (props) => {
   return (
     <div>
-      PRODUCT INFO SUBCOMPONENT
+      <h4>PRODUCT INFO SUBCOMPONENT</h4>
       <Header />
-
+      <Description />
     </div>
   );
 };
