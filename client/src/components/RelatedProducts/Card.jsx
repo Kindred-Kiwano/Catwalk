@@ -62,17 +62,17 @@ const Card = (props) => {
   }
 
   const dummyClick = (e) => {
-    console.log(e.target);
+    console.log(e.target.id);
     e.preventDefault();
   };
 
   return (
-    <div className='card' id={id} onClick={() => {console.log('\n')}}>
+    <div className='card' id={id} onClick={e => dummyClick(e)}>
       <header className='card'>
-        <CardButton value={outfit} click={e => dummyClick(e)} />
+        <CardButton value={outfit} click={()=>{}} />
         <CardImage img={imgSrc} />
       </header>
-      <CardInfo product={product} sale={'false'} />
+      <CardInfo product={product} />
     </div>
   );
 };

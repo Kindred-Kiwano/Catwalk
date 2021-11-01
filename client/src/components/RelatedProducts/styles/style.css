@@ -94,6 +94,10 @@ footer p {
   width: 90%;
 }
 
+footer p.price-sale {
+  color: red;
+}
+
 footer p.category {
   letter-spacing: 0.2rem;
   font-weight: bold;
