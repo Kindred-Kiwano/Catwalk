@@ -3,11 +3,16 @@ import { render, screen } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 
 import Carousel from '../Carousel.jsx';
+import productList from '../../../../../fakeData/productList.js';
 
 const TestCarousel = () => {
   return (
-    <Carousel />
+    render(<Carousel list={productList} />)
   );
 };
 
-export default TestCarousel;
+
+it('should render carousel component to the screen', () => {
+  render(<Carousel list={productList} />)
+  expect(screen.getBy'').to.be.
+})
