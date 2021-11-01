@@ -1,3 +1,9 @@
 node_modules
 config.js
-package-lock.json
+*bundle.js
+*Dummy*
+*eslint*
+.DS_Store
+.vscode*
+*.excalidraw
+*.gitignore*
