@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import CardButton from './CardButton.jsx';
 import CardImage from './CardImage.jsx';
 import CardInfo from './CardInfo.jsx';
-import FakeRating from './FakeRating.jsx';
 
 
 /*
@@ -40,17 +39,22 @@ types/styles: {
 
 */
 
-let imgSrc = 'https://images.unsplash.com/photo-1526330563440-3ae2174b6bce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80';
+let imgSrc = 'https://images.unsplash.com/photo-1477420143023-6a0e0b04b69a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80';
 
 
 const Card = (props) => {
+  let { product } = props;
 
-  let { id, name, default_price, sale_price, style, category } = props.product;
+  let { id, name, default_price, sale_price, style, category } = product;
 
   var testGet = props.click;
 
-  if (sale_price) {
+  const outfit = 'ⓧ';
+  const related = '★';
 
+  if (sale_price) {
+    //get price data from api
+    //format price
   }
 
   if (default_price - sale_price) {
@@ -58,25 +62,17 @@ const Card = (props) => {
   }
 
   const dummyClick = (e) => {
-    console.log(e.target)
-    e.preventDefault()
+    console.log(e.target);
+    e.preventDefault();
   };
 
   return (
-
-    <div className='card' id={id} onClick={() => {}}>
-      <span className='card header'>
+    <div className='card' id={id} onClick={() => {console.log('\n')}}>
+      <header className='card'>
+        <CardButton value={outfit} click={e => dummyClick(e)} />
         <CardImage img={imgSrc} />
-        <CardButton value={' ⓧ '} click={e => dummyClick(e)} />
-      </span>
-      <span className={'card info'}>
-        <CardInfo
-          category={category}
-          name={name}
-          price={default_price}
-          sale={'false'} />
-        <FakeRating product_id={id} type={'OUTFIT'} />
-      </span>
+      </header>
+      <CardInfo product={product} sale={'false'} />
     </div>
   );
 };

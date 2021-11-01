@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overscroll-behavior: none;
+  /* border: 1px solid pink; */
+}
+
+body {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel {
+  display: inline-flex;
+  scroll-snap-type: x mandatory;
+  margin: 1em;
+  padding: 0 .5em;
+  box-sizing: border-box;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  width: 100%;
+  height: 375px;
+  overscroll-behavior: none;
+  align-content: center;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+div.card {
+  justify-content: center;
+  z-index: 0;
+  scroll-snap-align: start;
+  display: inline-block;
+  margin-inline-start: 1em;
+  background-color: #eee;
+  outline: 1px solid #999;
+  height: 375px;
+  width: 250px;
+  position: relative;
+
+}
+
+header {
+  align-content: center;
+}
+
+header img {
+  z-index: 0;
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+}
+
+header button {
+  background: none;
+  font-size: larger;
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  /* padding: auto;  */
+  /* height: 30px; */
+  z-index: 20;
+
+}
+
+
+footer {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: left;
+  padding-left: 1em;
+  align-content: space-between;
+  padding: auto ;
+  line-height: 1.2em;
+}
+
+footer p {
+  width: 90%;
+}
+
+footer p.category {
+  letter-spacing: 0.2rem;
+  font-weight: bold;
+}
+
+footer div.rating {
+  color: red;
+}
+
