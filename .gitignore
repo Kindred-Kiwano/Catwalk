@@ -1,3 +1,9 @@
 node_modules
 config.js
-**bundle.js
+*bundle.js
+*Dummy*
+*eslint*
+.DS_Store
+.vscode*
+*.excalidraw
+*.gitignore*
