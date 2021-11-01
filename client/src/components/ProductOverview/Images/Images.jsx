@@ -1,9 +1,12 @@
 import React from 'react';
+import SelectedImage from './SelectedImage.jsx';
 
 var Images = () => {
+
   return (
     <div>
-      IMAGES SUBCOMPONENT
+      <h4>IMAGES SUBCOMPONENT</h4>
+      <SelectedImage />
     </div>
   );
 };
