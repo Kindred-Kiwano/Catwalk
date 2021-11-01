@@ -1,5 +1,6 @@
 import React from 'react';
 import SelectedImage from './SelectedImage.jsx';
+import Gallery from './Gallery.jsx';
 
 var Images = () => {
 
@@ -7,6 +8,7 @@ var Images = () => {
     <div>
       <h4>IMAGES SUBCOMPONENT</h4>
       <SelectedImage />
+      <Gallery />
     </div>
   );
 };
