@@ -11,9 +11,6 @@ var Gallery = () => {
         return <GalleryImage imageURL={imageObj.thumbnail_url} />;
       })}
     </div>
-      // generate thumbnail images
-      // still include the selected image, we'll grey it out in the carousel later
-
   );
 
 };
