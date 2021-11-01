@@ -13,6 +13,6 @@ const TestCarousel = () => {
 
 
 it('should render carousel component to the screen', () => {
-  render(<Carousel list={productList} />)
-  expect(screen.getBy'').to.be.
-})
+  render(<Carousel list={productList} />);
+  expect(screen.getByName, 'carousel').toBeInTheDocument();
+});
