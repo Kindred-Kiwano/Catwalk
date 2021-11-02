@@ -5,9 +5,7 @@ var SelectQty = (props) => {
   return (
     <div>
       <select>
-
-        {/* then map thru the array generating an <option value="x" >x</option> for each number */}
-        {props.availableQuantities.map((qty) => {
+        {props.qtyList.map((qty) => {
           return (<option value={qty}>{qty}</option>);
         })}
       </select>

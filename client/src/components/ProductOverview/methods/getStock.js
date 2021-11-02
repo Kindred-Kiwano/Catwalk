@@ -20,8 +20,6 @@ var getStock = {
 
     if (Object.keys(sizesToQuantities).length === 0) {
       sizesToQuantities['OUT OF STOCK'] = 0;
-    } else {
-      sizesToQuantities['Select size'] = '-';
     }
 
     return sizesToQuantities;

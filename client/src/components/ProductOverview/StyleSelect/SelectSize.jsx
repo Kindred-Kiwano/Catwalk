@@ -8,6 +8,7 @@ var SelectSize = (props) => {
     <div>
       {/* render all available sizes in a dropdown */}
       <select onChange={props.handleSizeSelection} >
+        <option>Select size</option>
         {Object.keys(props.sizesAndAmounts).map((size) => {
           return (<option value={size}>{size}</option>);
         })}
