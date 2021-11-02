@@ -2,11 +2,16 @@ import React from 'react';
 import { FakeProduct } from '../ProductOverview.jsx';
 import getStock from '../methods/getStock.js';
 
-var SelectSize = () => {
-  var prod = React.useContext(FakeProduct);
+var SelectSize = (props) => {
+  console.log('sizes and amounts generated: ', props.sizesAndAmounts);
   return (
     <div>
-      {getAvailableSizes(prod)}
+      {/* render all available sizes in a dropdown */}
+      <select onChange={props.handleSizeSelection} >
+        {Object.keys(props.sizesAndAmounts).map((size) => {
+          return (<option value={size}>{size}</option>);
+        })}
+      </select>
     </div>
   );
 };

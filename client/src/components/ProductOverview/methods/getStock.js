@@ -10,7 +10,7 @@ var getStock = {
     var skuObjects = productData.styles.results[0].skus;
     var sizesToQuantities = {};
     var currentSKU, sizeToQty;
-    for (key in skuObjects) {
+    for (var key in skuObjects) {
       currentSKU = skuObjects[key];
       if (currentSKU.quantity !== 0) {
         currentSKU = skuObjects[key];
@@ -38,7 +38,7 @@ var getStock = {
       displayAmount = amountInStock;
     }
 
-    qtyOptions = [];
+    var qtyOptions = [];
     for (var i = 1; i <= displayAmount; i++) {
       qtyOptions.push(i);
     }
@@ -51,7 +51,7 @@ var getStock = {
     var inStock = getStock.formatAllInStock(productData);
     var allOptions = {};
     var optionsTuple;
-    for (size in inStock) {
+    for (var size in inStock) {
       optionsTuple = getStock.generateQtyOptionsForSingleSKU(size, inStock);
       allOptions[optionsTuple[0]] = optionsTuple[1];
     }
