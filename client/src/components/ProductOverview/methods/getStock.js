@@ -60,23 +60,3 @@ var getStock = {
 
 export default getStock;
 
-
-
-// TODO after lunch: use the functions above to generate jsx dropdown menus
-
-// <option value={skuObject[sku].size}>
-// {skuObject[sku].size}
-// </option>
-// );
-// }
-// });
-
-// if (inStock.length === 0) {
-// inStock.push(<option VALUE="OUT OF STOCK">
-// OUT OF STOCK
-// </option>);
-// }
-
-// return (
-// <select>{inStock}</select>
-// );
