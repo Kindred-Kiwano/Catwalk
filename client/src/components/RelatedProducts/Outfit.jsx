@@ -5,28 +5,33 @@ const Outfit = {};
 Outfit.state = [];
 
 Outfit.add = (id) => {
-  Outfit.state.push(id)
-  Outfit.save(id);
+  let outfit = Outfit.retrieve() || Outfit.state;
+  outfit.push(id);
+  Outfit.state = outfit;
+  Outfit.save();
   // this.setState({
   //   outfit: [...this.state.outfit, id]
   // });
 };
 
-Outfit.save = (id) => {
+Outfit.save = () => {
   localStorage.setItem('outfit', JSON.stringify(Outfit.state));
 };
 
 Outfit.remove = (id) => {
-  var outfit = this.state.outfit.filter(fit => fit !== id);
-  this.setState({
-    outfit: outfit
-  });
+  let outfit = Outfit.retrieve().filter(fit => fit !== id);
+  Outfit.state = outfit;
+  // this.setState({
+  //   outfit: outfit
+  // });
   localStorage.removeItem('outfit');
-  outfit.length && Outfit.save();
+  outfit.length ? Outfit.save() : Outfit.reset();
 };
 
-Outfit.retrieve = () => {
+Outfit.reset = () => { localStorage.removeItem('outfit'); };
 
+Outfit.retrieve = () => {
+  return JSON.parse(localStorage.getItem('outfit'));
 };
 
 export default Outfit;
