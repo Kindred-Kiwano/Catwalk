@@ -1,6 +1,10 @@
 import React from 'react';
+import { FakeProduct } from '../ProductOverview.jsx';
 
+
+// should determine how many the shopper can buy of the selected size
 var SelectQty = () => {
+  var prod = React.useContext(FakeProduct);
   return (
     <div>
       <select>
@@ -10,5 +14,7 @@ var SelectQty = () => {
     </div>
   );
 };
+
+
 
 export default SelectQty;
