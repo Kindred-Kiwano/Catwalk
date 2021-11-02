@@ -5,11 +5,11 @@ import productList from '../../../../../fakeData/productList.js';
 import testReviews from '../../../../../fakeData/reviews.js';
 import ReviewItem from './ReviewItem.jsx';
 
-console.log(testReviews.reviews.results);
+console.log(testReviews.productExample.results);
 const ReviewsList = (props) => {
   return (
     <div>
-      {testReviews.reviews.results.map((review) =>
+      {testReviews.productExample.results.map((review) =>
         <div id="reviewList">
           <ReviewItem review={review} key={review.review_id}/>
         </div>
