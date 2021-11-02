@@ -50,17 +50,8 @@ const Card = (props) => {
   const outfit = 'ⓧ';
   const related = '★';
 
-  if (sale_price) {
-    //get price data from api
-    //format price
-  }
-
-  if (default_price - sale_price) {
-
-  }
-
   const handleClick = (e) => {
-    // methods[action](id);
+    methods[action](id);
   };
 
   return (

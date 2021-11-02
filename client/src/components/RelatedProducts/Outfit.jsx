@@ -12,9 +12,9 @@ Outfit.add = (id) => {
     Outfit.save();
   }
 
-  this.setState({
-    outfit: [...this.state.outfit, id]
-  })
+  // this.setState({
+  //   outfit: [...this.state.outfit, id]
+  // })
 };
 
 Outfit.save = () => {
@@ -37,35 +37,15 @@ Outfit.retrieve = () => {
   return JSON.parse(localStorage.getItem('outfit'));
 };
 
-
 var cardType = {
   outfit: {
     click: 'add',
     button: 'ⓧ'
-
   },
-}
+  related: {
+    click: 'remove',
+    button: '★'
+  }
+};
 
 export default Outfit;
-
-
-
-// export const UserContext = React.createContext();
-
-
-// export const UserContextProvider = (children) => {
-
-//   var [outfit, setOutfit] = React.useState([]);
-
-//   var initialState = {
-//     outfit: outfit,
-//     currentProduct: null
-//   };
-
-
-//   return (
-//     <UserContext.Provider value={ initialState, setOutfit }>
-//       {children}
-//     </UserContext.Provider>
-//   );
-// };

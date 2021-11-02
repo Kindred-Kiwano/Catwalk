@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import Outfit from './Outfit.jsx';
 import Related from './Related.jsx';
 import Carousel from './Carousel.jsx';
-p
+
 import Card from './Card.jsx';
 
 import productList from '../../../../fakeData/productList.js';
@@ -19,4 +19,5 @@ var initialState = {
 };
 
 const UserContext = React.createContext(initialState);
+
 export default UserContext;
