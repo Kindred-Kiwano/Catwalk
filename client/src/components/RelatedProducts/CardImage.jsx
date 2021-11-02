@@ -5,6 +5,7 @@ const CardImage = (props) => (
   <>
     <img src={props.img}
       role='img'
+      title={props.description}
       z-index="0" />
   </>
 );

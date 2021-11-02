@@ -6,9 +6,11 @@ Outfit.state = [];
 
 Outfit.add = (id) => {
   let outfit = Outfit.retrieve() || Outfit.state;
-  outfit.push(id);
-  Outfit.state = outfit;
-  Outfit.save();
+  if (!outfit.includes(id)) {
+    outfit.push(id);
+    Outfit.state = outfit;
+    Outfit.save();
+  }
   // this.setState({
   //   outfit: [...this.state.outfit, id]
   // });
