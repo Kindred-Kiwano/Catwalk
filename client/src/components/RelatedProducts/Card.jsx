@@ -56,20 +56,22 @@ const Card = (props) => {
     //get price data from api
     //format price
   }
+  let {add, retrieve, remove} = props.methods;
 
   if (default_price - sale_price) {
 
   }
 
   const dummyClick = (e) => {
-    console.log(e.target.id);
+    add(id)
+    console.log(e);
     e.preventDefault();
   };
 
   return (
     <div className='card' id={id} onClick={e => dummyClick(e)}>
       <header className='card'>
-        <CardButton value={related} click={()=>{}} />
+        <CardButton value={related} product={id} click={() => add(id)} />
         <CardImage img={imgSrc} />
       </header>
       <CardInfo product={product} />

@@ -1,20 +1,22 @@
 import axios from '../../../../config/config.js';
-import './styles/style.css';
 
 const Outfit = {};
 
+Outfit.state = [];
+
 Outfit.add = (id) => {
-  this.setState({
-    outfit: [...this.state.outfit, id]
-  });
-  Outfit.save();
+  Outfit.state.push(id)
+  Outfit.save(id);
+  // this.setState({
+  //   outfit: [...this.state.outfit, id]
+  // });
 };
 
-Outfit.save = () => {
-  localStorage.setItem('outfit', JSON.stringify(this.state.outfit));
+Outfit.save = (id) => {
+  localStorage.setItem('outfit', JSON.stringify(Outfit.state));
 };
 
-Outfit.delete = (id) => {
+Outfit.remove = (id) => {
   var outfit = this.state.outfit.filter(fit => fit !== id);
   this.setState({
     outfit: outfit
@@ -23,6 +25,9 @@ Outfit.delete = (id) => {
   outfit.length && Outfit.save();
 };
 
+Outfit.retrieve = () => {
+
+};
 
 export default Outfit;
 
