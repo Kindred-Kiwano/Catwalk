@@ -64,6 +64,7 @@ export default getStock;
 
 
 
+// TODO after lunch: use the functions above to generate jsx dropdown menus
 
 // <option value={skuObject[sku].size}>
 // {skuObject[sku].size}
