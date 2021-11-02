@@ -59,4 +59,3 @@ var getStock = {
 };
 
 export default getStock;
-

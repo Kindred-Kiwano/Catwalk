@@ -1,14 +1,14 @@
 import React from 'react';
 import { FakeProduct } from '../ProductOverview.jsx';
 import GalleryImage from './GalleryImage.jsx';
+import { ImagesOfStyle } from './Images.jsx';
 
 var Gallery = () => {
-  var prod = React.useContext(FakeProduct);
-  console.log('product styles is: ', prod.styles)
+  var images = React.useContext(ImagesOfStyle);
   return (
     <div>
-      {prod.styles.results[0].photos.map((imageObj) => {
-        return <GalleryImage imageURL={imageObj.thumbnail_url} />;
+      {images.map((imageObj) => {
+        return <GalleryImage thumbnailURL={imageObj.thumbnail_url} />;
       })}
     </div>
   );
