@@ -1,12 +1,12 @@
 import React from 'react';
-import { FakeProduct } from 'ProductOverview.jsx';
+import { FakeProduct } from '../ProductOverview.jsx';
+import '../styles.css';
 
 var Price = () => {
   var prod = React.useContext(FakeProduct);
   return (
     <div>
-      Price: $ {getPrice(prod)}
-
+      Price: {getPrice(prod)}
     </div>
   );
 };
@@ -21,12 +21,12 @@ var getPrice = (prod) => {
   // display the discount price followed by the struckthru original price
   if (prod.styles.results[0].sale_price === null) {
     // display original price
-    return <span>{regular}</span>;
+    return <span>${regular}</span>;
   } else {
     return (
       <span>
-        <span>{discounted}</span>
-        <span className="obnoxious-discount">{regular}</span>
+        <span className="discount-price">${discounted}</span>
+        <span className="former-price">${regular}</span>
       </span>
     );
   }
