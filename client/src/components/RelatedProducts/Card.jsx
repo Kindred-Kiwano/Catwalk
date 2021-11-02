@@ -45,7 +45,7 @@ let imgSrc = 'https://images.unsplash.com/photo-1477420143023-6a0e0b04b69a?ixlib
 const Card = (props) => {
   let { product } = props;
 
-  let { id, name, default_price, sale_price, style, category } = product;
+  let { id, name, default_price, sale_price, style, category, description } = product;
 
   var testGet = props.click;
 
@@ -56,21 +56,21 @@ const Card = (props) => {
     //get price data from api
     //format price
   }
+  let {add, retrieve, remove} = props.methods;
 
   if (default_price - sale_price) {
 
   }
 
-  const dummyClick = (e) => {
-    console.log(e.target.id);
-    e.preventDefault();
+  const handleClick = (e) => {
+    add(id);
   };
 
   return (
-    <div className='card' id={id} onClick={e => dummyClick(e)}>
+    <div className='card' id={id} onClick={e => handleClick(e)}>
       <header className='card'>
-        <CardButton value={related} click={()=>{}} />
-        <CardImage img={imgSrc} />
+        <CardButton value={related} id={id} onClick={(e) => handleClick(e)} />
+        <CardImage img={imgSrc} onClick={() => console.log(id)}/>
       </header>
       <CardInfo product={product} />
     </div>
