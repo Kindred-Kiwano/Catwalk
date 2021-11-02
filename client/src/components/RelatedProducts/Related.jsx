@@ -3,26 +3,32 @@ import Carousel from './Carousel.jsx';
 
 import { getAllProducts, getRelatedProducts } from '../../../../Shared/makeRequest.js';
 import axios from '../../../../config/config.js';
-import './styles/style.css';
+import './styles/carouselStyle.css';
 
 import productList from '../../../../fakeData/productList.js';
 
-const RelatedProducts = () => {};
+const Related = {};
 
-RelatedProducts.getRelated = (id) => {
+Related.getRelated = (id) => {
   return axios.get(`/products/${id}/related`)
     .catch(e => console.log(e));
 };
 
-RelatedProducts.getFeatures = (id) => {
+Related.getFeatures = (id) => {
   return axios.get(`/products/${id}`)
     .catch(e => console.log(e));
 };
 
-RelatedProducts.populateAsync = (arr, cb) => {
+Related.getStyles = (id) => {
+  return axios.get(`/products/${id}/styles`)
+    .catch(e => console.log(e));
+};
+
+Related.populateAsync = (arr, cb) => {
   return Promise.all(arr.map(a => cb(a)))
     .catch(e => console.log(e));
 };
 
 
-export default RelatedProducts;
+
+export default Related;

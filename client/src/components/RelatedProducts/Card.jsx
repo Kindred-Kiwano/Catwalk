@@ -69,7 +69,7 @@ const Card = (props) => {
   return (
     <div className='card' id={id} onClick={e => dummyClick(e)}>
       <header className='card'>
-        <CardButton value={outfit} click={()=>{}} />
+        <CardButton value={related} click={()=>{}} />
         <CardImage img={imgSrc} />
       </header>
       <CardInfo product={product} />
