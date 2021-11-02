@@ -2,3 +2,16 @@
   height: 40%;
   width: 40%;
 }
+
+.gallery-image {
+  height: 40px;
+  width: 40px;
+}
+
+.former-price {
+  text-decoration: line-through;
+}
+
+.discount-price {
+  color: red;
+}
