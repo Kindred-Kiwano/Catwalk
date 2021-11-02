@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import CardButton from './CardButton.jsx';
 import CardImage from './CardImage.jsx';
 import CardInfo from './CardInfo.jsx';
+import UserContext from './UserContext.jsx';
 
 
 /*
@@ -49,9 +50,15 @@ const Card = (props) => {
 
   const outfit = 'ⓧ';
   const related = '★';
+  const {userOutfit, setUserOutfit} = React.useContext(UserContext);
+
+  const updateOutfit = (id) => {
+    setUserOutfit([...userOutfit, id]);
+  }
+
 
   const handleClick = (e) => {
-    methods[action](id);
+    updateOutfit(product);
   };
 
   return (

@@ -34,7 +34,7 @@ Outfit.remove = (id) => {
 Outfit.reset = () => { localStorage.removeItem('outfit'); };
 
 Outfit.retrieve = () => {
-  return JSON.parse(localStorage.getItem('outfit'));
+  return JSON.parse(localStorage.getItem('outfit')) || [];
 };
 
 var cardType = {
