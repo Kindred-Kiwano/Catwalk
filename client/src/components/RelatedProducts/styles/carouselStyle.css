@@ -3,7 +3,6 @@
   padding: 0;
   border: 0;
   overscroll-behavior: none;
-  /* border: 1px solid pink; */
 }
 
 body {
@@ -21,13 +20,15 @@ body {
   display: inline-flex;
   scroll-snap-type: x mandatory;
   margin: 1em;
-  padding: 0 .5em;
+  margin-right: 2em;
+  padding: 0 1em;
   box-sizing: border-box;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
   width: 100%;
-  height: 375px;
+  height: 500px;
+  /* height: 375px; */
   overscroll-behavior: none;
   align-content: center;
 }
@@ -41,11 +42,11 @@ div.card {
   z-index: 0;
   scroll-snap-align: start;
   display: inline-block;
-  margin-inline-start: 1em;
+  margin-right: 1em;
+  /* margin-inline-start: 1em; */
   background-color: #eee;
-  outline: 1px solid #999;
-  height: 375px;
-  width: 250px;
+  height: 500px;
+  width: 350px;
   position: relative;
 
 }
@@ -56,8 +57,8 @@ header {
 
 header img {
   z-index: 0;
-  height: 250px;
-  width: 250px;
+  height: 350px;
+  width: 350px;
   object-fit: cover;
 }
 
@@ -70,8 +71,6 @@ header button {
   right: 10px;
   width: 40px;
   height: 40px;
-  /* padding: auto;  */
-  /* height: 30px; */
   z-index: 20;
 
 }
@@ -106,4 +105,3 @@ footer p.category {
 footer div.rating {
   color: red;
 }
-
