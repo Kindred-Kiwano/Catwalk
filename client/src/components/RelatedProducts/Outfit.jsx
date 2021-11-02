@@ -11,9 +11,10 @@ Outfit.add = (id) => {
     Outfit.state = outfit;
     Outfit.save();
   }
-  // this.setState({
-  //   outfit: [...this.state.outfit, id]
-  // });
+
+  this.setState({
+    outfit: [...this.state.outfit, id]
+  })
 };
 
 Outfit.save = () => {
@@ -35,6 +36,15 @@ Outfit.reset = () => { localStorage.removeItem('outfit'); };
 Outfit.retrieve = () => {
   return JSON.parse(localStorage.getItem('outfit'));
 };
+
+
+var cardType = {
+  outfit: {
+    click: 'add',
+    button: 'ⓧ'
+
+  },
+}
 
 export default Outfit;
 

@@ -43,11 +43,9 @@ let imgSrc = 'https://images.unsplash.com/photo-1477420143023-6a0e0b04b69a?ixlib
 
 
 const Card = (props) => {
-  let { product } = props;
+  let { product, methods, action } = props;
 
   let { id, name, default_price, sale_price, style, category, description } = product;
-
-  var testGet = props.click;
 
   const outfit = 'ⓧ';
   const related = '★';
@@ -56,14 +54,13 @@ const Card = (props) => {
     //get price data from api
     //format price
   }
-  let {add, retrieve, remove} = props.methods;
 
   if (default_price - sale_price) {
 
   }
 
   const handleClick = (e) => {
-    add(id);
+    // methods[action](id);
   };
 
   return (
