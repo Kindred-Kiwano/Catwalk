@@ -15,6 +15,14 @@ export var Style = React.createContext();
 export var ProductOverview = () => {
   // product that the page refers to
   var [product, updateProduct] = React.useState(Product);
+
+  // -- LEFT OFF HERE FOR 11/03 --
+  // TODO: figure out why calling updateStyle in Thumbnail.jsx is not re-rendering the images and prices etc.
+  // look at the react hooks docs:
+  // 'lifecycle methods' to update state - might be the missing piece!
+  // rules of hooks
+
+
   // initialize to the first style in the .results array in Product.styles
   var [style, updateStyle] = React.useState(Product.styles.results[0]);
 

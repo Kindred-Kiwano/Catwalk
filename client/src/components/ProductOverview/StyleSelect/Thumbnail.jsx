@@ -13,6 +13,7 @@ var Thumbnail = (props) => {
     // only update if current style is different
     if (style.style_id !== props.styleObject.style_id) {
       console.log('style updated!');
+      console.log('updating to this style: ', props.styleObject)
       updateStyle(props.styleObject);
     }
 
