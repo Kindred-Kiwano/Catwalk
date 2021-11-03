@@ -1,7 +1,7 @@
 import React from 'react';
 import SelectedImage from './SelectedImage.jsx';
 import Gallery from './Gallery.jsx';
-import { Style } from '../ProductOverview.jsx';
+import { Style } from '../../ProductOverview.jsx';
 
 // new contexts
 export var ImagesOfSelectedStyle = React.createContext();

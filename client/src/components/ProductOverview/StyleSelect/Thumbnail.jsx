@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles.css';
 import { Style } from '../ProductOverview.jsx';
-import { CurrentlySelectedImage } from '../Images/Images.jsx';
+import { CurrentlySelectedImage } from './Images/Images.jsx';
 
 var Thumbnail = (props) => {
   var [style, updateStyle] = React.useContext(Style);
