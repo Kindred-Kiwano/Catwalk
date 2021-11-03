@@ -1,6 +1,6 @@
 .selected {
-  height: 40%;
-  width: 40%;
+  height: 300px;
+  width: 300px;
 }
 
 .gallery-image {
@@ -15,5 +15,4 @@
 .discount-price {
   color: red;
 }
-
 
