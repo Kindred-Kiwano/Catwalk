@@ -1,20 +1,17 @@
+import React from 'react';
 import axios from '../../../../config/config.js';
+
+import UserContext from './UserContext.jsx';
 
 const Outfit = {};
 
 Outfit.state = [];
 
-Outfit.add = (id) => {
-  let outfit = Outfit.retrieve() || Outfit.state;
-  if (!outfit.includes(id)) {
-    outfit.push(id);
-    Outfit.state = outfit;
-    Outfit.save();
+Outfit.add = (product) => {
+  let {userOutfit, setUserOutfit} = React.useContext(UserContext);
+  if (!userOutfit.includes(product)) {
+    setUserOutfit([...userOutfit, product]);
   }
-
-  // this.setState({
-  //   outfit: [...this.state.outfit, id]
-  // })
 };
 
 Outfit.save = () => {
@@ -22,30 +19,16 @@ Outfit.save = () => {
 };
 
 Outfit.remove = (id) => {
-  let outfit = Outfit.retrieve().filter(fit => fit !== id);
-  Outfit.state = outfit;
-  // this.setState({
-  //   outfit: outfit
-  // });
-  localStorage.removeItem('outfit');
-  outfit.length ? Outfit.save() : Outfit.reset();
+  let {userOutfit, setUserOutfit} = React.useContext(UserContext);
+  if (userOutfit.includes(product)) {
+    setUserOutfit(userOutfit.filter(prod => id !== prod.id));
+  }
 };
 
 Outfit.reset = () => { localStorage.removeItem('outfit'); };
 
 Outfit.retrieve = () => {
   return JSON.parse(localStorage.getItem('outfit')) || [];
-};
-
-var cardType = {
-  outfit: {
-    click: 'add',
-    button: 'ⓧ'
-  },
-  related: {
-    click: 'remove',
-    button: '★'
-  }
 };
 
 export default Outfit;

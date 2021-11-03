@@ -4,6 +4,7 @@ import CardButton from './CardButton.jsx';
 import CardImage from './CardImage.jsx';
 import CardInfo from './CardInfo.jsx';
 import UserContext from './UserContext.jsx';
+import Outfit from './Outfit.jsx';
 
 
 /*
@@ -19,9 +20,6 @@ types/styles: {
       del (if selected)
     },
     methods: {
-      remove: (obj, list) => {
-        splice global state outfit array
-      }
     }
   },
   related: {
@@ -44,28 +42,29 @@ let imgSrc = 'https://images.unsplash.com/photo-1477420143023-6a0e0b04b69a?ixlib
 
 
 const Card = (props) => {
-  let { product, methods, action } = props;
+  let { product, type } = props;
 
-  let { id, name, default_price, sale_price, style, category, description } = product;
+  let { id, name, default_price, style, category, description } = product;
 
-  const outfit = 'ⓧ';
-  const related = '★';
-  const {userOutfit, setUserOutfit} = React.useContext(UserContext);
+  let {button, click, list, update} = type;
+  console.log(type);
 
-  const updateOutfit = (id) => {
-    setUserOutfit([...userOutfit, id]);
-  }
+  // const {userOutfit, setUserOutfit} = React.useContext(UserContext);
+
+  // const updateOutfit = (id) => {
+  //   setUserOutfit([...userOutfit, id]);
+  // };
 
 
-  const handleClick = (e) => {
-    updateOutfit(product);
+  const handleClick = (id) => {
+    update(id);
   };
 
   return (
-    <div className='card' id={id} onClick={e => handleClick(e)}>
+    <div className='card' id={id} onClick={() => update(product)}>
       <header className='card'>
-        <CardButton value={related} id={id} onClick={(e) => handleClick(e)} />
-        <CardImage img={imgSrc} onClick={() => console.log(id)}/>
+        <CardButton value={button} id={id} onClick={() => update(product)} />
+        <CardImage img={imgSrc} onClick={() => console.log(product)}/>
       </header>
       <CardInfo product={product} />
     </div>

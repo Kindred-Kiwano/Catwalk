@@ -1,9 +1,7 @@
 import React from 'react';
-import Carousel from './Carousel.jsx';
+// import Carousel from './Carousel.jsx';
 
-import { getAllProducts, getRelatedProducts } from '../../../../Shared/makeRequest.js';
 import axios from '../../../../config/config.js';
-import './styles/carouselStyle.css';
 
 import productList from '../../../../fakeData/productList.js';
 
