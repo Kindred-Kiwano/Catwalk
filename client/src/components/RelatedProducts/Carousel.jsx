@@ -9,7 +9,6 @@ const Carousel = (props) => {
 
   let {list, type} = props;
 
-
   return (
     <div className="carousel">
       { list.map(prod => (
