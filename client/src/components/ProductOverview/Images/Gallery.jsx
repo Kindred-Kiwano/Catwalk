@@ -1,10 +1,10 @@
 import React from 'react';
 import { FakeProduct } from '../ProductOverview.jsx';
 import GalleryImage from './GalleryImage.jsx';
-import { ImagesOfStyle } from './Images.jsx';
+import { ImagesOfSelectedStyle } from './Images.jsx';
 
 var Gallery = () => {
-  var [imageGallery, updateImageGallery] = React.useContext(ImagesOfStyle);
+  var [imageGallery, updateImageGallery] = React.useContext(ImagesOfSelectedStyle);
   return (
     <div>
       {imageGallery.map((imageObj) => {

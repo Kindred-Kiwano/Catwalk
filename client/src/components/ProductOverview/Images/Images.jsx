@@ -4,7 +4,7 @@ import Gallery from './Gallery.jsx';
 import { FakeProduct } from '../ProductOverview.jsx';
 
 // new contexts
-export var ImagesOfStyle = React.createContext();
+export var ImagesOfSelectedStyle = React.createContext();
 export var CurrentlySelectedImage = React.createContext();
 
 var Images = () => {
@@ -31,10 +31,10 @@ var Images = () => {
   return (
     <div>
       <CurrentlySelectedImage.Provider value={[selected, updateSelected]}>
-        <ImagesOfStyle.Provider value={[imageGallery, updateImageGallery]}>
+        <ImagesOfSelectedStyle.Provider value={[imageGallery, updateImageGallery]}>
           <SelectedImage />
           <Gallery />
-        </ImagesOfStyle.Provider>
+        </ImagesOfSelectedStyle.Provider>
       </CurrentlySelectedImage.Provider>
     </div>
   );
