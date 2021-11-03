@@ -28,8 +28,14 @@ var Images = () => {
     updateImageGallery(photosArray);
   });
 
+  // LEFT OFF HERE,
+  // -- fixed re-rendering bug for gallery with useEffect,
+    // Next need to set state of currently selected to first in the photoGallery
+
+
   // initialize selected image to first in the current gallery
   var [selected, updateSelected] = React.useState(imageGallery[0]);
+
 
 
   // MAYBE TODO: add a React.useEffect call to update state
