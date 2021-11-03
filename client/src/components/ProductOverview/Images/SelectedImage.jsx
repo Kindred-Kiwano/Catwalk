@@ -1,15 +1,13 @@
 import React from 'react';
 import { FakeProduct } from '../ProductOverview.jsx';
 import '../styles.css';
-import { ImagesOfStyle } from './Images.jsx';
+import { CurrentlySelectedImage } from './Images.jsx';
 
 var SelectedImage = () => {
-  var images = React.useContext(ImagesOfStyle);
-  var prod = React.useContext(FakeProduct);
-
+  var [selected, updateSelected] = React.useContext(CurrentlySelectedImage);
   return (
     <div>
-      <img className="selected" src={images[0].url} />
+      <img className="selected" src={selected} />
     </div>
   );
 };
