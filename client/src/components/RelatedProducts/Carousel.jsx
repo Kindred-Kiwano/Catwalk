@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // import Product from '../../../../fakeData/product.js';
 import UserContext from './UserContext.jsx';
-import Card from './Card.jsx';
+import Card from './Card/Card.jsx';
 
 const Carousel = (props) => {
 

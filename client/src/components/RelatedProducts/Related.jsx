@@ -27,6 +27,17 @@ Related.populateAsync = (arr, cb) => {
     .catch(e => console.log(e));
 };
 
+Related.modal = (id) => {
+  var comparisons = {};
+  return Related.getFeatures(id)
+    .then(product => product.data.features)
+    // .then(x => console.log(x))
+    // .then(stats => stats.forEach(stat => {
+    //   comparisons[stat['feature']] = stat['value'] || '';
+    // }))
+    // .then(() => console.log(comparisons))
+    .catch(err => console.log(err));
+};
 
 
 export default Related;

@@ -4,7 +4,6 @@ import FakeRating from './FakeRating.jsx';
 
 
 const CardInfo = (props) => {
-  console.log(props.product)
 
   let { id, name, default_price, category } = props.product;
   let price = default_price;
