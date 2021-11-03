@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../styles.css';
-import { CurrentlySelectedImage } from './Images.jsx';
+import { CurrentlySelectedImage } from '../StyleSelect.jsx';
 
 var GalleryImage = (props) => {
 
