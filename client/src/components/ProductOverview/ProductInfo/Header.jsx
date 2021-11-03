@@ -16,10 +16,9 @@ var Header = (props) => {
   return (
     <div>
       <FakeRating />
-      {/* project requirement: hide the reviews <span> if there are no reviews */}
+      {/* TODO project requirement: hide the reviews <span> if there are no reviews */}
       <span>Read all {Reviews.productExample.count} reviews </span>
       <span>{getStock.getTotal(style)} in stock</span>
-      {/* should render as the other one in our style selector does, wrapped with the same context! */}
       <Price />
     </div>
   );
