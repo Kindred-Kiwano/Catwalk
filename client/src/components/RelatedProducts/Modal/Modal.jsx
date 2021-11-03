@@ -30,7 +30,6 @@ const Modal = () => {
       </main>
     </div>
   );
-
 };
 
 

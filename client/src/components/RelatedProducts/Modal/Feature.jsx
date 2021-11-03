@@ -22,6 +22,6 @@ const Feature = (props) => {
       {props.target.feature.feature}
     </li>
   )
-}
+};
 
 export default Feature;

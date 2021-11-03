@@ -14,6 +14,7 @@ const Card = (props) => {
 
   let { id, name, default_price, style, category, description } = product;
 
+  
   let {button, click, list, update} = type;
   console.log(type);
 

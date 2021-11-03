@@ -14,6 +14,6 @@ const FeatureList = (props) => {
       {featureList}
     </ul>
   )
-}
+};
 
 export default FeatureList;
