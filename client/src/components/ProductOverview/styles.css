@@ -1,6 +1,6 @@
 .selected {
-  height: 40%;
-  width: 40%;
+  height: 300px;
+  width: 300px;
 }
 
 .gallery-image {
@@ -16,4 +16,6 @@
   color: red;
 }
 
-
+.style-thumbnail {
+  border: 1px solid black;
+}

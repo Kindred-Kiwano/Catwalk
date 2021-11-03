@@ -1,26 +1,41 @@
 // this file is the head component of the "product overview" tree
 
 import React from 'react';
-// main subcomponents:
 import CategoryAndName from './CategoryAndName/CategoryAndName.jsx';
 import ProductInfo from './ProductInfo/ProductInfo.jsx';
 import Share from './Share/Share.jsx';
 import Images from './Images/Images.jsx';
 import StyleSelect from './StyleSelect/StyleSelect.jsx';
 
-// dummydata
+// create a global contexts with dummy data
 import Product from '../../../../fakeData/product.js';
-export var FakeProduct = React.createContext('FORGOT TO PROVIDE CONTEXT, CAN MAKE A DEAFULT THO!');
+export var FakeProduct = React.createContext();
+export var Style = React.createContext();
+
 export var ProductOverview = () => {
+  // product that the page refers to
+  var [product, updateProduct] = React.useState(Product);
+
+  // -- LEFT OFF HERE FOR 11/03 --
+  // TODO: figure out why calling updateStyle in Thumbnail.jsx is not re-rendering the images and prices etc.
+  // look at the react hooks docs:
+  // 'lifecycle methods' to update state - might be the missing piece!
+  // rules of hooks
+
+
+  // initialize to the first style in the .results array in Product.styles
+  var [style, updateStyle] = React.useState(Product.styles.results[0]);
 
   return (
     <div>
-      <FakeProduct.Provider value={Product}>
-        <CategoryAndName />
-        <ProductInfo />
-        <Share />
-        <Images />
-        <StyleSelect />
+      <FakeProduct.Provider value={[product, updateProduct]}>
+        <Style.Provider value={[style, updateStyle]} >
+          <CategoryAndName />
+          <ProductInfo />
+          <Share />
+          <Images />
+          <StyleSelect />
+        </Style.Provider>
       </FakeProduct.Provider>
     </div>
   );

@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 import UserContext from './UserContext.jsx';
 import Card from './Card.jsx';
 
-
 const Carousel = (props) => {
 
   let {list, type} = props;

@@ -6,7 +6,6 @@ import CartOptions from './CartOptions.jsx';
 var StyleSelect = () => {
   return (
     <div>
-      <h4>STYLE SELECT SUBCOMPONENT</h4>
       <Price />
       <Thumbnails />
       <CartOptions />

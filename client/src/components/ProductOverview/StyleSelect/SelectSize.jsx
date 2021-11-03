@@ -1,42 +1,19 @@
 import React from 'react';
-import { FakeProduct } from '../ProductOverview.jsx';
+import getStock from '../methods/getStock.js';
 
-var SelectSize = () => {
-  var prod = React.useContext(FakeProduct);
+var SelectSize = (props) => {
+  console.log('sizes and amounts generated: ', props.sizesAndAmounts);
   return (
     <div>
-      {getAvailableSizes(prod)}
+      {/* render all available sizes in a dropdown */}
+      <select onChange={props.handleSizeSelection} >
+        <option>Select size</option>
+        {Object.keys(props.sizesAndAmounts).map((size) => {
+          return (<option value={size}>{size}</option>);
+        })}
+      </select>
     </div>
   );
-};
-
-
-var getAvailableSizes = (prod) => {
-  // get all SKUS of the selected product
-  var skuObject = prod.styles.results[0].skus;
-  var available = Object.keys(skuObject);
-  console.log('list of skus: ', available);
-  var inStock = [];
-  available.forEach((sku) => {
-    if (skuObject[sku].quantity !== 0) {
-      inStock.push(
-        <option value={skuObject[sku].size}>
-          {skuObject[sku].size}
-        </option>
-      );
-    }
-  });
-
-  if (inStock.length === 0) {
-    inStock.push(<option VALUE="OUT OF STOCK">
-      OUT OF STOCK
-    </option>);
-  }
-
-  return (
-    <select>{inStock}</select>
-  );
-
 };
 
 
