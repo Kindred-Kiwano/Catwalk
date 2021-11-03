@@ -24,17 +24,37 @@ var Images = () => {
 
   var photosArray = style.photos;
   var [imageGallery, updateImageGallery] = React.useState(photosArray);
-  React.useEffect(() => {
-    updateImageGallery(photosArray);
-  });
+
 
   // LEFT OFF HERE,
   // -- fixed re-rendering bug for gallery with useEffect,
     // Next need to set state of currently selected to first in the photoGallery
 
+  // component did update
+  React.useEffect(() => {
+    updateImageGallery(photosArray);
+  });
 
   // initialize selected image to first in the current gallery -- may need to change this to a condition for first render only, and on updates it's whatever we selected
   var [selected, updateSelected] = React.useState(imageGallery[0]);
+
+  // // cache previous style for rerenders
+  // var previousStyleReference = React.useRef();
+  // React.useEffect(() => {
+  //   previousStyleReference.current = style;
+  // });
+
+  // var previousStyle = previousStyleReference.current;
+  // React.useEffect(() => {
+  //   if (previousStyle !== style) {
+  //     updateSelected(imageGallery[0]);
+  //   }
+  // });
+
+
+
+  // when the style changes, we should set the selected state to the first in the image gallery
+
 
   console.log('our image gallery: ', imageGallery);
   return (
