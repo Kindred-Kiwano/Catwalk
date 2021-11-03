@@ -1,7 +1,7 @@
 import React from 'react';
 
 var SelectSize = (props) => {
-  console.log('sizes and amounts generated: ', props.sizesAndAmounts);
+
   return (
     <div>
       {/* TODO project requirement: if none of selected style in stock, the drowdown should become disabled and read "OUT OF STOCK" */}

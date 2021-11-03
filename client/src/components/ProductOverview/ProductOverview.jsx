@@ -25,7 +25,6 @@ export var ProductOverview = () => {
 
   // initialize to the first style in the .results array in Product.styles
   var [style, updateStyle] = React.useState(Product.styles.results[0]);
-  console.log('From product overview, style is ', style);
 
   return (
     <div>
