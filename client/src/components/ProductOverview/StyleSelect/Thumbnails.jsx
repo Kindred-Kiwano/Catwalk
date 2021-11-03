@@ -8,7 +8,7 @@ var Thumbnails = () => {
     <div>
       Thumbnails to select style:
       {product.styles.results.map((style) => {
-        return <Thumbnail color={style.name}/>;
+        return <Thumbnail color={style.name} styleObject={style} />;
       })}
     </div>
   );

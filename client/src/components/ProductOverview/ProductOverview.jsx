@@ -7,22 +7,27 @@ import Share from './Share/Share.jsx';
 import Images from './Images/Images.jsx';
 import StyleSelect from './StyleSelect/StyleSelect.jsx';
 
-// create a global context with dummy data
+// create a global contexts with dummy data
 import Product from '../../../../fakeData/product.js';
 export var FakeProduct = React.createContext();
+export var Style = React.createContext();
 
 export var ProductOverview = () => {
-
+  // product that the page refers to
   var [product, updateProduct] = React.useState(Product);
+  // initialize to the first style in product data
+  var [style, updateStyle] = React.useState(Product.styles.results[0]);
 
   return (
     <div>
       <FakeProduct.Provider value={[product, updateProduct]}>
-        <CategoryAndName />
-        <ProductInfo />
-        <Share />
-        <Images />
-        <StyleSelect />
+        <Style.Provider value={[style, updateStyle]} >
+          <CategoryAndName />
+          <ProductInfo />
+          <Share />
+          <Images />
+          <StyleSelect />
+        </Style.Provider>
       </FakeProduct.Provider>
     </div>
   );
