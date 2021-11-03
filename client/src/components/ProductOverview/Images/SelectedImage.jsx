@@ -7,7 +7,7 @@ var SelectedImage = () => {
   console.log('selected image url is: ', selected);
   return (
     <div>
-      <img className="selected" src={selected} />
+      <img className="selected" src={selected.url} />
     </div>
   );
 };

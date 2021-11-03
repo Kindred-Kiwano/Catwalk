@@ -16,7 +16,7 @@ var Images = () => {
 
 
 
-  // the default state should be out first image in the collection of THE STYLE THE USER SELECTED
+  // one page load, the default image should be the first in the gallery – ** however, the currently selected image's index should be maintained when switching to another style
   var [style, updateStyle] = React.useContext(Style);
   console.log('from <Images />, the style is: ', style);
 
@@ -24,7 +24,7 @@ var Images = () => {
   var [imageGallery, updateImageGallery] = React.useState(photosArray);
 
   // initialize selected image to first in the current gallery
-  var [selected, updateSelected] = React.useState(imageGallery[0].url);
+  var [selected, updateSelected] = React.useState(imageGallery[0]);
 
 
   // MAYBE TODO: add a React.useEffect call to update state
@@ -33,6 +33,7 @@ var Images = () => {
     <div>
       <CurrentlySelectedImage.Provider value={[selected, updateSelected]}>
         <ImagesOfSelectedStyle.Provider value={[imageGallery, updateImageGallery]}>
+          {/* TODO: project requirement: overlay the gallery onto the selected image */}
           <SelectedImage />
           <Gallery />
         </ImagesOfSelectedStyle.Provider>

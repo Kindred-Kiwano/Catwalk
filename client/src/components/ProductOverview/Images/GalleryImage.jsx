@@ -3,16 +3,20 @@ import '../styles.css';
 import { CurrentlySelectedImage } from './Images.jsx';
 
 var GalleryImage = (props) => {
+
   // move this referece and function to another file to save on memory?
   var [selected, updateSelected] = React.useContext(CurrentlySelectedImage);
   var selectNewImage = (event) => {
-    // send the other URL we have here in props to be rendered as the full image
-    updateSelected(props.fullImageURL);
-    // use CurrentlySelectedImage's context value to access the function that updates the selected image state
+    // only change the image if it's not the current selected one
+    if (selected.url !== props.imageObject.url) {
+      console.log('updating selected!');
+      updateSelected(props.imageObject);
+    }
   };
 
   return (
-    <img className="gallery-image" src={props.thumbnailURL} onClick={selectNewImage}/>
+    // TODO project requirement: highlight the selected thumbnail
+    <img onClick={selectNewImage} className="gallery-image" src={props.imageObject.thumbnail_url} />
   );
 };
 

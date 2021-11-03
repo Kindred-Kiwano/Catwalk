@@ -7,8 +7,11 @@ var Gallery = () => {
 
   return (
     <div>
-      {imageGallery.map((imageObj) => {
-        return <GalleryImage thumbnailURL={imageObj.thumbnail_url} fullImageURL={imageObj.url} />;
+      {/* TODO project requirement: When switching between styles, the index of the image currently selected should be maintained when the gallery updates for the new style. Add another context and state at the tree's head to keep track of this */}
+
+
+      {imageGallery.map((imageObject) => {
+        return <GalleryImage imageObject={imageObject} />;
       })}
     </div>
   );
