@@ -123,7 +123,7 @@ Product.styles = {
           'size': '11'
         },
         '1702943': {
-          'quantity': 35,
+          'quantity': 4,
           'size': '11.5'
         },
         '1702944': {

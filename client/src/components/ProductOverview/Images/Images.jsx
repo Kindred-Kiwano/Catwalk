@@ -19,7 +19,7 @@ var Images = () => {
   // the default state should be out first image in the collection of THE STYLE THE USER SELECTED
   var [style, updateStyle] = React.useContext(Style);
   console.log('from <Images />, the style is: ', style);
-  // LATER CHANGE THIS TO REFLECT THE SELECTED STYLE (deafult first is good)
+
   var photosArray = style.photos;
   var [imageGallery, updateImageGallery] = React.useState(photosArray);
 
