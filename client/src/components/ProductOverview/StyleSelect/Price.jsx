@@ -1,26 +1,21 @@
 import React from 'react';
-import { FakeProduct } from '../ProductOverview.jsx';
+import { Style } from '../ProductOverview.jsx';
 import '../styles.css';
 
 var Price = () => {
-  var [product, updateProduct] = React.useContext(FakeProduct);
+  var [style, updateStyle] = React.useContext(Style);
   return (
     <div>
-      Price: {getPrice(product)}
+      Price: {getPrice(style)}
     </div>
   );
 };
 
-
-var getPrice = (product) => {
-  // MAKE DYNAMIC WHEN GETTING FROM API
-  var regular = product.styles.results[0].original_price;
-  var discounted = product.styles.results[0].sale_price;
-
-  // if there's a discounted price,
-  // display the discount price followed by the struckthru original price
-  if (product.styles.results[0].sale_price === null) {
-    // display original price
+// formats strike thru for items on sale
+var getPrice = (style) => {
+  var regular = style.original_price;
+  var discounted = style.sale_price;
+  if (style.sale_price === null) {
     return <span>${regular}</span>;
   } else {
     return (

@@ -1,5 +1,4 @@
 import React from 'react';
-import { FakeProduct } from '../ProductOverview.jsx';
 import getStock from '../methods/getStock.js';
 
 var SelectSize = (props) => {

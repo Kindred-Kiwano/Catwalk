@@ -1,5 +1,4 @@
 import React from 'react';
-import { FakeProduct } from '../ProductOverview.jsx';
 import '../styles.css';
 import { CurrentlySelectedImage } from './Images.jsx';
 

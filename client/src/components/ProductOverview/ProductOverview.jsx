@@ -15,7 +15,7 @@ export var Style = React.createContext();
 export var ProductOverview = () => {
   // product that the page refers to
   var [product, updateProduct] = React.useState(Product);
-  // initialize to the first style in product data
+  // initialize to the first style in the .results array in Product.styles
   var [style, updateStyle] = React.useState(Product.styles.results[0]);
 
   return (
