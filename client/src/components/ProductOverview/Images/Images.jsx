@@ -33,12 +33,8 @@ var Images = () => {
     // Next need to set state of currently selected to first in the photoGallery
 
 
-  // initialize selected image to first in the current gallery
+  // initialize selected image to first in the current gallery -- may need to change this to a condition for first render only, and on updates it's whatever we selected
   var [selected, updateSelected] = React.useState(imageGallery[0]);
-
-
-
-  // MAYBE TODO: add a React.useEffect call to update state
 
   console.log('our image gallery: ', imageGallery);
   return (
