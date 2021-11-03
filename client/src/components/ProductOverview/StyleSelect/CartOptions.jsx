@@ -8,8 +8,8 @@ import getStock from '../methods/getStock.js';
 import { FakeProduct } from '../ProductOverview.jsx';
 
 var CartOptions = () => {
-  var prod = React.useContext(FakeProduct);
-  var sizesAndAmounts = getStock.generateQtyOptionsForAll(prod);
+  var [product, updateProduct] = React.useContext(FakeProduct);
+  var sizesAndAmounts = getStock.generateQtyOptionsForAll(product);
   var [sizeSelected, updateSizeSelected] = React.useState('Select size');
   var [qtyList, updateQtyList] = React.useState(['-']);
 

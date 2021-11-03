@@ -17,9 +17,9 @@ var Images = () => {
 
 
   // the default state should be out first image in the collection of THE STYLE THE USER SELECTED
-  var currentProduct = React.useContext(FakeProduct);
+  var [product, updateProduct] = React.useContext(FakeProduct);
   // LATER CHANGE THIS TO REFLECT THE SELECTED STYLE (deafult first is good)
-  var photosArrayOfFirstStyle = currentProduct.styles.results[0].photos;
+  var photosArrayOfFirstStyle = product.styles.results[0].photos;
   var [imageGallery, updateImageGallery] = React.useState(photosArrayOfFirstStyle);
 
   // initialize selected image to first in the current gallery

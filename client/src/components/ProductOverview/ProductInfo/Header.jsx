@@ -6,7 +6,7 @@ import Reviews from '../../../../../fakeData/reviews.js';
 import FakeRating from '../../RelatedProducts/FakeRating.jsx';
 
 var Header = (props) => {
-  var prod = React.useContext(FakeProduct);
+  var [product, updateProduct] = React.useContext(FakeProduct);
 
   return (
     <div>
