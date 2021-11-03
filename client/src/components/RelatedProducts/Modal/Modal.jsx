@@ -17,7 +17,7 @@ const Modal = (props) => {
 
   let features = [];
   if (currentProduct) {
-    features = modal(currentProduct);
+    features = modal(currentProduct, 61590);
   }
 
   return (
@@ -28,9 +28,7 @@ const Modal = (props) => {
             <h3>COMPARING</h3>
           </header>
           <main className={'modal'}><br/>
-            <ul>
-              <FeatureList />
-            </ul>
+            <FeatureList list={features}/>
           </main>
         </div>
         :

@@ -4,6 +4,8 @@ import Feature from './Feature.jsx';
 
 const FeatureList = (props) => {
 
+  let { list } = props;
+
   let sampleListA = [
     {
       'feature': 'Sole',
@@ -35,7 +37,7 @@ const FeatureList = (props) => {
   ];
 
   let featureList = sampleListA.map(spec => {
-    <Feature />
+    <Feature feature={spec.feature} value={spec.value}/>
   })
 
   return (

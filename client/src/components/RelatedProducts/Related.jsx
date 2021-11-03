@@ -14,6 +14,7 @@ Related.getRelated = (id) => {
 
 Related.getFeatures = (id) => {
   return axios.get(`/products/${id}`)
+    .then(product => product.data.features)
     .catch(e => console.log(e));
 };
 
@@ -27,16 +28,19 @@ Related.populateAsync = (arr, cb) => {
     .catch(e => console.log(e));
 };
 
-Related.modal = (id) => {
+Related.modal = (current, target) => {
   var comparisons = {};
-  return Related.getFeatures(id)
-    .then(product => product.data.features)
-    // .then(x => console.log(x))
+  Related.getFeatures(current)
+    .then(list => comparisons[current] = list)
+    .then(Related.getFeatures(target))
+    .then(list => comparisons[target] = list)
+    .then(() => comparisons)
     // .then(stats => stats.forEach(stat => {
     //   comparisons[stat['feature']] = stat['value'] || '';
     // }))
     // .then(() => console.log(comparisons))
     .catch(err => console.log(err));
+
 };
 
 

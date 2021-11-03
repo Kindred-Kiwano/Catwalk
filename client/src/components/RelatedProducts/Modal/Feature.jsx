@@ -2,24 +2,24 @@ import React from 'react';
 
 
 const Feature = (props) => {
-  let {current, target, feature} = props
+  let {feature, value} = props
   // if () {
 
   // }
 
   let sample = {feature: 'Satisfaction Guaranteed', value: 'ok'};
-  
+
 
   return (
     <li className={'feature'}>
-      {props.current.feature}
+      {/* {feature} */}
       <p className={'feature-title'}>
-        <em>{sample.feature}</em><br/>
+        <em>{feature}</em><br/>
         {
-          sample.value ? <p classname={'feature-value'}>{sample.value}<br/></p> : null
+          value ? <p classname={'feature-value'}>{value}<br/></p> : null
         }
       </p>
-      {props.target.feature.feature}
+      {/* {feature} */}
     </li>
   )
 };
