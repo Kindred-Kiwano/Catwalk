@@ -1,13 +1,10 @@
 import React from 'react';
-import { FakeProduct } from '../ProductOverview.jsx';
 
 // maps sizes in stock to all quantities a user can buy
 var getStock = {
   // generates an object {size:qty}
-  formatAllInStock: function(productData) {
-    // get all SKUS of the selected product
-    // HARDCODED RN, CHANGE ONCE GETTING API INFO
-    var skuObjects = productData.styles.results[0].skus;
+  formatAllInStock: function(styleData) {
+    var skuObjects = styleData.skus;
     var sizesToQuantities = {};
     var currentSKU, sizeToQty;
     for (var key in skuObjects) {
@@ -45,8 +42,8 @@ var getStock = {
   },
 
   // returns an object {size: [list of quantities]}
-  generateQtyOptionsForAll: function(productData) {
-    var inStock = getStock.formatAllInStock(productData);
+  generateQtyOptionsForAll: function(styleData) {
+    var inStock = getStock.formatAllInStock(styleData);
     var allOptions = {};
     var optionsTuple;
     for (var size in inStock) {
@@ -59,24 +56,3 @@ var getStock = {
 };
 
 export default getStock;
-
-
-
-// TODO after lunch: use the functions above to generate jsx dropdown menus
-
-// <option value={skuObject[sku].size}>
-// {skuObject[sku].size}
-// </option>
-// );
-// }
-// });
-
-// if (inStock.length === 0) {
-// inStock.push(<option VALUE="OUT OF STOCK">
-// OUT OF STOCK
-// </option>);
-// }
-
-// return (
-// <select>{inStock}</select>
-// );

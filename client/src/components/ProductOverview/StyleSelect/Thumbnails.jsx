@@ -3,12 +3,12 @@ import Thumbnail from './Thumbnail.jsx';
 import { FakeProduct } from '../ProductOverview.jsx';
 
 var Thumbnails = () => {
-  var prod = React.useContext(FakeProduct);
+  var [product, updateProduct] = React.useContext(FakeProduct);
   return (
     <div>
       Thumbnails to select style:
-      {prod.styles.results.map((style) => {
-        return <Thumbnail color={style.name}/>;
+      {product.styles.results.map((style) => {
+        return <Thumbnail color={style.name} styleObject={style} />;
       })}
     </div>
   );

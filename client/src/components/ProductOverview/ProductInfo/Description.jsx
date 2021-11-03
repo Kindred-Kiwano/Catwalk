@@ -2,10 +2,10 @@ import React from 'react';
 import { FakeProduct } from '../ProductOverview.jsx';
 
 var Description = () => {
-  var prod = React.useContext(FakeProduct);
+  var [product, updateProduct] = React.useContext(FakeProduct);
   return (
     <div>
-      <p>{prod.info.description}</p>
+      <p>{product.info.description}</p>
     </div>
   );
 };

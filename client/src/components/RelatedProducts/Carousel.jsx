@@ -7,7 +7,7 @@ import Card from './Card.jsx';
 const Carousel = (props) => (
   <div className="carousel">
     { props.list.map(prod => (
-      <Card product={prod} key={prod.id} methods={props.methods} />
+      <Card product={prod} key={product.id} methods={props.methods} />
     )) }
   </div>
 );
