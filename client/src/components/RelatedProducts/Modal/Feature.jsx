@@ -8,7 +8,7 @@ const Feature = (props) => {
   // }
 
   let sample = {feature: 'Satisfaction Guaranteed', value: 'ok'};
-
+  
 
   return (
     <li className={'feature'}>

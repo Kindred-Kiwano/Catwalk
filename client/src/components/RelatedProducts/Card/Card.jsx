@@ -14,9 +14,12 @@ const Card = (props) => {
 
   let { id, name, default_price, style, category, description } = product;
 
-  
+
   let {button, click, list, update} = type;
-  console.log(type);
+
+  if (type === 'outfit') {
+    list = [...list]
+  }
 
   const handleClick = (id) => {
     update(id);
@@ -25,7 +28,7 @@ const Card = (props) => {
   return (
     <div className='card' id={id} onClick={() => update(product)}>
       <header className='card'>
-        <CardButton value={button} onClick={() => update(product)} />
+        <CardButton button={button} onClick={() => update(product)} />
         <CardImage img={imgSrc} onClick={() => console.log(product)}/>
       </header>
       <CardInfo product={product} />

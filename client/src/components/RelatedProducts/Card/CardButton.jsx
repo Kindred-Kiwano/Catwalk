@@ -7,7 +7,7 @@ const CardButton = (props) => (
   <button className='card-btn'
     role={'button'}
   >
-    {props.value}
+    {props.button}
   </button>
 );
 

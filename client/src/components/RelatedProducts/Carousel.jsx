@@ -8,6 +8,10 @@ const Carousel = (props) => {
 
   let {list, type} = props;
 
+  if (type === 'outfit') {
+    list = [...list];
+  }
+
   return (
     <div className="carousel">
       { list.map(prod => (

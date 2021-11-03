@@ -8,7 +8,9 @@ import FeatureList from './FeatureList.jsx';
 import '../styles/modalStyle.css';
 let { modal } = Related;
 
-const Modal = () => {
+const Modal = (props) => {
+
+  let {visible} = props
 
   let {userOutfit, setUserOutfit} = React.useContext(UserContext);
   let {currentProduct, setCurrentProduct} = React.useContext(UserContext);
@@ -19,16 +21,22 @@ const Modal = () => {
   }
 
   return (
-    <div id={'modal'}>
-      <header>
-        <h3>COMPARING</h3>
-      </header>
-      <main className={'modal'}><br/>
-        <ul>
-          <FeatureList />
-        </ul>
-      </main>
-    </div>
+    <>
+      { visible ?
+        <div id={'modal'} onClick={(visible)=>{visible = !visible}}>
+          <header>
+            <h3>COMPARING</h3>
+          </header>
+          <main className={'modal'}><br/>
+            <ul>
+              <FeatureList />
+            </ul>
+          </main>
+        </div>
+        :
+        <></>
+      }
+    </>
   );
 };
 
