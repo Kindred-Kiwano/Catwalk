@@ -4,6 +4,7 @@ import { CurrentlySelectedImage } from './Images.jsx';
 
 var SelectedImage = () => {
   var [selected, updateSelected] = React.useContext(CurrentlySelectedImage);
+  console.log('selected image url is: ', selected);
   return (
     <div>
       <img className="selected" src={selected} />
