@@ -5,6 +5,7 @@ var Description = () => {
   var [product, updateProduct] = React.useContext(FakeProduct);
   return (
     <div>
+      {/* possible TODO hide this <p> if description is null  */}
       <p>{product.info.description}</p>
     </div>
   );

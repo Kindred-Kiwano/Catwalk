@@ -52,6 +52,18 @@ var getStock = {
     }
 
     return allOptions;
+  },
+
+  // takes in a styleData object and returns the total in stock for all sizes
+  getTotal: function(styleData) {
+    var skusObject = styleData.skus;
+    var total = 0;
+    var sku;
+    for (var key in skusObject) {
+      sku = skusObject[key];
+      total += sku.quantity;
+    }
+    return total;
   }
 };
 
