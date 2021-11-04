@@ -4,6 +4,7 @@ import Price from './Price.jsx';
 import Thumbnails from './Thumbnails.jsx';
 import CartOptions from './CartOptions.jsx';
 import { Style } from '../ProductOverview.jsx';
+import decorate from '../methods/decorate.js';
 
 // new contexts
 export var ImagesOfSelectedStyle = React.createContext();
@@ -13,10 +14,10 @@ var StyleSelect = () => {
 
   // one page load, the default image should be the first in the gallery – ** however, the currently selected image's index should be maintained when switching to another style
   var [style, updateStyle] = React.useContext(Style);
-  // console.log('Style picked up in images: ', style.name);
-  // console.log('The images associated with that style: ', style.photos);
 
-  var photosArray = style.photos;
+
+  // photosArray will give each photo object an index number to reference later
+  var photosArray = decorate.addIndexRefs(style.photos);
   var [imageGallery, updateImageGallery] = React.useState(photosArray);
   // update state on new style selection
   // TODO: only update when the style changes
