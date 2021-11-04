@@ -7,7 +7,6 @@ import Description from './Description.jsx';
 var ProductInfo = (props) => {
   return (
     <div>
-      <h4>PRODUCT INFO SUBCOMPONENT</h4>
       <Header />
       <Description />
     </div>

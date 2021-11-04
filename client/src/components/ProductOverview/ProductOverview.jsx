@@ -4,27 +4,32 @@ import React from 'react';
 import CategoryAndName from './CategoryAndName/CategoryAndName.jsx';
 import ProductInfo from './ProductInfo/ProductInfo.jsx';
 import Share from './Share/Share.jsx';
-import Images from './Images/Images.jsx';
 import StyleSelect from './StyleSelect/StyleSelect.jsx';
 
-// create a global contexts with dummy data
-import Product from '../../../../fakeData/product.js';
+
+// create a global contexts
+// import Product from '../../../../fakeData/product.js';
 export var FakeProduct = React.createContext();
 export var Style = React.createContext();
 
-export var ProductOverview = () => {
-  // product that the page refers to
-  var [product, updateProduct] = React.useState(Product);
-
-  // -- LEFT OFF HERE FOR 11/03 --
-  // TODO: figure out why calling updateStyle in Thumbnail.jsx is not re-rendering the images and prices etc.
-  // look at the react hooks docs:
-  // 'lifecycle methods' to update state - might be the missing piece!
-  // rules of hooks
+// product that the page refers to
+export var ProductOverview = (props) => {
+// props will hold the Product object
+// {
+//   .info: ...
+//   .styles: ...
+// }
 
 
-  // initialize to the first style in the .results array in Product.styles
-  var [style, updateStyle] = React.useState(Product.styles.results[0]);
+  // -- LEFT OFF HERE --
+
+    // only want to rerender when we don't have all info to continue
+    // once we have both the product and the styles, and ONLY then,
+      // render the rest of the app
+
+
+  var [product, updateProduct] = React.useState(props.productState);
+  var [style, updateStyle] = React.useState(props.productState.styles.data.results[0]);
 
   return (
     <div>
@@ -33,11 +38,13 @@ export var ProductOverview = () => {
           <CategoryAndName />
           <ProductInfo />
           <Share />
-          <Images />
           <StyleSelect />
         </Style.Provider>
       </FakeProduct.Provider>
     </div>
   );
+
+
+
 };
 
