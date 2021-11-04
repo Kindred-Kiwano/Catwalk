@@ -4,7 +4,8 @@ import Feature from './Feature.jsx';
 
 const FeatureList = (props) => {
 
-  let { list } = props;
+  let { features } = props;
+  console.log(features, 'sefdg')
 
   let sampleListA = [
     {
@@ -25,26 +26,16 @@ const FeatureList = (props) => {
     }
   ];
 
-  let sampleListB = [
-    {
-      'feature': 'Mid-Sole',
-      'value': 'ControlSupport Arch Bridge'
-    },
-    {
-      'feature': 'Stitching',
-      'value': 'Double'
-    }
-  ];
-
-  let featureList = sampleListA.map(spec => {
-    <Feature feature={spec.feature} value={spec.value}/>
-  })
+  let featureList = features.map(spec => <Feature
+    feature={spec.feature}
+    value={spec.value}
+  />);
 
   return (
-    <ul>
+    <ul className='features'>
       {featureList}
     </ul>
-  )
+  );
 };
 
 export default FeatureList;

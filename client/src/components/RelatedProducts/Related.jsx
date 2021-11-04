@@ -1,14 +1,17 @@
-import React from 'react';
-// import Carousel from './Carousel.jsx';
+// import React from 'react';
 
 import axios from '../../../../config/config.js';
-
-import productList from '../../../../fakeData/productList.js';
 
 const Related = {};
 
 Related.getRelated = (id) => {
   return axios.get(`/products/${id}/related`)
+    .catch(e => console.log(e));
+};
+
+Related.getData = (id) => {
+  return axios.get(`/products/${id}`)
+    .then(product => product.data)
     .catch(e => console.log(e));
 };
 
@@ -42,6 +45,8 @@ Related.modal = (current, target) => {
     .catch(err => console.log(err));
 
 };
+
+
 
 
 export default Related;

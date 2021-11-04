@@ -3,32 +3,68 @@ import axios from '../../../../config/config.js';
 
 import UserContext from './UserContext.jsx';
 
-const Outfit = {};
+const outfit = {};
 
-Outfit.state = [];
 
-Outfit.add = (product) => {
+
+outfit.add = (product) => {
   let {userOutfit, setUserOutfit} = React.useContext(UserContext);
-  if (!userOutfit.includes(product)) {
-    setUserOutfit([...userOutfit, product]);
-  }
+  setUserOutfit([...userOutfit, product]);
+  localStorage.setItem('outfit', JSON.stringify(userOutfit.map(x => x.id)));
 };
 
-Outfit.save = () => {
+outfit.save = () => {
   localStorage.setItem('outfit', JSON.stringify(Outfit.state));
 };
 
-Outfit.remove = (id) => {
+outfit.remove = (product) => {
   let {userOutfit, setUserOutfit} = React.useContext(UserContext);
-  if (userOutfit.includes(product)) {
-    setUserOutfit(userOutfit.filter(prod => id !== prod.id));
-  }
+  setUserOutfit(userOutfit.filter(prod => product.id !== prod.id));
 };
 
-Outfit.reset = () => { localStorage.removeItem('outfit'); };
+// Outfit.reset = () => { localStorage.removeItem('outfit'); };
 
-Outfit.retrieve = () => {
+outfit.retrieve = () => {
   return JSON.parse(localStorage.getItem('outfit')) || [];
 };
 
-export default Outfit;
+outfit.list = outfit.retrieve();
+outfit.button = 'ⓧ';
+outfit.click = outfit.add;
+
+
+
+
+
+var related = {};
+
+
+related.getRelatedIds = (id) => {
+  return axios.get(`/products/${id}/related`)
+    .catch(e => console.log(e));
+};
+
+related.getData = (id) => {
+  return axios.get(`/products/${id}`)
+    .then(product => product.data)
+    .catch(e => console.log(e));
+};
+
+related.getFeatures = (id) => {
+  return axios.get(`/products/${id}`)
+    .then(product => product.data)
+    .catch(e => console.log(e));
+};
+
+related.getStyles = (id) => {
+  return axios.get(`/products/${id}/styles`)
+    .catch(e => console.log(e));
+};
+
+related.populateAsync = (arr, cb) => {
+  return Promise.all(arr.map(a => cb(a)))
+    .catch(e => console.log(e));
+};
+
+
+export {outfit, related};
