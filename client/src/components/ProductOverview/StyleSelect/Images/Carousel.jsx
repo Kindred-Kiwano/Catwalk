@@ -3,6 +3,7 @@ import Gallery from './Gallery.jsx';
 import { CurrentlySelectedImage } from '../StyleSelect.jsx';
 // image gallery
 import { ImagesOfSelectedStyle } from '../StyleSelect.jsx';
+import sharedHelpers from '../../../../../../Shared/sharedHelpers.js';
 
 var Carousel = () => {
   var [imageGallery, updateImageGallery] = React.useContext(ImagesOfSelectedStyle);
@@ -22,11 +23,13 @@ var Carousel = () => {
     }
   };
 
+  var [leftButtonDisplay, rightButtonDisplay] = sharedHelpers.setButtonDisplay(selected, imageGallery);
+
   return (
     <div>
-      <button onClick={moveSelection}>{'<'}</button>
+      <button style={leftButtonDisplay} onClick={moveSelection}>{'<'}</button>
       <Gallery />
-      <button onClick={moveSelection}>{'>'}</button>
+      <button style={rightButtonDisplay} onClick={moveSelection}>{'>'}</button>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ProductOverview } from './ProductOverview.jsx';
-import { elliotsGetAllProducts, getAllStyles } from '../../../../Shared/makeRequest.js';
+import { getFiveRandomProducts, getProductById, getAllStyles } from '../../../../Shared/makeRequest.js';
 
 var LoadProduct = () => {
   var [productState, setProductState] = React.useState(null);
@@ -8,24 +8,30 @@ var LoadProduct = () => {
 
   if (productState === null) {
     // make network request
-    elliotsGetAllProducts()
-      .then((productsResponse) => {
-        // for now arbitrarilly choosing the first product
-        Product.info = productsResponse.data[0];
-        getAllStyles(Product.info.id)
-          .then((stylesResponse) => {
-            Product.styles = stylesResponse;
-            setProductState(Product);
-          })
-          .catch((err) => {
-            console.log(`error getting styles for product "${Product.info.name}"`);
-            throw err;
-          });
-      })
+
+
+    //todo getting productResponse
+      Product.info = productResponse.data;
+      getAllStyles(Product.info.id)
+        .then((stylesResponse) => {
+          console.log('styles: ', stylesResponse);
+
+          Product.styles = stylesResponse;
+          setProductState(Product);
+        })
+        .catch((err) => {
+          console.log(`error getting styles for product "${Product.info.name}"`);
+          throw err;
+        });
+    })
       .catch((err) => {
         console.log('error getting products');
         throw err;
       });
+
+
+
+
 
     return (
       <p>

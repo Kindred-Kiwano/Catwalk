@@ -15,8 +15,7 @@ var Gallery = () => {
        * arrow buttons to scroll through images (needs to select images)
        * carousel should scoll automatically when selected image is more than 7 from start (or scroll back to
            first 7 if the user goes back there)
-       * The left button should dissapear when the first image is selected, and right button should dissapear
-           when last image is selected
+       * [done] The left button should dissapear when the first image is selected, and right button should dissapear when last image is selected
       */}
 
       {imageGallery.map((imageObject) => {
