@@ -13,3 +13,12 @@ export const getRelatedProducts = (id) => {
   return axios.get(`/products/${id}/related`); //returns a promise
 };
 
+
+export const elliotsGetAllProducts = () => {
+  // get 5 products for now
+  return axios.get('/products');
+};
+
+export const getAllStyles = (product_id) => {
+  return axios.get(`/products/${product_id}/styles`);
+};
