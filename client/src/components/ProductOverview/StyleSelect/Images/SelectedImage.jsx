@@ -4,7 +4,6 @@ import { CurrentlySelectedImage } from '../StyleSelect.jsx';
 
 var SelectedImage = () => {
   var [selected, updateSelected] = React.useContext(CurrentlySelectedImage);
-  console.log('currently selected image: ', selected.url);
 
   /** TODO project requirement: magnifying glass cursor
    *  When the user moves mouse off the galley and onto the main image, cursor should become a magnifying glass

@@ -29,7 +29,6 @@ export var ProductOverview = (props) => {
 
 
   var [product, updateProduct] = React.useState(props.productState);
-  console.log('all styles? ', props.productState.styles.data.results);
   var [style, updateStyle] = React.useState(props.productState.styles.data.results[0]);
 
   return (
