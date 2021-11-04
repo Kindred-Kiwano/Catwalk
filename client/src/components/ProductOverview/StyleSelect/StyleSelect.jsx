@@ -19,6 +19,7 @@ var StyleSelect = () => {
   var photosArray = style.photos;
   var [imageGallery, updateImageGallery] = React.useState(photosArray);
   // update state on new style selection
+  // TODO: only update when the style changes
   React.useEffect(() => {
     updateImageGallery(photosArray);
   });
