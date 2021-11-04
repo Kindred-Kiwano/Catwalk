@@ -33,21 +33,6 @@ context.related = related;
 
 const UserContext = React.createContext(context);
 
-var carouselType = {
-  outfit: {
-    list: userOutfit,
-    click: (product) => {
-      setUserOutfit(userOutfit.filter(prod => prod.id !== product.id));
-    }
-  },
-  related: {
-    list: relatedProducts,
-    click: (product) => {
-      setUserOutfit([...userOutfit, product]);
-    }
-  }
-};
-
 
 
 export default UserContext;

@@ -5,6 +5,15 @@ import UserContext from './UserContext.jsx';
 
 const outfit = {};
 
+class Products {
+  constructor(props) {
+
+  }
+
+  getRelated = (id) => {
+    return 
+  }
+}
 
 
 outfit.add = (product) => {
