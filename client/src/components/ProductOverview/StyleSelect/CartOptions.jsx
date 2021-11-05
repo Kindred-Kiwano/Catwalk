@@ -16,6 +16,9 @@ var CartOptions = () => {
   var [qtyList, updateQtyList] = React.useState(['-']);
 
   var handleSizeSelection = (event) => {
+    // erase any reminders
+    document.getElementById('reminder-to-select-size').innerHTML = '';
+
     var size = event.target.value;
     if (size === 'Select size') {
       updateSizeSelected(size);
@@ -30,7 +33,7 @@ var CartOptions = () => {
     <div>
       <SelectSize sizesAndAmounts={sizesAndAmounts} handleSizeSelection={handleSizeSelection}/>
       <SelectQty qtyList={qtyList} />
-      <AddToCart />
+      <AddToCart sizeSelected={sizeSelected}/>
     </div>
   );
 };

@@ -13,7 +13,7 @@ export var CurrentlySelectedImage = React.createContext();
 
 var StyleSelect = () => {
 
-  // one page load, the default image should be the first in the gallery – ** however, the currently selected image's index should be maintained when switching to another style
+  // on page load, the default image should be the first in the gallery – ** however, the currently selected image's index should be maintained when switching to another style
   var [style, updateStyle] = React.useContext(Style);
 
 
@@ -27,6 +27,7 @@ var StyleSelect = () => {
   // update state on new style selection
   // TODO: only update when the style changes
   React.useEffect(() => {
+    console.log('called useEffect to update the whole gallery');
     updateImageGallery(photosArray);
   }, [JSON.stringify(photosArray)]);
 
