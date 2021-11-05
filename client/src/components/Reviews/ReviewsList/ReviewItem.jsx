@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-// import '../styles/style.css';
+import '../styles/style.css';
 
 var ReviewItem = (props) => {
 
@@ -24,8 +24,7 @@ var ReviewItem = (props) => {
   return (
     <div id="reviewItem">
       <div className="reviewTopSection">
-        <div className="starRatings">
-          <span>★★★★★</span>
+        <div className="Stars" style={{"--rating": `${props.review.rating}`}}>
         </div>
         <div className="reviewerAndDate">
         By {props.review.reviewer_name}, {props.review.date}
@@ -38,6 +37,9 @@ var ReviewItem = (props) => {
         <div className="reviewBody">
           {props.review.body}
         </div>
+        {props.review.recommend ? (<div className="productRecommended">
+          ✔ I recommend this product.
+        </div>) : (<div></div>)}
       </div>
       <div className="reviewBottomSection">
         <div className="reviewHelpful">
@@ -46,7 +48,6 @@ var ReviewItem = (props) => {
           {currentHelpfulCount} | <button onClick={handleReport}> Report </button>
         </div>
       </div>
-      ------------------
     </div>
   );
 };
