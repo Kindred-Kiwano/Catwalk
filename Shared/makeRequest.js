@@ -18,10 +18,10 @@ export const getRelatedProducts = (id) => {
 
 export const getFiveRandomProducts = () => {
   // get 5 products for now
-  axios.get('/products');
+  return axios.get('/products');
 };
 
-export const getProductById = (product_id) => {
+export const getProductInfoById = (product_id) => {
   return axios.get(`/products/${product_id}`);
 };
 
