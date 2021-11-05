@@ -1,9 +1,10 @@
 import React from 'react';
 import GalleryImage from './GalleryImage.jsx';
-import { ImagesOfSelectedStyle } from '../StyleSelect.jsx';
+import { VisibleThumbnails } from './Images.jsx';
+
 
 var Gallery = () => {
-  var [imageGallery, updateImageGallery] = React.useContext(ImagesOfSelectedStyle);
+  var [visibleThumbnails, updateVisibleThumbnails] = React.useContext(VisibleThumbnails);
 
   return (
     <div>
@@ -15,11 +16,10 @@ var Gallery = () => {
        * arrow buttons to scroll through images (needs to select images)
        * carousel should scoll automatically when selected image is more than 7 from start (or scroll back to
            first 7 if the user goes back there)
-       * The left button should dissapear when the first image is selected, and right button should dissapear
-           when last image is selected
+       * [done] The left button should dissapear when the first image is selected, and right button should dissapear when last image is selected
       */}
 
-      {imageGallery.map((imageObject) => {
+      {visibleThumbnails.map((imageObject) => {
         return <GalleryImage imageObject={imageObject} />;
       })}
     </div>

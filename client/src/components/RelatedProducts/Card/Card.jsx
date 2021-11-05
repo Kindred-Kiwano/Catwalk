@@ -1,33 +1,21 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ProductCard from './ProductCard.jsx';
 import CardButton from './CardButton.jsx';
-import CardImage from './CardImage.jsx';
-import CardInfo from './CardInfo.jsx';
-import UserContext from '../UserContext.jsx';
-import Outfit from '../Outfit.jsx';
-
-
-let imgSrc = 'https://images.unsplash.com/photo-1477420143023-6a0e0b04b69a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80';
 
 const Card = (props) => {
-  let { product, type } = props;
 
-  let { id, name, default_price, style, category, description } = product;
-
-  let {button, click, list, update} = type;
-  console.log(type);
-
-  const handleClick = (id) => {
-    update(id);
-  };
+  let { product, method, label } = props;
+  let { click } = method;
 
   return (
-    <div className='card' id={id} onClick={() => update(product)}>
-      <header className='card'>
-        <CardButton value={button} onClick={() => update(product)} />
-        <CardImage img={imgSrc} onClick={() => console.log(product)}/>
-      </header>
-      <CardInfo product={product} />
+    <div className={`card card-${label}`}>
+      <CardButton label={label} click={click}/>
+      {/* <CardButton label={label} click={()=>click(product)}/> */}
+      { product ?
+        <ProductCard {...{product, label}}/>
+        :
+        <></>
+      }
     </div>
   );
 };

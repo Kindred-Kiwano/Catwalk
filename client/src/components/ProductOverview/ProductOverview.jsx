@@ -13,23 +13,10 @@ export var FakeProduct = React.createContext();
 export var Style = React.createContext();
 
 // product that the page refers to
-export var ProductOverview = (props) => {
-// props will hold the Product object
-// {
-//   .info: ...
-//   .styles: ...
-// }
-
-
-  // -- LEFT OFF HERE --
-
-    // only want to rerender when we don't have all info to continue
-    // once we have both the product and the styles, and ONLY then,
-      // render the rest of the app
-
+var ProductOverview = (props) => {
 
   var [product, updateProduct] = React.useState(props.productState);
-  var [style, updateStyle] = React.useState(props.productState.styles.data.results[0]);
+  var [style, updateStyle] = React.useState(props.productState.styles.results[0]);
 
   return (
     <div>
@@ -44,7 +31,7 @@ export var ProductOverview = (props) => {
     </div>
   );
 
-
-
 };
+
+export default ProductOverview;
 

@@ -1,13 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Outfit from '../Outfit.jsx';
 
-const CardButton = (props) => (
-  <button className='card-btn'
-    role={'button'}
-  >
-    {props.value}
-  </button>
-);
+const CardButton = (props) => {
+  let { label, click } = props;
+
+  let text = {
+    outfit: 'ⓧ',
+    related: '★',
+    addToOutfit: ''
+  };
+  //remove product from props, replace with ID
+  return (
+    <button className={'card ' + label}
+      role={'button'}
+      onClick={click} >
+      { text[label] }
+    </button>
+  );
+};
 
 export default CardButton;

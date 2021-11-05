@@ -2,26 +2,24 @@ import React from 'react';
 
 
 const Feature = (props) => {
-  let {current, target, feature} = props
-  // if () {
-
-  // }
+  let {feature, value, current, target} = props;
 
   let sample = {feature: 'Satisfaction Guaranteed', value: 'ok'};
 
+  if (current && target) {
+    //conditionally render
+  }
 
   return (
     <li className={'feature'}>
-      {props.current.feature}
       <p className={'feature-title'}>
-        <em>{sample.feature}</em><br/>
-        {
-          sample.value ? <p classname={'feature-value'}>{sample.value}<br/></p> : null
-        }
+        <em>{feature}</em><br/>
       </p>
-      {props.target.feature.feature}
+      {
+        value ? <p className={'feature-value'}>{value}<br/></p> : <></>
+      }
     </li>
-  )
-}
+  );
+};
 
 export default Feature;
