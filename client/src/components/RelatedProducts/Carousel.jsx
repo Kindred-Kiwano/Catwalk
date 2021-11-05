@@ -10,23 +10,23 @@ const Carousel = (props) => {
   let { method, label, data, title } = props;
   console.log(props)
 
-  if (label === 'addToOutfit') {
-    data = [<Card {...props} />, ...data]; //not quite
+  let list = data ? data.map(prod => (
+    <Card product={prod}
+      label={label}
+      method={method[label]}
+    />
+  )) : <></>;
+
+  if (label === 'outfit') {
+    list = [<Card label={'addToOutfit'} method={props.method.addToOutfit}/>].concat(list)
   }
 
   return (
     <>
       <div id={`carousel-${label}`}>
-        <header title={title}><h3>{title}</h3></header>
+        <header title={title}><h3><a href='/61590'>{title}</a></h3></header>
         <div className={'carousel'} id={`carousel-${label}`}>
-          {
-            data ? data.map(prod => (
-              <Card product={prod}
-                label={label}
-                method={method[label]}
-              />
-            )) : <h3>Loading</h3>
-          }
+          { list }
         </div>
       </div>
     </>

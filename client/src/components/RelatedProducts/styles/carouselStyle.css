@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   border: 0;
-  overscroll-behavior: none;
+  /* overscroll-behavior: none; */
 }
 
 body {
@@ -49,10 +49,10 @@ div.card {
   height: 500px;
   width: 350px;
   position: relative;
-
 }
 
-header {
+
+header.carousel {
   align-content: center;
 }
 
@@ -75,6 +75,15 @@ button.card {
 
 }
 
+button.card.addToOutfit {
+  width: 350px;
+  height: 100%;
+  font-size: 300px;
+  top: auto;
+  right: auto;
+  padding: auto;
+
+}
 
 footer {
   width: 90%;

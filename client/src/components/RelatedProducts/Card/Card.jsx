@@ -7,6 +7,8 @@ const Card = (props) => {
   let { product, method, label } = props;
   let { click } = method;
 
+  console.log(props)
+
   return (
     <div className={`card card-${label}`}>
       <CardButton label={label} click={click}/>

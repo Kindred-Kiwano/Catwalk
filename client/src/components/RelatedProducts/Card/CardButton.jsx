@@ -7,7 +7,7 @@ const CardButton = (props) => {
   let text = {
     outfit: 'ⓧ',
     related: '★',
-    addToOutfit: ''
+    addToOutfit: '+'
   };
   //remove product from props, replace with ID
   return (
