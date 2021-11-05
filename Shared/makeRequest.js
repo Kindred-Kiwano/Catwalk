@@ -26,7 +26,7 @@ export const getProductInfoById = (product_id) => {
 
 
 export const getAllStyles = (product_id) => {
-  return axios.get(`/products/${61584}/styles`);
+  return axios.get(`/products/${product_id}/styles`);
 };
 
 // for checking certain edgecases

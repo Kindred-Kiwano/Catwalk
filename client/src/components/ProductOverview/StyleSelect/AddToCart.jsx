@@ -1,5 +1,6 @@
 import React from 'react';
 import { Style } from '../ProductOverview.jsx';
+import getStock from '../methods/getStock.js';
 
 
 var AddToCart = (props) => {
@@ -17,8 +18,8 @@ var AddToCart = (props) => {
   // pull in the context of selected style
   var [style, updateStyle] = React.useContext(Style);
   // if the style selected has no sizes in stock, return an empty div
-  var skuIDs = Object.keys(style.skus);
-  if (skuIDs.length === 1 && skuIDs[0] === 'null') {
+
+  if (getStock.hasNoneInStock(style)) {
     return (
       <div></div>
     );

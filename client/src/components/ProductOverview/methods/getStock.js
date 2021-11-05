@@ -4,21 +4,23 @@ import React from 'react';
 var getStock = {
   // generates an object {size:qty}
   formatAllInStock: function(styleData) {
+    if (getStock.hasNoneInStock(styleData)) {
+      return {};
+    }
+
     var skuObjects = styleData.skus;
     var sizesToQuantities = {};
     var currentSKU, sizeToQty;
     for (var key in skuObjects) {
       currentSKU = skuObjects[key];
       // usually, out of stock items are {quantity: null}
-      if (currentSKU.quantity !== 0 || currentSKU.quantity !== null) {
+      if (currentSKU.quantity !== 0 && currentSKU.quantity !== null) {
         currentSKU = skuObjects[key];
         sizesToQuantities[currentSKU.size] = currentSKU.quantity;
       }
     }
 
-    if (Object.keys(sizesToQuantities).length === 0) {
-      sizesToQuantities['OUT OF STOCK'] = 0;
-    }
+
 
     return sizesToQuantities;
   },
@@ -44,6 +46,7 @@ var getStock = {
 
   // returns an object {size: [list of quantities]}
   generateQtyOptionsForAll: function(styleData) {
+
     var inStock = getStock.formatAllInStock(styleData);
     var allOptions = {};
     var optionsTuple;
@@ -65,7 +68,13 @@ var getStock = {
       total += sku.quantity;
     }
     return total;
+  },
+
+  hasNoneInStock: function(styleData) {
+    var skuIDs = Object.keys(styleData.skus);
+    return (skuIDs.length === 0) || (skuIDs.length === 1 && skuIDs[0] === 'null');
   }
+
 };
 
 export default getStock;
