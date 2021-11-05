@@ -15,8 +15,6 @@ var GalleryImage = (props) => {
   };
 
   // if it's the currenly selected image
-  console.log('selected: ', selected.url);
-  console.log('props.imageObject: ', props.imageObject.url);
   var selectedStatus = '';
   if (selected.url === props.imageObject.url) {
     selectedStatus = 'selected-thumbnail';
