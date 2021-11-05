@@ -9,6 +9,7 @@ import decorate from '../methods/decorate.js';
 // new contexts
 export var ImagesOfSelectedStyle = React.createContext();
 export var CurrentlySelectedImage = React.createContext();
+export var VisibleThumbnails = React.createContext();
 
 var StyleSelect = () => {
 
@@ -19,6 +20,12 @@ var StyleSelect = () => {
   // photosArray will give each photo object an index number to reference later
   var photosArray = decorate.addIndexRefs(style.photos);
   var [imageGallery, updateImageGallery] = React.useState(photosArray);
+
+  var initialVisiblePhotos = imageGallery.slice(0, 7);
+  // initialize to first 7 in gallery
+  var [visibleThumbnails, updateVisibleThumbnails] = React.useState(initialVisiblePhotos);
+
+
   // update state on new style selection
   // TODO: only update when the style changes
   React.useEffect(() => {
@@ -31,12 +38,14 @@ var StyleSelect = () => {
   return (
     <div>
       <ImagesOfSelectedStyle.Provider value={[imageGallery, updateImageGallery]}>
-        <CurrentlySelectedImage.Provider value={[selected, updateSelected]}>
-          <Images />
-          <Price />
-          <Thumbnails />
-          <CartOptions />
-        </CurrentlySelectedImage.Provider>
+        <VisibleThumbnails.Provider value={[visibleThumbnails, updateVisibleThumbnails]} >
+          <CurrentlySelectedImage.Provider value={[selected, updateSelected]}>
+            <Images />
+            <Price />
+            <Thumbnails />
+            <CartOptions />
+          </CurrentlySelectedImage.Provider>
+        </VisibleThumbnails.Provider>
       </ImagesOfSelectedStyle.Provider>
     </div>
   );

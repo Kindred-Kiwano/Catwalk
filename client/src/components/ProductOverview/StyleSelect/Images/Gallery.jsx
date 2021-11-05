@@ -2,8 +2,10 @@ import React from 'react';
 import GalleryImage from './GalleryImage.jsx';
 import { ImagesOfSelectedStyle } from '../StyleSelect.jsx';
 
+
 var Gallery = () => {
   var [imageGallery, updateImageGallery] = React.useContext(ImagesOfSelectedStyle);
+
 
   return (
     <div>

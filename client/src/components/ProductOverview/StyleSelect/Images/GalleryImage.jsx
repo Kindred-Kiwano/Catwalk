@@ -14,9 +14,18 @@ var GalleryImage = (props) => {
     }
   };
 
+  // if it's the currenly selected image
+  console.log('selected: ', selected.url);
+  console.log('props.imageObject: ', props.imageObject.url);
+  var selectedStatus = '';
+  if (selected.url === props.imageObject.url) {
+    selectedStatus = 'selected-thumbnail';
+  }
+
+
   return (
     // TODO project requirement: highlight the selected thumbnail
-    <img onClick={selectNewImage} className="gallery-image" src={props.imageObject.thumbnail_url} />
+    <img onClick={selectNewImage} className={'gallery-image ' + selectedStatus} src={props.imageObject.thumbnail_url} />
   );
 };
 
