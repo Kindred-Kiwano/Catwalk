@@ -1,29 +1,27 @@
 import React from 'react';
-import { ProductOverview } from './ProductOverview.jsx';
-import { elliotsGetAllProducts, getAllStyles } from '../../../../Shared/makeRequest.js';
+import ProductOverview from './ProductOverview.jsx';
+import { getFiveRandomProducts, getProductInfoById, getAllStyles } from '../../../../Shared/makeRequest.js';
 
 var LoadProduct = () => {
   var [productState, setProductState] = React.useState(null);
   var Product = {};
 
   if (productState === null) {
-    // make network request
-    elliotsGetAllProducts()
-      .then((productsResponse) => {
-        // for now arbitrarilly choosing the first product
-        Product.info = productsResponse.data[0];
-        getAllStyles(Product.info.id)
-          .then((stylesResponse) => {
-            Product.styles = stylesResponse;
-            setProductState(Product);
-          })
-          .catch((err) => {
-            console.log(`error getting styles for product "${Product.info.name}"`);
-            throw err;
-          });
+    // make network requests and re-render on success
+    getFiveRandomProducts()
+      .then((fiveProducts) => {
+        return getProductInfoById(fiveProducts.data[0].id)
+      })
+      .then((productInfo) => {
+        Product.info = productInfo.data;
+        return getAllStyles(productInfo.data.id)
+      })
+      .then((styles) => {
+        Product.styles = styles.data;
+        setProductState(Product);
       })
       .catch((err) => {
-        console.log('error getting products');
+        console.log('error getting product(s) and/or details');
         throw err;
       });
 

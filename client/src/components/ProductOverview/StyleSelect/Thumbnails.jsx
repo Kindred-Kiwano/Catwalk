@@ -15,7 +15,7 @@ var Thumbnails = () => {
       Thumbnails to select style:
       {/* TODO project requirement: thumbails must appear in rows of 4 */}
 
-      {product.styles.data.results.map((styleObject) => {
+      {product.styles.results.map((styleObject) => {
         return <Thumbnail color={styleObject.name} styleObject={styleObject} />;
       })}
     </div>

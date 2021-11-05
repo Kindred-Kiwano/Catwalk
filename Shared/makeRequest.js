@@ -14,9 +14,15 @@ export const getRelatedProducts = (id) => {
 };
 
 
-export const elliotsGetAllProducts = () => {
+
+
+export const getFiveRandomProducts = () => {
   // get 5 products for now
   return axios.get('/products');
+};
+
+export const getProductInfoById = (product_id) => {
+  return axios.get(`/products/${product_id}`);
 };
 
 export const getAllStyles = (product_id) => {
