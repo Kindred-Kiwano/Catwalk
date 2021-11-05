@@ -1,11 +1,10 @@
 import React from 'react';
 import GalleryImage from './GalleryImage.jsx';
-import { ImagesOfSelectedStyle } from '../StyleSelect.jsx';
+import { VisibleThumbnails } from '../StyleSelect.jsx';
 
 
 var Gallery = () => {
-  var [imageGallery, updateImageGallery] = React.useContext(ImagesOfSelectedStyle);
-
+  var [visibleThumbnails, updateVisibleThumbnails] = React.useContext(VisibleThumbnails);
 
   return (
     <div>
@@ -20,7 +19,7 @@ var Gallery = () => {
        * [done] The left button should dissapear when the first image is selected, and right button should dissapear when last image is selected
       */}
 
-      {imageGallery.map((imageObject) => {
+      {visibleThumbnails.map((imageObject) => {
         return <GalleryImage imageObject={imageObject} />;
       })}
     </div>
