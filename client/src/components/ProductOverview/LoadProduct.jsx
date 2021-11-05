@@ -7,34 +7,23 @@ var LoadProduct = () => {
   var Product = {};
 
   if (productState === null) {
-    // make network request
+    // make network requests and re-render on success
     getFiveRandomProducts()
       .then((fiveProducts) => {
-        getProductInfoById(fiveProducts.data[0].id)
-          .then((productInfo) => {
-            Product.info = productInfo.data;
-            getAllStyles(productInfo.data.id)
-              .then((styles) => {
-                Product.styles = styles.data;
-                setProductState(Product);
-              })
-              .catch((err) => {
-                console.log('error getting styles');
-                throw err;
-              });
-          }).catch((err) => {
-            console.log('error getting product by id');
-            throw err;
-          });
+        return getProductInfoById(fiveProducts.data[0].id)
+      })
+      .then((productInfo) => {
+        Product.info = productInfo.data;
+        return getAllStyles(productInfo.data.id)
+      })
+      .then((styles) => {
+        Product.styles = styles.data;
+        setProductState(Product);
       })
       .catch((err) => {
-        console.log('error getting initial five products');
+        console.log('error getting product(s) and/or details');
         throw err;
       });
-
-
-
-
 
     return (
       <p>
