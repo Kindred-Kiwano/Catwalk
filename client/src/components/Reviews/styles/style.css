@@ -9,7 +9,7 @@
   padding: 10px;
   width: auto;
   border-bottom: 1px solid #383838;
-  font-family: 'Cabin', sans-serif;
+
 }
 .reviewTopSection {
   margin: 2px;
@@ -47,6 +47,53 @@
 .reviewBottomSection {
   padding-top: 20px;
 }
+
+/* :root {
+  --star-size: 20px;
+  --star-color: rgb(167, 167, 167);
+  --star-background: rgb(43, 185, 0);
+} */
+
+.Stars {
+  --star-size: 20px;
+  --star-color: rgb(167, 167, 167);
+  --star-background: rgb(43, 185, 0);
+  --percent: calc(var(--rating) / 5 * 100%);
+  display: inline-block;
+  /* font-size: var(--star-size);
+  font-family: Times; */
+  line-height: 1;
+}
+.Stars::before {
+  content: "★★★★★";
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+.Bars {
+  --bar-size: 90px;
+  --bar-color: rgb(167, 167, 167);
+  --bar-background: rgb(43, 185, 0);
+  --percent: calc(var(--rating) / 5 * 100%);
+  display: inline-block;
+  /* font-size: var(--star-size);
+  font-family: Times; */
+  /* line-height: 1; */
+}
+.Bars::before {
+  content: "▁";
+  font-size: 200px;
+  /* letter-spacing: 2px; */
+  background: linear-gradient(90deg, var(--bar-background) var(--percent), var(--bar-color) var(--percent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
 
 
 

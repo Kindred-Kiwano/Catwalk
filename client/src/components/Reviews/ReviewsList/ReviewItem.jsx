@@ -24,8 +24,7 @@ var ReviewItem = (props) => {
   return (
     <div id="reviewItem">
       <div className="reviewTopSection">
-        <div className="starRatings">
-          <span>★★★★★</span>
+        <div className="Stars" style={{"--rating": `${props.review.rating}`}}>
         </div>
         <div className="reviewerAndDate">
         By {props.review.reviewer_name}, {props.review.date}
