@@ -7,10 +7,8 @@ import '../styles/modalStyle.css';
 const Modal = (props) => {
   let visible = props.data;
   let {features, toggle} = props;
-  props.context.userOutfit.push('hello')
-  console.log('context', props.context)
 
-  let sampleListA = [
+  features = features || [
     {
       'feature': 'Sole',
       'value': 'Rubber'

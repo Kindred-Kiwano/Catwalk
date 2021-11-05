@@ -5,35 +5,22 @@ import Feature from './Feature.jsx';
 const FeatureList = (props) => {
 
   let { features } = props;
-  console.log(features, 'sefdg')
 
-  let sampleListA = [
-    {
-      'feature': 'Sole',
-      'value': 'Rubber'
-    },
-    {
-      'feature': 'Material',
-      'value': 'FullControlSkin'
-    },
-    {
-      'feature': 'Mid-Sole',
-      'value': 'ControlSupport Arch Bridge'
-    },
-    {
-      'feature': 'Stitching',
-      'value': 'Double Stitch'
-    }
-  ];
+  //get current product features from context
+  //write helper function to compare and conditionally render
 
-  let featureList = features.map(spec => <Feature
-    feature={spec.feature}
-    value={spec.value}
-  />);
+  let featureList = features.map(spec =>
+    <Feature
+      feature={ spec.feature }
+      value={ spec.value }
+      current={ true }
+      target={ false }
+    />
+  );
 
   return (
     <ul className='features'>
-      {featureList}
+      { featureList }
     </ul>
   );
 };

@@ -1,47 +1,36 @@
 import React from 'react';
 import Card from './Card/Card.jsx';
 import UserContext from './UserContext.jsx';
+
 import './styles/carouselStyle.css';
 
 
 const Carousel = (props) => {
-  let { type, name } = props;
-  let list = props.data;
-  let { button, click } = type[name];
+
+  let { method, label, data, title } = props;
+  console.log(props)
+
+  if (label === 'addToOutfit') {
+    data = [<Card {...props} />, ...data]; //not quite
+  }
 
   return (
-    <div className={`carousel`} id={`carousel-${name}`}>
-      {
-        list ? list.map(prod => (
-          <Card product={prod}
-            name={name}
-            type={type[name]}
-            button={button}
-            click={click} />
-        )) : <h3>Loading</h3>
-      }
-    </div>
+    <>
+      <div id={`carousel-${label}`}>
+        <header title={title}><h3>{title}</h3></header>
+        <div className={'carousel'} id={`carousel-${label}`}>
+          {
+            data ? data.map(prod => (
+              <Card product={prod}
+                label={label}
+                method={method[label]}
+              />
+            )) : <h3>Loading</h3>
+          }
+        </div>
+      </div>
+    </>
   );
 };
 
 export default Carousel;
-
-// var carouselType = {
-  // outfit: {
-  //   list: userOutfit,
-  //   button: 'ⓧ',
-  //   click: (product) => {
-  //     setUserOutfit(userOutfit.filter(prod => prod.id !== product.id));
-  //   }
-  // },
-//   related: {
-//     list: relatedProducts,
-//     button: '★',
-//     click: (product) => {
-//       setUserOutfit([...userOutfit, product]);
-//     }
-//   },
-//   add: {
-
-//   }
-// };

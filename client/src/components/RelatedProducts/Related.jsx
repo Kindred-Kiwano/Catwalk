@@ -6,7 +6,7 @@ const Related = {};
 
 Related.getRelated = (id) => {
   return axios.get(`/products/${id}/related`)
-    .catch(e => throw e);
+    .catch(e => e);
 };
 
 Related.getData = (id) => {

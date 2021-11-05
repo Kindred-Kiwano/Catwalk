@@ -4,12 +4,15 @@ import CardImage from './CardImage.jsx';
 import CardInfo from './CardInfo.jsx';
 
 
-const CardBody = (props) => {
-  let { button, click, img, product, type } = props;
+const ProductCard = (props) => {
+  let { type, product, label } = props;
+  
+  let img = 'https://images.unsplash.com/photo-1477420143023-6a0e0b04b69a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80';
+
   return (
     <>
       <header className='card'>
-        <CardButton button={button} onClick={() => click(product)} />
+
         <CardImage img={img} onClick={() => console.log(product)}/>
       </header>
       <CardInfo product={product} />
@@ -18,4 +21,4 @@ const CardBody = (props) => {
 };
 
 
-export default CardBody;
+export default ProductCard;

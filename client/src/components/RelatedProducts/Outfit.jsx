@@ -5,16 +5,6 @@ import UserContext from './UserContext.jsx';
 
 const outfit = {};
 
-class Products {
-  constructor(props) {
-
-  }
-
-  getRelated = (id) => {
-    return 
-  }
-}
-
 
 outfit.add = (product) => {
   let {userOutfit, setUserOutfit} = React.useContext(UserContext);
@@ -31,13 +21,13 @@ outfit.remove = (product) => {
   setUserOutfit(userOutfit.filter(prod => product.id !== prod.id));
 };
 
-// Outfit.reset = () => { localStorage.removeItem('outfit'); };
 
 outfit.retrieve = () => {
   return JSON.parse(localStorage.getItem('outfit')) || [];
 };
 
-outfit.list = outfit.retrieve();
+outfit.list = [];
+// outfit.list = outfit.retrieve();
 outfit.button = 'ⓧ';
 outfit.click = outfit.add;
 
