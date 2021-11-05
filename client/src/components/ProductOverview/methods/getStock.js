@@ -9,7 +9,8 @@ var getStock = {
     var currentSKU, sizeToQty;
     for (var key in skuObjects) {
       currentSKU = skuObjects[key];
-      if (currentSKU.quantity !== 0) {
+      // usually, out of stock items are {quantity: null}
+      if (currentSKU.quantity !== 0 || currentSKU.quantity !== null) {
         currentSKU = skuObjects[key];
         sizesToQuantities[currentSKU.size] = currentSKU.quantity;
       }
