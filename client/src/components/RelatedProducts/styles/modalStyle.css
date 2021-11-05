@@ -1,0 +1,30 @@
+#modal {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: #ddd;
+  height: 40vh;
+  width: 80vw;
+  position: fixed;
+  transform: translate(-50%, -80%);
+  top: 50%;
+  left: 50%;
+  z-index: 20;
+}
+
+ul.features {
+  /* list-style-type: none; */
+}
+
+.feature {
+  align-content: center;
+  text-align: center;
+}
+
+p.feature-title {
+  color: #999;
+}
+
+p.feature-value {
+  color: #000;
+}
