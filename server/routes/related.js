@@ -11,9 +11,9 @@ const {
 
 router.get('/', (req, res) => {
   try {
-    res.status(200).send('fix me');
+    res.status(200).send('<h1 style="color:hotpink"><em>Fix Me</em></h1>');
   } catch (error) {
-    res.status(400).send(error);
+    res.status(418).send(error);
   }
 });
 
@@ -31,7 +31,7 @@ router.get('/:id', async (req, res) => {
   let {id} = req.params;
   try {
     let product = await getProductData(id);
-    res.status(200).send(product.data); //works
+    res.status(200).send(product.data);
   } catch (error) {
     res.status(400).send(error);
   }

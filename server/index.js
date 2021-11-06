@@ -12,9 +12,9 @@ app.use('/products', related);
 
 
 app.listen(PORT, () => {
-  console.log(`Serving static files at  http://localhost:${PORT}`);
+  console.log(`Serving static files at http://localhost:${PORT}`);
 });
 
-app.get('/something', (req, res) => {
-  res.send('<body style="background-color:hotpink"/>');
+app.get('/', (req, res) => {
+  res.send('<h1 style="color:hotpink"><em>Fix Me</em></h1>');
 });
