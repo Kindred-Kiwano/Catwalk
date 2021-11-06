@@ -17,9 +17,9 @@ var Thumbnail = (props) => {
   };
 
   return (
-    <span onClick={changeStyle} className="style-thumbnail" style={{backgroundColor: props.color.toLowerCase()}}>
+    <span onClick={changeStyle} className="style-thumbnail" >
       {/* TODO project requirement: checkmark should appear over the selected icon */}
-      &emsp;
+      {props.styleObject.name}
     </span>
   );
 };
