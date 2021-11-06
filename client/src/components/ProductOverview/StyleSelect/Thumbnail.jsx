@@ -16,8 +16,14 @@ var Thumbnail = (props) => {
     }
   };
 
+  var selectedStatus = '';
+  if (style.style_id === props.styleObject.style_id) {
+    // later change this css class to produce a checkmark (or conditially render one here)
+    selectedStatus = 'current-style-thumbnail';
+  }
+
   return (
-    <span onClick={changeStyle} className="style-thumbnail" >
+    <span onClick={changeStyle} className={'style-thumbnail ' + selectedStatus} >
       {/* TODO project requirement: checkmark should appear over the selected icon */}
       {props.styleObject.name}
     </span>
