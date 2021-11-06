@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
     res.status(200).send('<h1 style="color:hotpink"><em>Fix Me</em></h1>');
   } catch (error) {
     res.status(418).send(error);
-  }
+  } //should return a list of products
 });
 
 router.get('/related/:id', async (req, res) => {
@@ -46,6 +46,6 @@ router.get('/styles/:id', async (req, res) => {
   } catch (error) {
     res.status(400).send(error);
   }
-}); //working ! sends an array of formatted objects, to be extended with basic data
+}); //working ! sends an array of formatted objects, to be extended with basic data after initial render
 
 module.exports = router;

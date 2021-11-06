@@ -25,19 +25,26 @@ import React from 'react';
 //   }
 // }
 
-const CardImage = (props) => (
-  <>
-    {
-      props.img ?
-        <img src={props.img}
-          role='img'
-          title={props.description}
-          // onClick={() => props.click(props.id)}
-        />
-        : <img src={'assets/loading.gif'} />
-    }
-  </>
-);
+const CardImage = (props) => {
+  let {images, img} = props;
+  if (images) {
+    console.log(images.length)
+  }
+
+  return (
+    <>
+      {
+        props.img ?
+          <img src={img}
+            role='img'
+            title={props.description}
+            onClick={props.click}
+          />
+          : <img src={'assets/loading.gif'} />
+      }
+    </>
+  );
+};
 
 
 export default CardImage;

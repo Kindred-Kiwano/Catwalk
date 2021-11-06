@@ -6,14 +6,13 @@ import CardInfo from './CardInfo.jsx';
 
 const ProductCard = (props) => {
   let { type, product, label } = props;
-  
-  let img = 'https://images.unsplash.com/photo-1477420143023-6a0e0b04b69a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80';
+  let {images, img} = product;
+  // img = 'https://images.unsplash.com/photo-1477420143023-6a0e0b04b69a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80';
 
   return (
     <>
-      <header className='card'>
-
-        <CardImage img={img} onClick={() => console.log(product)}/>
+      <header className='card' id={product.id}>
+        <CardImage img={img} images={images} click={() => console.log(product)}/>
       </header>
       <CardInfo product={product} />
     </>

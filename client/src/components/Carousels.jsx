@@ -1,22 +1,19 @@
-import React from 'react';
-// import Related from './RelatedProducts/Related.jsx';
+import React, {useState, useContext} from 'react';
 import Carousel from './RelatedProducts/Carousel.jsx';
-import {outfit, related} from './RelatedProducts/Outfit.jsx';
+import Related from './RelatedProducts/Related.jsx';
 import Wrapper from './RelatedProducts/Wrapper.jsx';
 import UserContext from './RelatedProducts/UserContext.jsx';
 import Modal from './RelatedProducts/Modal/Modal.jsx';
 import { products, styles } from './RelatedProducts/Data.js';
 
-let { getRelatedIds, getFeatures, getStyles, populateAsync, modal, getData, updateModalFeatures, updateRelatedProducts } = related;
-
 const Carousels = () => {
 
 
-  let [currentProduct, setCurrentProduct] = React.useState(61590);
-  let [relatedProducts, setRelatedProducts] = React.useState(products);
-  // let [userOutfit, setUserOutfit] = React.useState(products);
-  let [userOutfit, setUserOutfit] = React.useState([]);
-  let [modal, setModal] = React.useState(false);
+  let [currentProduct, setCurrentProduct] = useState(61590);
+  let [relatedProducts, setRelatedProducts] = useState(products);
+  // let [userOutfit, setUserOutfit] = useState(products);
+  let [userOutfit, setUserOutfit] = useState([products[0]]);
+  let [modal, setModal] = useState(false);
 
   var methods = {
     outfit: {
@@ -30,7 +27,8 @@ const Carousels = () => {
         console.log('hello');
         setUserOutfit([...userOutfit, products[0]]);
       }
-    }
+    },
+    update: (id) => setCurrentProduct(id)
   };
 
   let RelatedProductsCarousel = Wrapper(Carousel, relatedProducts, {method: methods, label: 'related', title: 'Related Products'});
@@ -51,6 +49,7 @@ const Carousels = () => {
   return (
     <UserContext.Provider value={ initialState }>
       <>
+        <Related />
         <ComparisonModal />
         <RelatedProductsCarousel />
         <UserOutfitCarousel />

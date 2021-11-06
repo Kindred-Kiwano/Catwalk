@@ -6,9 +6,8 @@ import './styles/carouselStyle.css';
 
 
 const Carousel = (props) => {
-
+  console.log(props);
   let { method, label, data, title } = props;
-  console.log(props)
 
   let list = data ? data.map(prod => (
     <Card product={prod}
@@ -18,13 +17,13 @@ const Carousel = (props) => {
   )) : <></>;
 
   if (label === 'outfit') {
-    list = [<Card label={'addToOutfit'} method={props.method.addToOutfit}/>].concat(list)
-  }
+    list = [ <Card label={'addToOutfit'} method={method.addToOutfit}/> ].concat(list);
+  } //fix CSS so this doesn't collapse when adding new products
 
   return (
     <>
       <div id={`carousel-${label}`}>
-        <header title={title}><h3><a href='/61590'>{title}</a></h3></header>
+        <header title={title}><h3><a href='/products/61590'>{title}</a></h3></header>
         <div className={'carousel'} id={`carousel-${label}`}>
           { list }
         </div>
