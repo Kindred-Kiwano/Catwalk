@@ -28,3 +28,9 @@ export const getProductInfoById = (product_id) => {
 export const getAllStyles = (product_id) => {
   return axios.get(`/products/${product_id}/styles`);
 };
+
+// for checking certain edgecases
+// none in stock:
+  // product_id 61584
+// more than 7 thumbnails for style:
+  // product_id 61579

@@ -9,6 +9,9 @@ import { Style } from '../ProductOverview.jsx';
 
 var CartOptions = () => {
   var [style, updateStyle] = React.useContext(Style);
+
+  // an object with k:v pairs like:
+    // size: [list of qty options]
   var sizesAndAmounts = getStock.generateQtyOptionsForAll(style);
 
   // the inital state ("Select size" and "-") isn't being used, but might leave as is
@@ -16,6 +19,9 @@ var CartOptions = () => {
   var [qtyList, updateQtyList] = React.useState(['-']);
 
   var handleSizeSelection = (event) => {
+    // erase any reminders
+    document.getElementById('reminder-to-select-size').innerHTML = '';
+
     var size = event.target.value;
     if (size === 'Select size') {
       updateSizeSelected(size);
@@ -29,8 +35,8 @@ var CartOptions = () => {
   return (
     <div>
       <SelectSize sizesAndAmounts={sizesAndAmounts} handleSizeSelection={handleSizeSelection}/>
-      <SelectQty qtyList={qtyList} />
-      <AddToCart />
+      <SelectQty sizeSelected={sizeSelected} qtyList={qtyList} />
+      <AddToCart sizeSelected={sizeSelected}/>
     </div>
   );
 };

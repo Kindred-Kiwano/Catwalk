@@ -23,3 +23,7 @@
 .style-thumbnail {
   border: 1px solid black;
 }
+
+.current-style-thumbnail {
+  border: 2px solid lime;
+}
