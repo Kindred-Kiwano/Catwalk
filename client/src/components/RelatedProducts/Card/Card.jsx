@@ -4,17 +4,18 @@ import CardButton from './CardButton.jsx';
 
 const Card = (props) => {
 
-  let { product, method, label } = props;
+  let { product, method, label, img } = props;
   let { click } = method;
 
   return (
     <div className={`card card-${label}`}>
-      <CardButton label={label} click={click}/>
-      {/* <CardButton label={label} click={()=>click(product)}/> */}
       { product ?
-        <ProductCard {...{product, label}}/>
+        <>
+          <CardButton label={label} click={()=>click(product)}/>
+          <ProductCard {...{product, label, img}}/>
+        </>
         :
-        <></>
+        <CardButton label={label} click={click}/>
       }
     </div>
   );

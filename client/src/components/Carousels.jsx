@@ -1,23 +1,21 @@
-import React from 'react';
-// import Related from './RelatedProducts/Related.jsx';
+import React, {useState, useContext} from 'react';
 import Carousel from './RelatedProducts/Carousel.jsx';
-import {outfit, related} from './RelatedProducts/Outfit.jsx';
+import Related from './RelatedProducts/Related.jsx';
 import Wrapper from './RelatedProducts/Wrapper.jsx';
 import UserContext from './RelatedProducts/UserContext.jsx';
 import Modal from './RelatedProducts/Modal/Modal.jsx';
 import { products, styles } from './RelatedProducts/Data.js';
 
-let { getRelatedIds, getFeatures, getStyles, populateAsync, modal, getData, updateModalFeatures, updateRelatedProducts } = related;
-
 const Carousels = () => {
 
 
-  let [currentProduct, setCurrentProduct] = React.useState(61590);
-  let [relatedProducts, setRelatedProducts] = React.useState(products);
-  let [userOutfit, setUserOutfit] = React.useState([]);
-  let [modal, setModal] = React.useState(false);
+  let [currentProduct, setCurrentProduct] = useState(61590);
+  let [relatedProducts, setRelatedProducts] = useState(products);
+  // let [userOutfit, setUserOutfit] = useState(products);
+  let [userOutfit, setUserOutfit] = useState([products[0]]);
+  let [modal, setModal] = useState(false);
 
-  var carouselMethods = {
+  var methods = {
     outfit: {
       click: (product) => setUserOutfit(userOutfit.filter(prod => prod.id !== product.id))
     },
@@ -25,17 +23,17 @@ const Carousels = () => {
       click: () => setModal(modal = !modal)
     },
     addToOutfit: {
-      click: (product) => {
-        setUserOutfit([...userOutfit, product]);
+      click: () => {
+        console.log('hello');
+        setUserOutfit([...userOutfit, products[0]]);
       }
-    }
+    },
+    update: (id) => setCurrentProduct(id)
   };
 
+  let RelatedProductsCarousel = Wrapper(Carousel, relatedProducts, {method: methods, label: 'related', title: 'Related Products'});
 
-
-  let RelatedProductsCarousel = Wrapper(Carousel, relatedProducts, {method: carouselMethods, label: 'related', title: 'Related Products'});
-
-  let UserOutfitCarousel = Wrapper(Carousel, userOutfit, {method: carouselMethods, label: 'outfit', title: 'Create Your Outfit'});
+  let UserOutfitCarousel = Wrapper(Carousel, userOutfit, {method: methods, label: 'outfit', title: 'Create Your Outfit'});
 
   let ComparisonModal = Wrapper(Modal, modal, {toggle: setModal});
 
@@ -45,14 +43,13 @@ const Carousels = () => {
     userOutfit,
     setUserOutfit,
     relatedProducts,
-    setRelatedProducts,
-    // modal,
-    // setModal
+    setRelatedProducts
   };
 
   return (
     <UserContext.Provider value={ initialState }>
       <>
+        <Related />
         <ComparisonModal />
         <RelatedProductsCarousel />
         <UserOutfitCarousel />
