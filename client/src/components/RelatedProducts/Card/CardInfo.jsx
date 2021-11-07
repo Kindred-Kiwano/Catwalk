@@ -1,21 +1,26 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import FakeRating from './FakeRating.jsx';
 
-
 const CardInfo = (props) => {
+  let { product } = props
+  if (product) {
+    let { id, name, default_price, original_price, price, category, sale_price, sale } = product
 
-  let { id, name, default_price, category, sale_price } = props.product;
-  let price = default_price;
+    console.log(props)
+    let placeholder = 'update this'
+    if (sale_price) {
+      placeholder = 'oh its a sale'
+    }
 
-  return (
-    <footer>
-      <p className='category'><em>{ category.toUpperCase() }</em></p>
-      <p className='name'>{ name }</p>
-      <p className={''}>{`$${ price.split('.')[0]}` }</p>
-      <FakeRating product_id={id} />
-    </footer>
-  );
+    return (
+      <>
+        <p className='category'><em>{category.toUpperCase() || ''}</em></p>
+        <p className='name'>{name || ''}</p>
+        <p className={placeholder}>{`$${price.split('.')[0]}` || '$FREE.99'}</p>
+        <FakeRating product_id={id || 0} />
+      </>
+    );
+  }
 };
 
 export default CardInfo;

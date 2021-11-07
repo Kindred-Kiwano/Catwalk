@@ -1,4 +1,8 @@
-
+import React from 'react';
+import CardButton from './CardButton.jsx';
+import CardImage from './CardImage.jsx';
+import CardInfo from './CardInfo.jsx';
+import Card from './Card.jsx';
 
 class ProductCard extends Card {
   constructor(props) {
@@ -6,8 +10,8 @@ class ProductCard extends Card {
     this.state = {
       id: this.props.id,
       product: null,
-      images: [],
-      img: images[0]
+      images: this.props.images || [], //add this functionality
+      img: this.props.img
     };
   }
 
@@ -25,5 +29,7 @@ class ProductCard extends Card {
   }
 }
 
+// const ProductCard = (props) => {
+//   // img = 'https://images.unsplash.com/photo-1477420143023-6a0e0b04b69a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80';
 
-export default ProductCard;
+// };
