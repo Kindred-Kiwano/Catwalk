@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import StarRating from './StarRating.jsx';
+import Characteristics from './Characteristics.jsx';
 import '../styles/style.css';
+
 
 // import ReactDOM from 'react-dom';
 // import $ from 'jquery';
@@ -164,385 +166,103 @@ const AddReview = () => {
 
         <fieldset>
           <legend>Size</legend>
-          <div className="field">
-            <label>
-              <input
-              type="radio"
-              name="size"
-              value={1}
-              onChange={handleChange}
-              checked={formData.size === '1'}
-              />
-              <span>A Size Too Small</span>
-            </label>
-          </div>
-          <div className="field">
-            <label>
-              <input
-              type="radio"
-              name="size"
-              value={2}
-              onChange={handleChange}
-              checked={formData.size === '2'}
-              />
-              <span>1/2 A Size Too Small</span>
-            </label>
-          </div>
-          <div className="field">
-            <label>
-              <input
-              type="radio"
-              name="size"
-              value={3}
-              onChange={handleChange}
-              checked={formData.size === '3'}
-              />
-              <span>Perfect</span>
-            </label>
-          </div>
-          <div className="field">
-            <label>
-              <input
-              type="radio"
-              name="size"
-              value={4}
-              onChange={handleChange}
-              checked={formData.size === '4'}
-              />
-              <span>1/2 A Size Too Large</span>
-            </label>
-          </div>
-          <div className="field">
-            <label>
-              <input
-              type="radio"
-              name="size"
-              value={5}
-              onChange={handleChange}
-              checked={formData.size === '5'}
-              />
-              <span>A Size Too Large</span>
-            </label>
+          <div>
+            <Characteristics
+              handleChange={handleChange}
+              messageOptions={[
+                'A Size Too Small',
+                'A 1/2 Size Too Small',
+                'Perfect',
+                'A 1/2 Size Too Large',
+                'A Size Too Large'
+              ]}
+              title={'size'}
+            />
           </div>
         </fieldset>
 
         <fieldset>
           <legend>Width</legend>
-          <div className="field">
-            <label>
-              <input
-              type="radio"
-              name="width"
-              value={1}
-              onChange={handleChange}
-              checked={formData.width === '1'}
-              />
-              <span>Too Narrow</span>
-            </label>
-          </div>
-          <div className="field">
-            <label>
-              <input
-              type="radio"
-              name="width"
-              value={2}
-              onChange={handleChange}
-              checked={formData.width === '2'}
-              />
-              <span>Slightly Narrow</span>
-            </label>
-          </div>
-          <div className="field">
-            <label>
-              <input
-              type="radio"
-              name="width"
-              value={3}
-              onChange={handleChange}
-              checked={formData.width === '3'}
-              />
-              <span>Perfect</span>
-            </label>
-          </div>
-          <div className="field">
-            <label>
-              <input
-              type="radio"
-              name="width"
-              value={4}
-              onChange={handleChange}
-              checked={formData.width === '4'}
-              />
-              <span>Slightly Wide</span>
-            </label>
-          </div>
-          <div className="field">
-            <label>
-              <input
-              type="radio"
-              name="width"
-              value={5}
-              onChange={handleChange}
-              checked={formData.width === '5'}
-              />
-              <span>Too Wide</span>
-            </label>
+          <div>
+            <Characteristics
+              handleChange={handleChange}
+              messageOptions={[
+                'Too Narrow',
+                'Slightly Narrow',
+                'Perfect',
+                'Slightly Wide',
+                'Too Wide'
+              ]}
+              title={'width'}
+            />
           </div>
         </fieldset>
 
         <fieldset>
           <legend>Comfort</legend>
-          <div className="field">
-            <label>
-              <input
-              type="radio"
-              name="comfort"
-              value={1}
-              onChange={handleChange}
-              checked={formData.comfort === '1'}
-              />
-              <span>Uncomfortable</span>
-            </label>
-          </div>
-          <div className="field">
-            <label>
-              <input
-              type="radio"
-              name="comfort"
-              value={2}
-              onChange={handleChange}
-              checked={formData.comfort === '2'}
-              />
-              <span>Slightly Uncomfortable</span>
-            </label>
-          </div>
-          <div className="field">
-            <label>
-              <input
-              type="radio"
-              name="comfort"
-              value={3}
-              onChange={handleChange}
-              checked={formData.comfort === '3'}
-              />
-              <span>Ok</span>
-            </label>
-          </div>
-          <div className="field">
-            <label>
-              <input
-              type="radio"
-              name="comfort"
-              value={4}
-              onChange={handleChange}
-              checked={formData.comfort === '4'}
-              />
-              <span>Comfortable</span>
-            </label>
-          </div>
-          <div className="field">
-            <label>
-              <input
-              type="radio"
-              name="comfort"
-              value={5}
-              onChange={handleChange}
-              checked={formData.comfort === '5'}
-              />
-              <span>Perfect</span>
-            </label>
+          <div>
+            <Characteristics
+              handleChange={handleChange}
+              messageOptions={[
+                'Uncomfortable',
+                'Slightly Uncomfortable',
+                'Ok',
+                'Comfortable',
+                'Perfect'
+              ]}
+              title={'comfort'}
+            />
           </div>
         </fieldset>
 
         <fieldset>
           <legend>Quality</legend>
-          <div className="field">
-            <label>
-              <input
-              type="radio"
-              name="quality"
-              value={1}
-              onChange={handleChange}
-              checked={formData.quality === '1'}
-              />
-              <span>Poor</span>
-            </label>
-          </div>
-          <div className="field">
-            <label>
-              <input
-              type="radio"
-              name="quality"
-              value={2}
-              onChange={handleChange}
-              checked={formData.quality === '2'}
-              />
-              <span>Below Average</span>
-            </label>
-          </div>
-          <div className="field">
-            <label>
-              <input
-              type="radio"
-              name="quality"
-              value={3}
-              onChange={handleChange}
-              checked={formData.quality === '3'}
-              />
-              <span>What I Expected</span>
-            </label>
-          </div>
-          <div className="field">
-            <label>
-              <input
-              type="radio"
-              name="quality"
-              value={4}
-              onChange={handleChange}
-              checked={formData.quality === '4'}
-              />
-              <span>Pretty Great</span>
-            </label>
-          </div>
-          <div className="field">
-            <label>
-              <input
-              type="radio"
-              name="quality"
-              value={5}
-              onChange={handleChange}
-              checked={formData.quality === '5'}
-              />
-              <span>Perfect</span>
-            </label>
+          <div>
+            <Characteristics
+              handleChange={handleChange}
+              messageOptions={[
+                'Poor',
+                'Below Average',
+                'What I expected',
+                'Pretty Great',
+                'Perfect'
+              ]}
+              title={'quality'}
+            />
           </div>
         </fieldset>
 
         <fieldset>
           <legend>Length</legend>
-          <div className="field">
-            <label>
-              <input
-              type="radio"
-              name="length"
-              value={1}
-              onChange={handleChange}
-              checked={formData.length === '1'}
-              />
-              <span>Runs Short</span>
-            </label>
-          </div>
-          <div className="field">
-            <label>
-              <input
-              type="radio"
-              name="length"
-              value={2}
-              onChange={handleChange}
-              checked={formData.length === '2'}
-              />
-              <span>Runs Slightly Short</span>
-            </label>
-          </div>
-          <div className="field">
-            <label>
-              <input
-              type="radio"
-              name="length"
-              value={3}
-              onChange={handleChange}
-              checked={formData.length === '3'}
-              />
-              <span>Perfect</span>
-            </label>
-          </div>
-          <div className="field">
-            <label>
-              <input
-              type="radio"
-              name="length"
-              value={4}
-              onChange={handleChange}
-              checked={formData.length === '4'}
-              />
-              <span>Runs Slightly Long</span>
-            </label>
-          </div>
-          <div className="field">
-            <label>
-              <input
-              type="radio"
-              name="length"
-              value={5}
-              onChange={handleChange}
-              checked={formData.length === '5'}
-              />
-              <span>Runs Long</span>
-            </label>
+          <div>
+            <Characteristics
+              handleChange={handleChange}
+              messageOptions={[
+                'Runs Short',
+                'Runs Slightly Short',
+                'Perfect',
+                'Runs Slightly Long',
+                'Runs Long'
+              ]}
+              title={'length'}
+            />
           </div>
         </fieldset>
 
         <fieldset>
           <legend>Fit</legend>
-          <div className="field">
-            <label>
-              <input
-              type="radio"
-              name="fit"
-              value={1}
-              onChange={handleChange}
-              checked={formData.fit === '1'}
-              />
-              <span>Runs Tight</span>
-            </label>
-          </div>
-          <div className="field">
-            <label>
-              <input
-              type="radio"
-              name="fit"
-              value={2}
-              onChange={handleChange}
-              checked={formData.fit === '2'}
-              />
-              <span>Runs Slightly Tight</span>
-            </label>
-          </div>
-          <div className="field">
-            <label>
-              <input
-              type="radio"
-              name="fit"
-              value={3}
-              onChange={handleChange}
-              checked={formData.fit === '3'}
-              />
-              <span>Perfect</span>
-            </label>
-          </div>
-          <div className="field">
-            <label>
-              <input
-              type="radio"
-              name="fit"
-              value={4}
-              onChange={handleChange}
-              checked={formData.fit === '4'}
-              />
-              <span>Runs Slightly Long</span>
-            </label>
-          </div>
-          <div className="field">
-            <label>
-              <input
-              type="radio"
-              name="fit"
-              value={5}
-              onChange={handleChange}
-              checked={formData.fit === '5'}
-              />
-              <span>Runs Long</span>
-            </label>
+          <div>
+            <Characteristics
+              handleChange={handleChange}
+              messageOptions={[
+                'Runs Tight',
+                'Runs Slightly Tight',
+                'Perfect',
+                'Runs Slightly Long',
+                'Runs Long'
+              ]}
+              title={'fit'}
+            />
           </div>
         </fieldset>
 
