@@ -9,9 +9,7 @@ var ReviewItem = (props) => {
   const handleHelpfulClick = () => {
     if (alreadyClicked === false) {
       props.review.helpfulness++;
-      // console.log(alreadyClicked);
       setCurrentHelpfulCount(currentHelpfulCount + 1)
-      // console.log(`clicked, also the current helpful count is ${props.review.helpfulness}`);
       setAlreadyClicked(!alreadyClicked);
     } else {
       alert('You already clicked that.');
@@ -22,12 +20,12 @@ var ReviewItem = (props) => {
   };
 
   return (
-    <div id="reviewItem">
+    <div className="reviewItem">
       <div className="reviewTopSection">
         <div className="Stars" style={{"--rating": `${props.review.rating}`}}>
         </div>
         <div className="reviewerAndDate">
-        By {props.review.reviewer_name}, {props.review.date}
+        By {props.review.reviewer_name}, {props.review.date.slice(0, -14)}
         </div>
       </div>
       <div className="reviewMidSection">

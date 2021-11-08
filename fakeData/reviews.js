@@ -1,7 +1,7 @@
 var Reviews = {};
 
 // *** not something the reviews API would give, but an example of a collection of reviews associated with one product
-Reviews.productExample = {
+Reviews.reviews = {
   'product': '48432',
   'page': 0,
   'count': 5,

@@ -16,12 +16,12 @@ var RatingBreakdown = (props) => {
     let avgNum = Number(ratings[1]) + Number(ratings[2]) + Number(ratings[3]) + Number(ratings[4]) + Number(ratings[5]);
     let totalAvg = totalScore / avgNum;
     let roundedNum = (Math.round(totalAvg * 4) / 4).toFixed(2);
-    return roundedNum;
+    return parseFloat(roundedNum);
   };
   return (
-    <div id="ratingsBreakdown">
+    <div className="ratingsBreakdown">
       <div className="topSectionRatings">
-        Average Score: {RatingsAvg(testReviews)}
+        <h1>{RatingsAvg(testReviews)}</h1>
       </div>
       <div className="Stars" style={{"--rating": `${RatingsAvg(testReviews)}`}}>
 
