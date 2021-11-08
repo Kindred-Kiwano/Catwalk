@@ -29,6 +29,11 @@ export const getAllStyles = (product_id) => {
   return axios.get(`/products/${product_id}/styles`);
 };
 
+
+export const getReviews = (productId, count, sortBy) => {
+  return axios.get(`/reviews?product_id=${productId}&count=${count}&sort=${sortBy}`);
+};
+
 // for checking certain edgecases
 // none in stock:
   // product_id 61584
