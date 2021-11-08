@@ -11,6 +11,7 @@ const StarRating = ( {handleChange }) => {
   //   'background-color': 'yellow',
   //   'font-size': '100px'
   // };
+  const messageOptions = ['Poor', 'Fair', 'Average', 'Good', 'Great'];
 
   return (
     <div className="starRating">
@@ -26,18 +27,7 @@ const StarRating = ( {handleChange }) => {
               onClick={() => {
 
                 setRating(ratingValue);
-                if (ratingValue === 1) {
-                  setMessage('Poor');
-                } else if (ratingValue === 2) {
-                  setMessage('Fair');
-                } else if (ratingValue === 3) {
-                  setMessage('Average');
-                } else if (ratingValue === 4) {
-                  setMessage('Good');
-                } else if (ratingValue === 5) {
-                  setMessage('Great');
-                }
-
+                setMessage(messageOptions[i]);
               }}
               onChange={handleChange}
             />
