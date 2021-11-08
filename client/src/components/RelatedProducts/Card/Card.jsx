@@ -1,24 +1,42 @@
 import React from 'react';
-import ProductCard from './ProductCard.jsx';
-import CardButton from './CardButton.jsx';
 
-const Card = (props) => {
+class Card extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      id: this.props.id || 0 //current product ID from global state- add to cart on click
+    };
+  }
 
-  let { product, method, label, img } = props;
-  let { click } = method;
+  handleClick(id) {
+    return this.props.click(id);
+  }
 
-  return (
-    <div className={`card card-${label}`}>
-      { product ?
-        <>
-          <CardButton label={label} click={()=>click(product)}/>
-          <ProductCard {...{product, label, img}}/>
-        </>
-        :
-        <CardButton label={label} click={click}/>
-      }
-    </div>
-  );
-};
+  showComparisons() {
+    //toggle modal, add another onClick
+  }
+
+  render() {
+    let { click, label } = this.props;
+    let { id } = this.state;
+
+    let text = {
+      outfit: 'ⓧ',
+      related: '★',
+      addToOutfit: '+'
+    };
+
+    return (
+      <div className={`card card-${label}`} id={id}>
+        <button className={'btn-' + label}
+          role={'button'}
+          onClick={() => this.handleClick(id)}>
+          { text[label] }
+        </button>
+        {this.props.children}
+      </div>
+    );
+  }
+}
 
 export default Card;
