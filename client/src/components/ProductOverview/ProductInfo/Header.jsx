@@ -3,8 +3,6 @@ import Price from '../StyleSelect/Price.jsx';
 import { Style } from '../ProductOverview.jsx';
 import getStock from '../methods/getStock.js';
 import { FakeProduct } from '../ProductOverview.jsx';
-// CHANGE TO IMPORT REAL DATA ON REVIEWS (might be in product state)
-// import Reviews from '../../../../../fakeData/reviews.js';
 
 var totalRatings = (reviewsMeta) => {
 
