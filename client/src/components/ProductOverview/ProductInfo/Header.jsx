@@ -2,12 +2,9 @@ import React from 'react';
 import Price from '../StyleSelect/Price.jsx';
 import { Style } from '../ProductOverview.jsx';
 import getStock from '../methods/getStock.js';
-
-// dummy data
 import { FakeProduct } from '../ProductOverview.jsx';
 import Reviews from '../../../../../fakeData/reviews.js';
-// from
-import FakeRating from '../../RelatedProducts/FakeRating.jsx';
+
 
 var Header = (props) => {
   var [product, updateProduct] = React.useContext(FakeProduct);
@@ -15,7 +12,7 @@ var Header = (props) => {
 
   return (
     <div>
-      <FakeRating />
+      <p>[ Rating will go here ]</p>
       {/* TODO project requirement: hide the reviews <span> if there are no reviews */}
       <span>Read all {Reviews.productExample.count} reviews </span>
       <span>{getStock.getTotal(style)} in stock</span>

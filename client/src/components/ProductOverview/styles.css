@@ -3,6 +3,10 @@
   width: 300px;
 }
 
+.selected-thumbnail {
+  border: 3px solid lime;
+}
+
 .gallery-image {
   height: 40px;
   width: 40px;
@@ -18,4 +22,8 @@
 
 .style-thumbnail {
   border: 1px solid black;
+}
+
+.current-style-thumbnail {
+  border: 2px solid lime;
 }
