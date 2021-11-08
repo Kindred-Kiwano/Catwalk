@@ -8,33 +8,9 @@ const {
   getStyles,
   formatInfo,
   formatStyles,
-} = require('../../Shared/related.js');
-
-const parseArrayParams = (url) => {
-  let path = url.split('/')
-  let last = path.pop()
-  let params = last.split(',').map(Number) //array of arguments to forward through '/all' route
-  let prefix = path.join('/') // + '/'
-  return [prefix, params]
-}
-
-const hasArrayParams = url => url.includes(',')
-
-products.get('/', async (req, res) => { //get a list of product info
-  console.log( new URL(req.url, `http://${(req.headers.host)}`))
-  console.log(res.url, 'res')
-  try {
-    var list
-    var products = await getProducts()
-    .then(products => products.data)
-    .then(results => Promise.allSettled(results.map(p => formatInfo(p))))
-    .then(results => results.map(result => result.value))
-    .then(success => res.status(200).send(success))
-    .catch(err => console.error(err))
-  } catch (error) {
-    res.status(404).send('Invalid Product ID')
-  }
-});
+  hasArrayParams,
+  parseArrayParams
+} = require('../../Shared/products.js');
 
 // products.use('/all', async (req, res, next) => {
 //   let {url} = req
@@ -62,6 +38,22 @@ products.get('/', async (req, res) => { //get a list of product info
 //     next()
 //   }
 // })
+
+products.get('/', async (req, res) => { //get a basic list of product info
+  console.log( new URL(req.url, `http://${(req.headers.host)}`))
+  console.log(res.url, 'res')
+  try {
+    var list
+    var products = await getProducts()
+    .then(products => products.data)
+    .then(results => Promise.allSettled(results.map(p => formatInfo(p))))
+    .then(results => results.map(result => result.value))
+    .then(success => res.status(200).send(success))
+    .catch(err => console.error(err))
+  } catch (error) {
+    res.status(404).send('Invalid Product ID')
+  }
+});
 
 products.get('/related/:id', async (req, res) => { // Returns an array of ids
   try {
