@@ -1,51 +1,129 @@
 const express = require('express');
-const router = express.Router();
+const products = express.Router();
 
 const {
   getRelatedIds,
-  getProductData,
+  getProductInfo,
+  getProducts,
   getStyles,
-  formatStyle,
+  formatInfo,
+  // formatStyle,
   formatStyles,
 } = require('../../Shared/related.js');
 
-router.get('/', (req, res) => {
+const parseArrayParams = (url) => {
+  let path = url.split('/')
+  let last = path.pop()
+  let params = last.split(',').map(Number)
+  let base = path.join('/') + '/';
+  return [base, params]
+}
+
+const hasArrayParams = url => url.includes(',')
+
+products.get('/', async (req, res) => { //get a list of product info
   try {
-    res.status(200).send('<h1 style="color:hotpink"><em>Fix Me</em></h1>');
+    var list
+    var products = await getProducts()
+    .then(products => products.data)
+    // .then(console.log)
+    .then(results => list = Promise.all(results.map(p => formatInfo(p))))
+    .then(result => res.status(200).send(result))
+    .catch(err => console.error(err))
+
   } catch (error) {
-    res.status(418).send(error);
-  } //should return a list of products
+    res.status(404).send('Invalid Product ID')
+  }
 });
 
-router.get('/related/:id', async (req, res) => {
-  let {id} = req.params;
+products.use('/all', async (req, res, next) => {
+  let {url} = req
   try {
-    const ids = await getRelatedIds(id);
-    res.status(200).send(ids.data);
+    var valid = await hasArrayParams(url)
+    if (!valid) throw 'expected an array'
+    var array = await parseArrayParams(url)
+    let [URL, ids] = array
+    console.log(req)
+      ids.forEach(id =>
+        console.log(products)
+        // res.redirect('/products' + URL + id) // this doesn't work
+        // products.get(URL + id) // this doesn't work
+      )
+
+
+    // res.send(array)
+
+    next()
+    res.end()
+  } catch (error) {
+    res.send(error)
+    next()
+  }
+})
+
+products.get('/related/:id', async (req, res) => { //returns an array of ids
+  try {
+    let {id} = req.params;
+    const ids = await getRelatedIds(id)
+    res.status(200).send(ids.data)
   } catch (error) {
     res.status(400).send(error);
   }
 });
 
-router.get('/:id', async (req, res) => {
-  let {id} = req.params;
+products.get('/related/all/:id', async (req, res) => { //returns an array of aggregated styles for all ids
   try {
-    let product = await getProductData(id);
-    res.status(200).send(product.data);
+    let {id} = req.params;
+    console.log(req.url)
+    const ids = await getRelatedIds(id)
+    const styles = Promise.allSettled(ids.data.map(async i => {
+      var style = await getStyles(i)
+      var formatted = await formatStyles(style.data)
+      return formatted
+    }))
+    .then(allRelated => res.status(200).send(allRelated))
   } catch (error) {
-    res.status(400).send(error);
+    res.status(404).send('Invalid Product ID')
   }
 });
 
-router.get('/styles/:id', async (req, res) => {
-  let {id} = req.params;
+products.get('/info/:id', async (req, res) => { // Returns basic info for one product
   try {
+    let {id} = req.params;
+    let product = await getProductInfo(id)
+    .then(product => formatInfo(product.data))
+    .then(prod => res.status(200).send(prod))
+  } catch (error) {
+    res.status(404).send('Invalid Product ID')
+  }
+});
+
+products.get('/styles/:id', async (req, res, next) => {
+  try {
+    let {id} = req.params;
     let styles = await getStyles(id)
       .then(styles => formatStyles(styles.data))
-      .then(array => res.status(200).send(array));
+      .then(array => res.status(200).send(array))
   } catch (error) {
-    res.status(400).send(error);
+    res.status(404).send('Invalid Product ID')
   }
-}); //working ! sends an array of formatted objects, to be extended with basic data after initial render
+}); // Working ! sends an array of formatted objects, to be extended with basic data after initial render
 
-module.exports = router;
+products.get('/features/:pair', async (req, res) => { //[id1, id2].join() -> '123,456'
+  try {
+  let ids = req.params.pair.split(',').map(Number) // pair -> [123, 456]
+  let [current, target] = ids
+
+  if (Number.isNaN(current) || Number.isNaN(current)) {
+    throw 'error'
+  }
+
+  var features = await Promise.allSettled(ids.map()) //something
+
+  } catch (error) {
+    res.status(404).send('Invalid Product ID(s)')
+  }
+})
+
+
+module.exports = products;

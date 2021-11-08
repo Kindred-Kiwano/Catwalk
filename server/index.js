@@ -16,5 +16,5 @@ app.listen(PORT, () => {
 });
 
 app.get('/', (req, res) => {
-  res.send('<h1 style="color:hotpink"><em>Fix Me</em></h1>');
+  res.send('Hello World');
 });
