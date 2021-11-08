@@ -1,6 +1,8 @@
 const axios = require('../config/config.js');
 const $ = require('jquery');
 
+// Helpers for router and templating
+
 module.exports = {
   getProducts: (params) => {
     params =
@@ -12,19 +14,13 @@ module.exports = {
     return axios.get(`/products`, params);
   },
 
-  getRelatedIds: (id) => {
-    return axios.get(`/products/${id}/related`);
-  },
+  getRelatedIds: (id) => axios.get(`/products/${id}/related`),
 
-  getProductInfo: (id) => {
-    return axios.get(`/products/${id}`);
-  },
+  getProductInfo: (id) => axios.get(`/products/${id}`),
 
-  getStyles: (id) => {
-    return axios.get(`/products/${id}/styles`);
-  },
+  getStyles: (id) => axios.get(`/products/${id}/styles`),
 
-  formatFeatures: (array) => array.map(f => [f.feature].push(f.value ? [f.value] : null)),
+  formatFeatures: (array) => array.map(f => [f.feature].concat(f.value ? f.value : [])),
 
   formatInfo:  ({ name, slogan, description, category, default_price, original_price, features }) => {
 
@@ -61,36 +57,17 @@ module.exports = {
   },
 
   extendStyleToProduct: (style, data) => {
-    return $.extend(style, data);
+    return $.extend(style, data); // Not currently using this
   },
+
+  parseArrayParams: (url) => {
+    let path = url.split('/')
+    let last = path.pop()
+    let params = last.split(',').map(Number) //array of arguments to forward through '/all' route
+    let prefix = path.join('/') // + '/'
+    return [prefix, params]
+  },
+
+  hasArrayParams: url => url.includes(',')
 };
 
-// Helpers for router and formatting
-
-
-// 1 - when page renders, load default cards with loading gif for related carousel
-  // 1a - check for localStorage array of outfit IDs - make API call if necessary or initialize to an empty array
-// 2 - current product is an ID, render with data as necessary
-  // 2a - memoize data for quick reload in a local object - check for {id: { product: {}, related: [{},{},{}] }}
-// 3 - load page with static data ?
-// 4 - when current product changes, update state of parent component
-
-/*
-
-this.state = {
-  currentID: 61590,
-  current: {} || null
-  relatedIDs: [62019,62121,62400,61889,61728],
-  related: [{},{},{},{},{}],
-  _storage: {
-    61590: {
-      relatedIDs: [123],
-      related: [{}]
-    }
-  },
-  outfit: [{},{}],
-  outfitIDs: [61588, 61589] // use localStorage
-}
-
-
-*/

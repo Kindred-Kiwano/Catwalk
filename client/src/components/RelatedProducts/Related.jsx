@@ -1,11 +1,9 @@
 import React from 'react';
-import Axios from 'axios';
+import axios from 'axios';
 
 import { extendStyleToProduct } from '../../../../Shared/related.js';
 
 import Carousel from './Carousel.jsx'
-
-var products = Axios.create({ baseURL: 'http://localhost:3000/products' });
 
 class Related extends React.Component {
   constructor(props) {
@@ -23,29 +21,37 @@ class Related extends React.Component {
         await products.get(`/${this.state.currentProduct}`),
         await products.get(`/styles/${this.state.currentProduct}`)
       ])
-        .then(arr => arr.map(a => a.data))
-        .then(data => {
-          let [source, target] = data;
-          return target.map((t) =>
-            extendStyleToProduct(t, source));
-        })
-        .then(result => {
-          this.setState({
-            relatedProducts: result
-          });
-        })
-        .catch(console.error)
+      .then(arr => arr.map(a => a.data))
+      .then(data => {
+        let [source, target] = data;
+        return target.map((t) =>
+        extendStyleToProduct(t, source));
+      })
+      .then(result => {
+        this.setState({
+          relatedProducts: result
+        });
+      })
+      .catch(console.error)
 
     } catch (error) {
       console.console.error(error);
     }
   }
 
+  async populateCarousel() {
+    try {
+      var outfit = await products.get(`/related/${this.state.currentProduct}`)
+    } catch (error) {
+
+    }
+  }
+
   render() {
-    let list = this.state.relatedProducts
+    // let list = this.state.relatedProducts
     return (
       <>
-        <Carousel list={list} />
+        {/* <Carousel list={list} /> */}
       </>
     );
   }
