@@ -13,7 +13,10 @@ var AddToCart = (props) => {
     } else {
       // make API post
       // LEFT OFF HERE, INCLUDE THE SKU ID IN STATE
-      addToCart(/* sku_id */)
+      // get current state of selected size and add to cart
+      var selected_sku_id = props.sizesObject[props.sizeSelected].sku_id;
+      console.log('adding skuID to cart: ', selected_sku_id);
+      addToCart(selected_sku_id)
         .then((response) => {
           console.log('post successful! ', response);
           alert('added to cart!');

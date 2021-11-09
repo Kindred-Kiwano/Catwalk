@@ -12,8 +12,8 @@ var CartOptions = () => {
 
   // an object with k:v pairs like:
     // size: [list of qty options]
-  var sizesAndAmounts = getStock.generateQtyOptionsForAll(style);
-  console.log('sizes and amount');
+  var sizesObject = getStock.generateQtyOptionsForAll(style);
+  console.log('sizes and amounts', sizesObject);
 
   // the inital state ("Select size" and "-") isn't being used, but might leave as is
   var [sizeSelected, updateSizeSelected] = React.useState('Select size');
@@ -29,15 +29,15 @@ var CartOptions = () => {
       updateQtyList(['-']);
     } else {
       updateSizeSelected(size);
-      updateQtyList(sizesAndAmounts[size]);
+      updateQtyList(sizesObject[size].quantities);
     }
   };
 
   return (
     <div>
-      <SelectSize sizesAndAmounts={sizesAndAmounts} handleSizeSelection={handleSizeSelection}/>
+      <SelectSize sizesObject={sizesObject} handleSizeSelection={handleSizeSelection}/>
       <SelectQty sizeSelected={sizeSelected} qtyList={qtyList} />
-      <AddToCart sizeSelected={sizeSelected}/>
+      <AddToCart sizeSelected={sizeSelected} sizesObject={sizesObject}/>
     </div>
   );
 };
