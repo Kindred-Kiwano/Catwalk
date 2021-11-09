@@ -101,6 +101,8 @@ button{
   font-family: 'Karla', sans-serif;
   background-color: #fff;
   padding: 2%;
+  border-radius: 10px;
+  border-color: #cbcbcb;
 }
 .new-review legend {
   font-size: 2em;
