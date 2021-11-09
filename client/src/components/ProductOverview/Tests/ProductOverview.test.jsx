@@ -1,6 +1,7 @@
 // test suite
 import React from 'react';
 import { render, screen } from '@testing-library/react';
+import { userEvent } from '@testing-library/user-event';
 import LoadProduct from '../LoadProduct.jsx';
 
 
@@ -25,7 +26,15 @@ describe('Basic content rendering', () => {
 });
 
 describe('component-specific tests', () => {
-  render(<LoadProduct />);
+  test('the header contains information about reviews', () => {
+    render(<LoadProduct />);
+    // find a better way to do this
+    setTimeout(function() {
+      var rating = screen.getByText(/read all/i);
+      expect(rating).toBeInTheDocument();
+
+    }, 3000);
+  });
 
 });
 
