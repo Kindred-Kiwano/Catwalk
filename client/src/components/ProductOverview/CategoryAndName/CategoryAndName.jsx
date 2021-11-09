@@ -5,8 +5,7 @@ var CategoryAndName = () => {
   var [product, updateProduct] = React.useContext(FakeProduct);
 
   return (
-    <div>
-      <h4>CATEGORY AND NAME SUBCOMPONENT</h4>
+    <div id='category-name'>
       <p>{ `${product.info.category} > ${product.info.name}` }</p>
     </div>
   );

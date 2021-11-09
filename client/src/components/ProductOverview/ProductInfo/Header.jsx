@@ -21,10 +21,13 @@ var Header = (props) => {
   var [style, updateStyle] = React.useContext(Style);
 
   return (
-    <div>
+    <div id="header">
       {/* TODO project requirement: hide the reviews <span> if there are no reviews */}
-      <DisplayStarRating ratings={product.reviews.ratings} />
-      <span>Read all {totalRatings(product.reviews)} reviews |</span>
+      <div>
+        <DisplayStarRating ratings={product.reviews.ratings} />
+        <span>Read all {totalRatings(product.reviews)} reviews |</span>
+
+      </div>
       <span>{getStock.getTotal(style)} in stock</span>
       <Price />
     </div>

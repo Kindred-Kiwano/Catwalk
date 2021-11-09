@@ -37,7 +37,7 @@ var Carousel = () => {
   var [leftButtonDisplay, rightButtonDisplay] = sharedHelpers.setButtonDisplay(selected, imageGallery);
 
   return (
-    <div>
+    <div id="carousel-and-buttons">
       <button style={leftButtonDisplay} onClick={moveSelection}>{'<'}</button>
       <Gallery />
       <button style={rightButtonDisplay} onClick={moveSelection}>{'>'}</button>
