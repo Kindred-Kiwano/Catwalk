@@ -1,12 +1,12 @@
 // test suite
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { ProductOverview } from '../ProductOverview.jsx';
+import LoadProduct from '../LoadProduct.jsx';
 
 describe('Basic content rendering', () => {
 
   test('should render text to the page', () => {
-    render(<ProductOverview />);
+    render(<LoadProduct />);
     var priceMentions = screen.findAllByText(/price/i).then((array) => {
       expect(array.length).not.toBe(0);
     }).catch((err) => {
@@ -15,7 +15,7 @@ describe('Basic content rendering', () => {
   });
 
   test('should render images to the page', () => {
-    render(<ProductOverview />);
+    render(<LoadProduct />);
     var images = screen.findAllByRole('image');
     expect(images.length).not.toBe(0);
   });
