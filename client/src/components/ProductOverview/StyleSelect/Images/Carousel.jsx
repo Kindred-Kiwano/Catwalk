@@ -38,7 +38,7 @@ var Carousel = () => {
 
   return (
     <div id="carousel-and-buttons">
-      <button style={leftButtonDisplay} onClick={moveSelection}>{'<'}</button>
+      <button data-testid="right-button" style={leftButtonDisplay} onClick={moveSelection}>{'<'}</button>
       <Gallery />
       <button style={rightButtonDisplay} onClick={moveSelection}>{'>'}</button>
     </div>

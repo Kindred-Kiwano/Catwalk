@@ -21,7 +21,7 @@ var decorate = {
         row = [];
       }
 
-      row.push(<Thumbnail styleObject={styles[i]} />);
+      row.push(<Thumbnail testKey={`style-${i}`} styleObject={styles[i]} />);
       if (i === styles.length - 1) {
         // push any remaing row being built
         allRows.push(<div>{row}</div>);
