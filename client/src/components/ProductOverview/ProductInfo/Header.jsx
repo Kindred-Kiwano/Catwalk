@@ -19,10 +19,6 @@ var totalRatings = (reviewsMeta) => {
 var Header = (props) => {
   var [product, updateProduct] = React.useContext(FakeProduct);
   var [style, updateStyle] = React.useContext(Style);
-  console.log('product state is: ', product);
-  console.log('product reviews are: ', product.reviews);
-
-
 
   return (
     <div>
