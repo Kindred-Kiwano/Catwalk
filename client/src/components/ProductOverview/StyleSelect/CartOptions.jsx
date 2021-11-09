@@ -10,12 +10,17 @@ import { Style } from '../ProductOverview.jsx';
 var CartOptions = () => {
   var [style, updateStyle] = React.useContext(Style);
 
+
+  console.log('style is:', style);
+
   // an object with k:v pairs like:
     // size: [list of qty options]
-  var sizesAndAmounts = getStock.generateQtyOptionsForAll(style);
+  var sizesObject = getStock.generateQtyOptionsForAll(style);
+  console.log('sizes and amounts is NOW...', sizesObject);
 
   // the inital state ("Select size" and "-") isn't being used, but might leave as is
   var [sizeSelected, updateSizeSelected] = React.useState('Select size');
+  // var [sizeList, updateSizeList]
   var [qtyList, updateQtyList] = React.useState(['-']);
 
   var handleSizeSelection = (event) => {
@@ -28,15 +33,15 @@ var CartOptions = () => {
       updateQtyList(['-']);
     } else {
       updateSizeSelected(size);
-      updateQtyList(sizesAndAmounts[size]);
+      updateQtyList(sizesObject[size].quantities);
     }
   };
 
   return (
     <div>
-      <SelectSize sizesAndAmounts={sizesAndAmounts} handleSizeSelection={handleSizeSelection}/>
+      <SelectSize sizesObject={sizesObject} handleSizeSelection={handleSizeSelection}/>
       <SelectQty sizeSelected={sizeSelected} qtyList={qtyList} />
-      <AddToCart sizeSelected={sizeSelected}/>
+      <AddToCart sizeSelected={sizeSelected} sizesObject={sizesObject}/>
     </div>
   );
 };

@@ -1,16 +1,30 @@
 import React from 'react';
 import { Style } from '../ProductOverview.jsx';
 import getStock from '../methods/getStock.js';
+import { addToCart } from '../../../../../Shared/makeRequest.js';
 
 
 var AddToCart = (props) => {
 
-  var validateAddToCart = (event) => {
+  var validateAndAddToCart = (event) => {
     // dont worry about if the item is out of stock - the button will be disabled and this function won't fire
     if (props.sizeSelected === 'Select size') {
       document.getElementById('reminder-to-select-size').innerHTML = 'Please select a size';
     } else {
-      alert('added to cart!');
+      // make API post
+      // LEFT OFF HERE, INCLUDE THE SKU ID IN STATE
+      // get current state of selected size and add to cart
+      var selected_sku_id = props.sizesObject[props.sizeSelected].sku_id;
+      console.log('adding skuID to cart: ', selected_sku_id);
+      addToCart(selected_sku_id)
+        .then((response) => {
+          console.log('post successful! ', response);
+          alert('added to cart!');
+        })
+        .catch((err) => {
+          console.log('error adding to cart');
+          throw err;
+        });
     }
   };
 
@@ -28,10 +42,8 @@ var AddToCart = (props) => {
     return (
       <div>
         {/* TODO project requirement: when reminding user to select a size on clicking add to cart, open the dropdown menu. *** Couldn't yet figure this out, come back to it later *** */}
-        {/* TODO project requirement: hide button if selected style is out of stock */}
-        {/* TODO project requirement: if both size and qty are valid, clicking the button should add the item(s) to the user's cart */}
 
-        <button onClick={validateAddToCart}>
+        <button onClick={validateAndAddToCart}>
           Add To Cart
         </button>
       </div>

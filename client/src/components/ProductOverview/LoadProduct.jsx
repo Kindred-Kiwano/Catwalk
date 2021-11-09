@@ -1,8 +1,10 @@
 import React from 'react';
 import ProductOverview from './ProductOverview.jsx';
-import { getFiveRandomProducts, getProductInfoById, getAllStyles } from '../../../../Shared/makeRequest.js';
+import { getFiveRandomProducts, getProductInfoById, getAllStyles, getReviewCount } from '../../../../Shared/makeRequest.js';
+
 
 var LoadProduct = () => {
+
   var [productState, setProductState] = React.useState(null);
   var Product = {};
 
@@ -10,12 +12,18 @@ var LoadProduct = () => {
     // make network requests and re-render on success
     getFiveRandomProducts()
       .then((fiveProducts) => {
-        return getProductInfoById(fiveProducts.data[0].id)
+        return getProductInfoById(fiveProducts.data[0].id); // gives the product id of first one
       })
       .then((productInfo) => {
         Product.info = productInfo.data;
-        return getAllStyles(productInfo.data.id)
+        return getReviewCount(productInfo.data.id);
       })
+
+      .then((productReviews) => {
+        Product.reviews = productReviews.data;
+        return getAllStyles(Product.info.id);
+      })
+
       .then((styles) => {
         Product.styles = styles.data;
         setProductState(Product);

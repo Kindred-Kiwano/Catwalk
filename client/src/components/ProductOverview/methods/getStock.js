@@ -1,8 +1,8 @@
-import React from 'react';
+// import React from 'react';
 
 // maps sizes in stock to all quantities a user can buy
 var getStock = {
-  // generates an object {size:qty}
+  // generates an object {size: {qty: x, sku_id: y}}
   formatAllInStock: function(styleData) {
     if (getStock.hasNoneInStock(styleData)) {
       return {};
@@ -15,47 +15,44 @@ var getStock = {
       currentSKU = skuObjects[key];
       // usually, out of stock items are {quantity: null}
       if (currentSKU.quantity !== 0 && currentSKU.quantity !== null) {
-        currentSKU = skuObjects[key];
-        sizesToQuantities[currentSKU.size] = currentSKU.quantity;
+        // currentSKU = skuObjects[key];
+        sizesToQuantities[currentSKU.size] = {};
+        sizesToQuantities[currentSKU.size].sku_id = key;
+        sizesToQuantities[currentSKU.size].quantities = currentSKU.quantity;
       }
     }
-
-
 
     return sizesToQuantities;
   },
 
 
-  // returns a tuple [size, [qty options list]]
-  generateQtyOptionsForSingleSKU: function(sizeSelected, sizeToQty) {
-    var amountInStock = sizeToQty[sizeSelected];
+  // takes the quantities INT an returns an ARRAY of ints (quantities) a user can select
+  generateQtyOptionsForSingleSKU: function(qty) {
     var displayAmount;
-    if (amountInStock > 15) {
+    if (qty > 15) {
       displayAmount = 15;
     } else {
-      displayAmount = amountInStock;
+      displayAmount = qty;
     }
 
-    var qtyOptions = [];
+    var quantities = [];
     for (var i = 1; i <= displayAmount; i++) {
-      qtyOptions.push(i);
+      quantities.push(i);
     }
 
-    return [sizeSelected, qtyOptions];
+    return quantities;
   },
 
-  // returns an object {size: [list of quantities]}
+  // changes ALL the size keys from int to array of ints
   generateQtyOptionsForAll: function(styleData) {
 
     var inStock = getStock.formatAllInStock(styleData);
-    var allOptions = {};
-    var optionsTuple;
     for (var size in inStock) {
-      optionsTuple = getStock.generateQtyOptionsForSingleSKU(size, inStock);
-      allOptions[optionsTuple[0]] = optionsTuple[1];
+      // change the qty field to an array
+      inStock[size].quantities = getStock.generateQtyOptionsForSingleSKU(inStock[size].quantities);
     }
 
-    return allOptions;
+    return inStock;
   },
 
   // takes in a styleData object and returns the total in stock for all sizes
@@ -78,3 +75,9 @@ var getStock = {
 };
 
 export default getStock;
+
+
+
+
+// var result = getStock.generateQtyOptionsForAll(sample);
+// console.log(result);

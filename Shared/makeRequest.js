@@ -29,6 +29,16 @@ export const getAllStyles = (product_id) => {
   return axios.get(`/products/${product_id}/styles`);
 };
 
+export const getReviewCount = (product_id) => {
+  return axios.get(`/reviews/meta?product_id=${product_id}`);
+};
+
+export const addToCart = (sku_id) => {
+  return axios.post('/cart', {
+    'sku_id': sku_id
+  });
+};
+
 
 export const getReviews = (productId, count, sortBy) => {
   return axios.get(`/reviews?product_id=${productId}&count=${count}&sort=${sortBy}`);

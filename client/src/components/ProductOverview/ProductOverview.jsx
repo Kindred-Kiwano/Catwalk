@@ -3,7 +3,6 @@
 import React from 'react';
 import CategoryAndName from './CategoryAndName/CategoryAndName.jsx';
 import ProductInfo from './ProductInfo/ProductInfo.jsx';
-import Share from './Share/Share.jsx';
 import StyleSelect from './StyleSelect/StyleSelect.jsx';
 
 
@@ -22,10 +21,11 @@ var ProductOverview = (props) => {
     <div>
       <FakeProduct.Provider value={[product, updateProduct]}>
         <Style.Provider value={[style, updateStyle]} >
-          <CategoryAndName />
-          <ProductInfo />
-          <Share />
-          <StyleSelect />
+          <div id="main-block">
+            <CategoryAndName />
+            <ProductInfo />
+            <StyleSelect />
+          </div>
         </Style.Provider>
       </FakeProduct.Provider>
     </div>

@@ -4,18 +4,18 @@ const sharedHelpers = {
     var leftButtonDisplay, rightButtonDisplay;
 
     if (imageGallery.length === 0 || imageGallery.length === 1) {
-      leftButtonDisplay = {display: 'none'};
-      rightButtonDisplay = {display: 'none'};
+      leftButtonDisplay = {visibility: 'hidden'};
+      rightButtonDisplay = {visibility: 'hidden'};
     } else {
       if (selected.index === 0) {
-        leftButtonDisplay = {display: 'none'};
-        rightButtonDisplay = {display: 'inline'};
+        leftButtonDisplay = {visibility: 'hidden'};
+        rightButtonDisplay = {visibility: 'visible'};
       } else if (selected.index === imageGallery.length - 1) {
-        leftButtonDisplay = {display: 'inline'};
-        rightButtonDisplay = {display: 'none'};
+        leftButtonDisplay = {visibility: 'visible'};
+        rightButtonDisplay = {visibility: 'hidden'};
       } else {
-        leftButtonDisplay = {display: 'inline'};
-        rightButtonDisplay = {display: 'inline'};
+        leftButtonDisplay = {display: 'visible'};
+        rightButtonDisplay = {display: 'visible'};
       }
     }
 
