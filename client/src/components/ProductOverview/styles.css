@@ -59,6 +59,10 @@
   width: 300px;
 }
 
+.selected-expand {
+  width: 100%;
+}
+
 /* thumbnail corresponding to selected image */
 .selected-thumbnail {
   border: 3px solid lime;
