@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import StarRating from './StarRating.jsx';
 import Characteristics from './Characteristics.jsx';
+import productChar from './productChar.js';
+import CharList from './CharList.jsx';
 import '../styles/style.css';
 
 
@@ -128,7 +130,7 @@ const AddReview = () => {
         {Object.values(errors).map(error => (
           <h6 key={error}>{error}</h6>
         ))}
-        <h2>Write A Review!</h2>
+        <h1>Write A Review!</h1>
 
         <h2 className="center deep-purple-text">{feedback}</h2>
 
@@ -163,109 +165,9 @@ const AddReview = () => {
             </label>
           </div>
         </fieldset>
-
-        <fieldset>
-          <legend>Size</legend>
-          <div>
-            <Characteristics
-              handleChange={handleChange}
-              messageOptions={[
-                'A Size Too Small',
-                'A 1/2 Size Too Small',
-                'Perfect',
-                'A 1/2 Size Too Large',
-                'A Size Too Large'
-              ]}
-              title={'size'}
-            />
-          </div>
-        </fieldset>
-
-        <fieldset>
-          <legend>Width</legend>
-          <div>
-            <Characteristics
-              handleChange={handleChange}
-              messageOptions={[
-                'Too Narrow',
-                'Slightly Narrow',
-                'Perfect',
-                'Slightly Wide',
-                'Too Wide'
-              ]}
-              title={'width'}
-            />
-          </div>
-        </fieldset>
-
-        <fieldset>
-          <legend>Comfort</legend>
-          <div>
-            <Characteristics
-              handleChange={handleChange}
-              messageOptions={[
-                'Uncomfortable',
-                'Slightly Uncomfortable',
-                'Ok',
-                'Comfortable',
-                'Perfect'
-              ]}
-              title={'comfort'}
-            />
-          </div>
-        </fieldset>
-
-        <fieldset>
-          <legend>Quality</legend>
-          <div>
-            <Characteristics
-              handleChange={handleChange}
-              messageOptions={[
-                'Poor',
-                'Below Average',
-                'What I expected',
-                'Pretty Great',
-                'Perfect'
-              ]}
-              title={'quality'}
-            />
-          </div>
-        </fieldset>
-
-        <fieldset>
-          <legend>Length</legend>
-          <div>
-            <Characteristics
-              handleChange={handleChange}
-              messageOptions={[
-                'Runs Short',
-                'Runs Slightly Short',
-                'Perfect',
-                'Runs Slightly Long',
-                'Runs Long'
-              ]}
-              title={'length'}
-            />
-          </div>
-        </fieldset>
-
-        <fieldset>
-          <legend>Fit</legend>
-          <div>
-            <Characteristics
-              handleChange={handleChange}
-              messageOptions={[
-                'Runs Tight',
-                'Runs Slightly Tight',
-                'Perfect',
-                'Runs Slightly Long',
-                'Runs Long'
-              ]}
-              title={'fit'}
-            />
-          </div>
-        </fieldset>
-
+        <div>
+          <CharList handleChange={handleChange} char={productChar} />
+        </div>
         <fieldset>
           <legend>Review Message</legend>
           <div className="field">
@@ -291,7 +193,6 @@ const AddReview = () => {
             </textarea>
           </div>
         </fieldset>
-
         <fieldset>
           <legend>Your Info</legend>
           <div className="field">
