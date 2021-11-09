@@ -9,14 +9,7 @@ import { Style } from '../ProductOverview.jsx';
 
 var CartOptions = () => {
   var [style, updateStyle] = React.useContext(Style);
-
-
-  console.log('style is:', style);
-
-  // an object with k:v pairs like:
-    // size: [list of qty options]
   var sizesObject = getStock.generateQtyOptionsForAll(style);
-  console.log('sizes and amounts is NOW...', sizesObject);
 
   // the inital state ("Select size" and "-") isn't being used, but might leave as is
   var [sizeSelected, updateSizeSelected] = React.useState('Select size');

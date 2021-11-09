@@ -37,13 +37,16 @@ var StyleSelect = () => {
   var [selected, updateSelected] = React.useState(imageGallery[0]);
 
   return (
-    <div>
+    <div id="images-and-styles">
       <ImagesOfSelectedStyle.Provider value={[imageGallery, updateImageGallery]}>
         <CurrentlySelectedImage.Provider value={[selected, updateSelected]}>
+          {/* returns a div */}
           <Images />
-          <Price />
-          <Thumbnails />
-          <CartOptions />
+          <div id="style-select-panel">
+            <Price />
+            <Thumbnails />
+            <CartOptions />
+          </div>
         </CurrentlySelectedImage.Provider>
       </ImagesOfSelectedStyle.Provider>
     </div>

@@ -22,14 +22,44 @@
 }
 
 
+#images-and-styles {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+
+#all-images, #style-select-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: sandybrown;
+
+}
+#style-select-panel {
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 2em;
+  background-color: salmon;
+
+}
 
 
 
+#carousel-and-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+
+/* currently selected image */
 .selected {
   height: 300px;
   width: 300px;
 }
 
+/* thumbnail corresponding to selected image */
 .selected-thumbnail {
   border: 3px solid lime;
 }

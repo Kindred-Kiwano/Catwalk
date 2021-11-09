@@ -19,7 +19,7 @@ var Images = () => {
 
 
   return (
-    <div>
+    <div id="all-images">
       {/* TODO: project requirement: overlay the gallery onto the selected image */}
       <VisibleThumbnails.Provider value={[visibleThumbnails, updateVisibleThumbnails]} >
         <SelectedImage />
