@@ -33,20 +33,19 @@ var StyleSelect = () => {
   var [expand, updateExpand] = React.useContext(ExpandedView);
 
   var collapsedView = (
-    <div id="collapsed-view">
+    <React.Fragment>
+      {/* has id="all-images" */}
       <Images />
-      <div id="style-select-panel">
+      <div id="style-select">
         <Price />
         <Thumbnails />
         <CartOptions />
       </div>
-    </div>
+    </React.Fragment>
   );
 
   var expandedView = (
-    <div id="expanded-view">
-      <Expanded />
-    </div>
+    <Expanded />
   );
 
   var childComponents = expand ? expandedView : collapsedView;

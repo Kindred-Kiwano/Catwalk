@@ -23,11 +23,8 @@ var Header = (props) => {
   return (
     <div id="header">
       {/* TODO project requirement: hide the reviews <span> if there are no reviews */}
-      <div>
-        {/* <DisplayStarRating ratings={product.reviews.ratings} /> */}
-        <span>Read all {totalRatings(product.reviews)} reviews |</span>
-
-      </div>
+      {/* <DisplayStarRating ratings={product.reviews.ratings} /> */}
+      <span>Read all {totalRatings(product.reviews)} reviews |</span>
       <span>{getStock.getTotal(style)} in stock</span>
       <Price />
     </div>

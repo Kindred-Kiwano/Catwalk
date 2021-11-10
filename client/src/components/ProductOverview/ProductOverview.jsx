@@ -29,9 +29,9 @@ var ProductOverview = (props) => {
                 <CategoryAndName />
                 <ProductInfo />
               </div>
-              <div id="bottom-cell">
-                <StyleSelect />
-              </div>
+              {/* has id="images-and-styles" */}
+              <StyleSelect />
+
             </div>
           </ExpandedView.Provider>
         </Style.Provider>

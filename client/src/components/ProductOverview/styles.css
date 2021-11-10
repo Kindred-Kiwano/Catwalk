@@ -1,5 +1,8 @@
+/* HEADER ELEMS */
+
 #category-name {
   text-align: center;
+  background-color: darkcyan;
 }
 
 #main-block {
@@ -16,7 +19,7 @@
 #header, #description-and-share {
   display: flex;
   flex-direction: row;
-  background-color: rgb(204, 198, 198);
+  background-color: rgb(230, 241, 181);
   justify-content: space-evenly;
 }
 
@@ -24,10 +27,17 @@
   background-color: lightblue;
 }
 
-#share {
-  text-align: right;
+#description {
+  background-color: burlywood;
 }
 
+#share {
+  text-align: right;
+  background-color: coral;
+}
+
+
+/* IMAGES AND STYLE OPTIONS */
 
 #images-and-styles {
   height: 400px;
@@ -37,7 +47,7 @@
   grid-template-columns: 60% 40%;
 }
 
-#all-images, #style-select-panel {
+#images, #style-select {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,14 +56,14 @@
 }
 
 
-#style-select-panel {
+#style-select {
   justify-content: space-evenly;
   align-items: flex-start;
   background-color: salmon;
 }
 
 
-#carousel-and-buttons {
+#carousel {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -74,8 +84,6 @@
   cursor: -webkit-zoom-in;
   cursor: zoom-in;
 }
-
-
 
 
 
@@ -103,7 +111,6 @@
 .former-price {
   text-decoration: line-through;
 }
-
 .discount-price {
   color: red;
 }

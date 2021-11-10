@@ -7,7 +7,7 @@ var Gallery = () => {
   var [visibleThumbnails, updateVisibleThumbnails] = React.useContext(VisibleThumbnails);
 
   return (
-    <div>
+    <div id="gallery">
 
       {/* TODO project requirement: When switching between styles, the index of the image currently selected should be maintained when the gallery updates for the new style. Add another context and state at the tree's head to keep track of this */}
 

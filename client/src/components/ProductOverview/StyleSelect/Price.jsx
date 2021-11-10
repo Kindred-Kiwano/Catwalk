@@ -16,13 +16,13 @@ var getPrice = (style) => {
   var regular = style.original_price;
   var discounted = style.sale_price;
   if (style.sale_price === null) {
-    return <span>${regular}</span>;
+    return <p id="price">${regular}</p>;
   } else {
     return (
-      <span>
+      <p id="price">
         <span className="discount-price">${discounted}</span>
         <span className="former-price">${regular}</span>
-      </span>
+      </p>
     );
   }
 
