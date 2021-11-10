@@ -6,7 +6,7 @@ import CartOptions from './CartOptions.jsx';
 import { Style } from '../ProductOverview.jsx';
 import decorate from '../methods/decorate.js';
 import { ExpandedView } from '../ProductOverview.jsx';
-import Expanded from './Images/Expanded.jsx';
+import Expanded from './Images/ExpandedView/Expanded.jsx';
 
 // new contexts
 export var ImagesOfSelectedStyle = React.createContext();
