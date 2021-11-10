@@ -22,9 +22,13 @@ var ProductOverview = (props) => {
       <FakeProduct.Provider value={[product, updateProduct]}>
         <Style.Provider value={[style, updateStyle]} >
           <div id="main-block">
-            <CategoryAndName />
-            <ProductInfo />
-            <StyleSelect />
+            <div id="top-cell">
+              <CategoryAndName />
+              <ProductInfo />
+            </div>
+            <div id="bottom-cell">
+              <StyleSelect />
+            </div>
           </div>
         </Style.Provider>
       </FakeProduct.Provider>

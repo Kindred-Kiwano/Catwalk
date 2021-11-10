@@ -15,24 +15,27 @@ var SelectedImage = () => {
    * -- fill in later --
    */
 
-  var selectedClass;
+
+  // apply classnames for styling based on expanded view or not
+  var selectedClass, selectedContainer;
   if (expand) {
     selectedClass = 'selected-expand';
+    selectedContainer = 'selected-expand-container';
   } else {
     selectedClass = 'selected';
+    selectedContainer = 'selected-contianer';
   }
 
   var toggleExpand = (event) => {
+
     updateExpand(!expand);
   };
 
+  // toggle expand and make the image area span fullscreen
 
   return (
-    <div>
-      <button onClick={toggleExpand}>
-        Expand oWo
-      </button>
-      <img className={selectedClass} src={selected.url} />
+    <div className={selectedContainer}>
+      <img onClick={toggleExpand} className={selectedClass} src={selected.url} />
     </div>
   );
 

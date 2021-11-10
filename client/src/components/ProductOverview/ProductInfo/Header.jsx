@@ -3,7 +3,7 @@ import Price from '../StyleSelect/Price.jsx';
 import { Style } from '../ProductOverview.jsx';
 import getStock from '../methods/getStock.js';
 import { FakeProduct } from '../ProductOverview.jsx';
-import DisplayStarRating from '../../../../../Shared/DisplayStarRating.jsx';
+// import DisplayStarRating from '../../../../../Shared/DisplayStarRating.jsx';
 
 var totalRatings = (reviewsMeta) => {
 
@@ -24,7 +24,7 @@ var Header = (props) => {
     <div id="header">
       {/* TODO project requirement: hide the reviews <span> if there are no reviews */}
       <div>
-        <DisplayStarRating ratings={product.reviews.ratings} />
+        {/* <DisplayStarRating ratings={product.reviews.ratings} /> */}
         <span>Read all {totalRatings(product.reviews)} reviews |</span>
 
       </div>

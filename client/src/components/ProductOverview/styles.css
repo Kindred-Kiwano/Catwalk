@@ -6,6 +6,13 @@
   margin: 2.5em;
 }
 
+/* figure this out */
+/* #top-cell, #bottom-cell {
+  display: grid;
+  grid-template-rows: 50% 50%;
+} */
+
+
 #header, #description-and-share {
   display: flex;
   flex-direction: row;
@@ -23,6 +30,7 @@
 
 
 #images-and-styles {
+  height: 400px;
   margin-top: 2em;
   margin-bottom: 2em;
   display: grid;
@@ -33,17 +41,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 400px;
   background-color: sandybrown;
 
 }
+
 #style-select-panel {
   justify-content: space-evenly;
   align-items: flex-start;
-  padding: 2em;
   background-color: salmon;
-
 }
-
 
 
 #carousel-and-buttons {
@@ -54,14 +61,32 @@
 
 
 /* currently selected image */
-.selected {
-  height: 300px;
-  width: 300px;
+.selected-container {
+  height: 400px;
 }
 
+.selected {
+  height: 400px;
+}
+
+.selected:hover {
+  cursor: -moz-zoom-in;
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
+}
+
+
+
+
+
+#selected-expand-container {
+  /* allows zoom-in */
+  overflow: hidden;
+}
 .selected-expand {
   width: 100%;
 }
+
 
 /* thumbnail corresponding to selected image */
 .selected-thumbnail {
