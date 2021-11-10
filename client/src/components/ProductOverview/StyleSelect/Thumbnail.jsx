@@ -31,8 +31,9 @@ var Thumbnail = (props) => {
     selectedStatus = 'current-style-thumbnail';
   }
 
+  console.log('test key: ', props.testKey);
   return (
-    <span onClick={changeStyle} className={'style-thumbnail ' + selectedStatus} >
+    <span data-testid={props.testKey} onClick={changeStyle} className={'style-thumbnail ' + selectedStatus} >
       {/* TODO project requirement: checkmark should appear over the selected icon */}
       {props.styleObject.name}
     </span>

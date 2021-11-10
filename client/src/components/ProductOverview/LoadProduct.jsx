@@ -24,8 +24,8 @@ var LoadProduct = () => {
         return getAllStyles(Product.info.id);
       })
 
-      .then((styles) => {
-        Product.styles = styles.data;
+      .then((productStyles) => {
+        Product.styles = productStyles.data;
         setProductState(Product);
       })
       .catch((err) => {
