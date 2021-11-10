@@ -43,8 +43,8 @@
   align-items: center;
   height: 400px;
   background-color: sandybrown;
-
 }
+
 
 #style-select-panel {
   justify-content: space-evenly;
@@ -74,6 +74,8 @@
   cursor: -webkit-zoom-in;
   cursor: zoom-in;
 }
+
+
 
 
 
