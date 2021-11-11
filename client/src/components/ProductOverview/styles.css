@@ -2,7 +2,6 @@
 
 #category-name {
   text-align: center;
-  background-color: darkcyan;
 }
 
 #main-block {
@@ -12,20 +11,25 @@
 #header, #description-and-share {
   display: flex;
   flex-direction: row;
-  background-color: rgb(230, 241, 181);
+  background-color: darkcyan;
+  color: whitesmoke;
   justify-content: space-evenly;
+  border: 2px solid firebrick;
 }
+
 #description-and-share {
-  background-color: lightblue;
-}
-
-#description {
-  background-color: burlywood;
-}
-
-#share {
   background-color: coral;
+  border-radius: 0 0 7px 7px;
 }
+
+#description, #share {
+  display: inline-block;
+  border: 1px solid firebrick;
+  padding: 4px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
 
 
 /* IMAGES */
@@ -57,7 +61,7 @@
 /* currently selected image */
 .selected {
   height: inherit;
-  max-width: 600px;
+  max-width: 500px;
   cursor: zoom-in;
 }
 
@@ -137,19 +141,23 @@
 }
 
 #style-select {
-  background-color: salmon;
+  background: rgb(2,0,36);
+  background: -moz-linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(204,63,31,1) 53%, rgba(0,212,255,1) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(204,63,31,1) 53%, rgba(0,212,255,1) 100%);
+  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(204,63,31,1) 53%, rgba(0,212,255,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#00d4ff",GradientType=1);
 }
 
 #thumbnails {
-  background-color: tomato;
+  /* background-color: tomato; */
   margin-bottom: 2em;
 }
-#style-description {
+/* #style-description {
   color: lightblue;
-}
+} */
 
 #thumbnail-container {
-  background-color: turquoise;
+  /* background-color: turquoise; */
 }
 
 .row {
@@ -165,9 +173,12 @@
   border-radius: 30%;
   width: 40px;
   font-size: 8pt;
+  line-height: 8pt;
   padding: 2px;
   margin-left: 2em;
   margin-right: 1.5em;
+  box-shadow: 3px 2px 2px firebrick;
+
 }
 
 .current-style-thumbnail {
@@ -175,21 +186,33 @@
 }
 
 #check-out {
-  background-color: red;
+  /* background-color: red; */
 }
 
 
 /* CHECK-OUT PANEL */
 
 #check-out-options-container {
-  width: 70%;
+  width: 85%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
 
+#select-size, #select-quantity, #add-to-cart {
+  background-color: black;
+  color: oldlace;
+  border-radius: 6px;
+}
+
+#add-to-cart {
+  background-color: darkgreen;
+  border: 2px solid black;
+}
+
 #reminder-to-select-size {
   color: darkred;
+  text-align: center;
 }
 
 

@@ -43,7 +43,7 @@ var AddToCart = (props) => {
       <div id="add-to-cart-container">
         {/* TODO project requirement: when reminding user to select a size on clicking add to cart, open the dropdown menu. *** Couldn't yet figure this out, come back to it later *** */}
 
-        <button data-testid="add-to-cart" onClick={validateAndAddToCart}>
+        <button id="add-to-cart" data-testid="add-to-cart" onClick={validateAndAddToCart}>
           Add To Cart
         </button>
       </div>
