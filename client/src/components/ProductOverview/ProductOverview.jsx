@@ -4,13 +4,33 @@ import React from 'react';
 import CategoryAndName from './CategoryAndName/CategoryAndName.jsx';
 import ProductInfo from './ProductInfo/ProductInfo.jsx';
 import StyleSelect from './StyleSelect/StyleSelect.jsx';
-
+import { postClickTracking } from '../../../../Shared/makeRequest.js';
 
 // create a global contexts
 // import Product from '../../../../fakeData/product.js';
 export var FakeProduct = React.createContext();
 export var Style = React.createContext();
 export var ExpandedView = React.createContext();
+
+document.querySelector('*').addEventListener('click', (event) => {
+  var selector;
+  var target = event.target;
+  if (target.id.length) {
+    selector = target.id;
+  } else if (target.className.length) {
+    selector = target.className;
+  } else {
+    selector = target.nodeName;
+  }
+
+  var dataToSend = {
+    element: selector,
+    widget: 'ProductOverview',
+    time: JSON.stringify(new Date())
+  };
+
+  postClickTracking(dataToSend);
+});
 
 // product that the page refers to
 var ProductOverview = (props) => {
@@ -24,7 +44,7 @@ var ProductOverview = (props) => {
       <FakeProduct.Provider value={[product, updateProduct]}>
         <Style.Provider value={[style, updateStyle]} >
           <ExpandedView.Provider value={[expand, updateExpand]} >
-            <div id="main-block">
+            <div id="main-block" >
               <div id="top-cell">
                 <CategoryAndName />
                 <ProductInfo />

@@ -1,3 +1,6 @@
+// NOTE: This code was modified from the original react-img-zoom package to re-render properly on update
+// This project was for educational purposes only, and intends no profit or gain
+
 /* eslint jsx-a11y/mouse-events-have-key-events: 0 */
 import React, { Component, createRef } from 'react'
 import PropTypes from 'prop-types'
