@@ -40,6 +40,8 @@ var SelectedImage = () => {
   var height = expand ? '600px' : '500px';
   var cursor = expand ? 'zoom-out' : 'zoom-in';
 
+  console.log('selected image is: ', selected.index);
+  console.log('selected url is: ', selected.url);
   return (
     <div className='selected-container' style={{height}} >
       <div className="main-arrow-container-left">

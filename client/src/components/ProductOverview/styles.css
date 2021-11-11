@@ -113,6 +113,11 @@
   border: 3px solid whitesmoke;
 }
 
+.placeholder-dot {
+  font-size: 32pt;
+  color: yellow;
+}
+
 
 
 /* STYLE-SELECTION PANEL: */

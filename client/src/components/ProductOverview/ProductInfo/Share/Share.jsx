@@ -1,13 +1,18 @@
 import React from 'react';
 
+var alertComingSoon = (event) => {
+  event.preventDefault();
+  alert('This feature is coming soon. Thank you for your patience!');
+};
+
 var Share = () => {
-  // todo: connect APIs for each
+
   return (
     <div id="share">
       <h5>Share on social media:</h5>
-      <a>Facebook |</a>
-      <a>Twitter |</a>
-      <a>Pinterest</a>
+      <a href="#" onClick={alertComingSoon}>Facebook</a>
+      <a href="#" onClick={alertComingSoon}>Twitter</a>
+      <a href="#" onClick={alertComingSoon}>Pinterest</a>
     </div>
   );
 };
