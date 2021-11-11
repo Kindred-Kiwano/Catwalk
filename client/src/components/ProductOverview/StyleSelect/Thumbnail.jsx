@@ -4,6 +4,15 @@ import { Style } from '../ProductOverview.jsx';
 import { CurrentlySelectedImage } from './StyleSelect.jsx';
 import { ImagesOfSelectedStyle } from './StyleSelect.jsx';
 
+var parseName = (styleName) => {
+  var array = styleName.split(' & ');
+  if (array.length === 1) {
+    return [styleName, ''];
+  }
+  return array;
+};
+
+
 var Thumbnail = (props) => {
   var [style, updateStyle] = React.useContext(Style);
   var [selected, updateSelected] = React.useContext(CurrentlySelectedImage);
@@ -31,11 +40,14 @@ var Thumbnail = (props) => {
     selectedStatus = 'current-style-thumbnail';
   }
 
+  var [color1, color2] = parseName(props.styleObject.name);
 
   return (
-    <span data-testid={props.testKey} onClick={changeStyle} className={'style-thumbnail ' + selectedStatus} >
-      {props.styleObject.name}
-    </span>
+    <p data-testid={props.testKey} onClick={changeStyle} className={'style-thumbnail ' + selectedStatus} >
+      {color1}
+      <br />
+      {color2}
+    </p>
   );
 };
 

@@ -183,3 +183,9 @@
 #reminder-to-select-size {
   color: darkred;
 }
+
+
+/* some ideas:
+border radius and slight shaddow on image thumbnails
+look into z-index for hovering one element over the other (when image grows to expandedview)
+*/

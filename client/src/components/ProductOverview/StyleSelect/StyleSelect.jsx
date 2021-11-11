@@ -5,8 +5,6 @@ import Thumbnails from './Thumbnails.jsx';
 import CartOptions from './CartOptions.jsx';
 import { Style } from '../ProductOverview.jsx';
 import decorate from '../methods/decorate.js';
-import { ExpandedView } from '../ProductOverview.jsx';
-import Expanded from './Images/ExpandedView/Expanded.jsx';
 
 // new contexts
 export var ImagesOfSelectedStyle = React.createContext();
@@ -30,33 +28,19 @@ var StyleSelect = () => {
 
   // initial selected is first image
   var [selected, updateSelected] = React.useState(imageGallery[0]);
-  var [expand, updateExpand] = React.useContext(ExpandedView);
-
-  var collapsedView = (
-    <React.Fragment>
-      {/* has id="all-images" */}
-      <Images />
-      <div id="style-select">
-        <Price />
-        <Thumbnails />
-        <CartOptions />
-        <p id="reminder-to-select-size"></p> {/* insert text here if user tries adding to cart before selecting */}
-
-      </div>
-    </React.Fragment>
-  );
-
-  var expandedView = (
-    <Expanded />
-  );
-
-  var childComponents = expand ? expandedView : collapsedView;
 
   return (
     <div id="images-and-styles">
       <ImagesOfSelectedStyle.Provider value={[imageGallery, updateImageGallery]}>
         <CurrentlySelectedImage.Provider value={[selected, updateSelected]}>
-          {childComponents}
+          {/* has id="all-images" */}
+          <Images />
+          <div id="style-select">
+            <Price />
+            <Thumbnails />
+            <CartOptions />
+            <p id="reminder-to-select-size"></p> {/* insert text here if user tries adding to cart before selecting */}
+          </div>
         </CurrentlySelectedImage.Provider>
       </ImagesOfSelectedStyle.Provider>
     </div>
