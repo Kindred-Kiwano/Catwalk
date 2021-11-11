@@ -1,4 +1,6 @@
 import React from 'react';
+import BigImage from './BigImage.jsx';
+import DotIcons from './DotIcons.jsx';
 
 var Expanded = () => {
 
