@@ -32,12 +32,12 @@ var CartOptions = () => {
 
   return (
     <div id="check-out">
-      <div id="check-out-options-container">
+      <div id="select-size-qty">
         <SelectSize sizesObject={sizesObject} handleSizeSelection={handleSizeSelection}/>
         <SelectQty sizeSelected={sizeSelected} qtyList={qtyList} />
-        <AddToCart sizeSelected={sizeSelected} sizesObject={sizesObject}/>
       </div>
-      <p id="reminder-to-select-size"></p> {/* insert text here if user tries adding to cart before selecting */}
+      <AddToCart sizeSelected={sizeSelected} sizesObject={sizesObject}/>
+      <p id="reminder-to-select-size"></p>
     </div>
   );
 };

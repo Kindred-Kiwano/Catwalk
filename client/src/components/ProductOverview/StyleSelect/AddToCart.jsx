@@ -11,9 +11,6 @@ var AddToCart = (props) => {
     if (props.sizeSelected === 'Select size') {
       document.getElementById('reminder-to-select-size').innerHTML = 'Please select a size';
     } else {
-      // make API post
-      // LEFT OFF HERE, INCLUDE THE SKU ID IN STATE
-      // get current state of selected size and add to cart
       var selected_sku_id = props.sizesObject[props.sizeSelected].sku_id;
       console.log('adding skuID to cart: ', selected_sku_id);
       addToCart(selected_sku_id)

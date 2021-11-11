@@ -42,6 +42,7 @@ var StyleSelect = () => {
             <div id="style-select">
               <Price />
               <Thumbnails />
+              <hr></hr>
               <CartOptions />
 
             </div>
