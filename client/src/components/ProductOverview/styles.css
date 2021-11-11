@@ -38,8 +38,12 @@
 }
 
 #images, #style-select {
-  height: 600px;
+  /* height: 600px; */
   background-color: sandybrown;
+}
+
+#images {
+  position: relative;
 }
 
 .selected-container {
@@ -75,20 +79,17 @@
   color: cornflowerblue;
 }
 
-/* expanded view === true */
-/* todo */
-/* #selected-expand-container {
-  (this allows zoom-in)
-  overflow: hidden;
-}
-.selected-expand {
-  width: 100%;
-}
-*/
-
 #carousel {
   /* eventually change width and justify-content properties */
-  margin-top: 1em;
+  position: absolute;
+  z-index: 50;
+  /* margin-left: auto;
+  margin-right: auto; */
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -191,3 +192,5 @@
 border radius and slight shaddow on image thumbnails
 look into z-index for hovering one element over the other (when image grows to expandedview)
 */
+
+/* place carousel onto .selected-container */
