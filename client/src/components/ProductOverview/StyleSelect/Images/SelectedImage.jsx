@@ -5,7 +5,7 @@ import { ExpandedView } from '../../ProductOverview.jsx';
 import { moveSelection } from './Carousel.jsx';
 import sharedHelpers from '../../../../../../Shared/sharedHelpers.js';
 import pickImage from '../../methods/pickImage.js';
-import Zoom from 'react-img-zoom';
+import Zoom from '../../react-img-zoom/src/index.js';
 
 // image gallery
 import { ImagesOfSelectedStyle } from '../StyleSelect.jsx';
