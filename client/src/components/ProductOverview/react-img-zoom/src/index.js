@@ -68,6 +68,13 @@ class Zoom extends Component {
         transition: `transform ${transitionTime}s ease-out`,
         backgroundImage: `url('${img}')`,
       }
+
+      this.setState({
+        zoom: this.state.zoom,
+        mouseX: this.state.mouseX,
+        mouseY: this.state.mouseY
+      });
+
     }
 
   }
@@ -138,7 +145,7 @@ class Zoom extends Component {
             ...this.innerDivStyle,
             transform: zoom ? `scale(${zoomScale})` : 'scale(1.0)',
           }}
-          className={styles.zoomImg}
+          className={'zoomImg'}
         />
       </div>
     )
