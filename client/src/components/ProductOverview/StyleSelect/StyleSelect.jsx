@@ -40,6 +40,8 @@ var StyleSelect = () => {
         <Price />
         <Thumbnails />
         <CartOptions />
+        <p id="reminder-to-select-size"></p> {/* insert text here if user tries adding to cart before selecting */}
+
       </div>
     </React.Fragment>
   );

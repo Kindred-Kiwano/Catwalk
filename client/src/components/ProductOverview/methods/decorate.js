@@ -15,7 +15,6 @@ var decorate = {
     // using products.styles.results as styles
     var allRows = [];
     var row = [];
-    debugger;
     for (var i = 0; i < styles.length; i++) {
       if (i % 4 === 0 && i !== 0) {
         allRows.push(<div className="row" >{row}</div>);
