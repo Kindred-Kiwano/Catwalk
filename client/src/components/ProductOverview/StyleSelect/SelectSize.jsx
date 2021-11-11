@@ -14,7 +14,7 @@ var SelectSize = (props) => {
   } else {
 
     return (
-      <div>
+      <div id="select-size-container">
         {/* TODO project requirement: if none of selected style in stock, the drowdown should become disabled and read "OUT OF STOCK" */}
         <p id="reminder-to-select-size"></p> {/* insert text here if user tries adding to cart before selecting */}
         <select onChange={props.handleSizeSelection} >

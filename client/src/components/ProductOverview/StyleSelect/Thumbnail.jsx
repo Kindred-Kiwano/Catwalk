@@ -33,8 +33,7 @@ var Thumbnail = (props) => {
 
 
   return (
-    <span data-testid={props.testKey} onClick={changeStyle} className={'style-thumbnail ' + selectedStatus} >
-      {/* TODO project requirement: checkmark should appear over the selected icon */}
+    <span className="thumbnail" data-testid={props.testKey} onClick={changeStyle} className={'style-thumbnail ' + selectedStatus} >
       {props.styleObject.name}
     </span>
   );
