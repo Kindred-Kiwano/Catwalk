@@ -12,7 +12,7 @@ var Thumbnails = () => {
 
   return (
     <div id="thumbnails">
-      <p>Style: {style.name}</p>
+      <p id="style-description">Style: {style.name}</p>
       <div id="thumbnail-container">
         {/* returns an array of divs (rows) */}
         {decorate.parseThumbnailRows(product.styles.results)}

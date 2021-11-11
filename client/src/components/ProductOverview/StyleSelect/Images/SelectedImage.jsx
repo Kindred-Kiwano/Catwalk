@@ -18,7 +18,17 @@ var SelectedImage = () => {
 
   return (
     <div className='selected-container'>
+      <div className="main-arrow-container-left">
+        <button className="main-arrow">
+          arrow
+        </button>
+      </div>
       <img onClick={toggleExpand} className='selected' src={selected.url} />
+      <div className="main-arrow-container-right">
+        <button className="main-arrow">
+          arrow
+        </button>
+      </div>
     </div>
   );
 

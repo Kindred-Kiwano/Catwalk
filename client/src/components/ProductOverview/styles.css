@@ -9,12 +9,6 @@
   margin: 2.5em;
 }
 
-/* figure this out */
-/* #top-cell, #bottom-cell {
-  display: grid;
-  grid-template-rows: 50% 50%;
-} */
-
 
 #header, #description-and-share {
   display: flex;
@@ -22,7 +16,6 @@
   background-color: rgb(230, 241, 181);
   justify-content: space-evenly;
 }
-
 #description-and-share {
   background-color: lightblue;
 }
@@ -32,15 +25,14 @@
 }
 
 #share {
-  text-align: right;
   background-color: coral;
 }
 
 
-/* IMAGES AND STYLE OPTIONS */
+
+/* IMAGES */
 
 #images-and-styles {
-  height: 400px;
   margin-top: 2em;
   margin-bottom: 2em;
   display: grid;
@@ -48,65 +40,89 @@
 }
 
 #images, #style-select {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 400px;
+  height: 550px;
   background-color: sandybrown;
 }
 
-
-#style-select {
-  justify-content: space-evenly;
-  align-items: flex-start;
-  background-color: salmon;
-}
-
-
-#carousel {
+.selected-container {
+  height: 450px;
+  background-color: black;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
 }
-
 
 /* currently selected image */
-.selected-container {
-  height: 400px;
-}
-
 .selected {
-  height: 400px;
+  height: inherit;
 }
-
 .selected:hover {
   cursor: -moz-zoom-in;
   cursor: -webkit-zoom-in;
   cursor: zoom-in;
 }
 
+.main-arrow-container-left, .main-arrow-container-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1em;
+}
 
+.main-arrow-container-right {
+  margin-left: 0;
+  margin-right: 1em;
+}
 
+.main-arrow {
+  color: cornflowerblue;
+}
 
-
-#selected-expand-container {
-  /* allows zoom-in */
+/* expanded view === true */
+/* todo */
+/* #selected-expand-container {
+  (this allows zoom-in)
   overflow: hidden;
 }
 .selected-expand {
   width: 100%;
 }
+*/
 
-
-/* thumbnail corresponding to selected image */
-.selected-thumbnail {
-  border: 3px solid lime;
+#carousel {
+  /* eventually change width and justify-content properties */
+  margin-top: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
+#gallery {
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  justify-content: space-evenly;
+  background-color: darkgreen;
+}
+
+/* later add container to allow aspect ratio like you did for selected image */
 .gallery-image {
   height: 40px;
   width: 40px;
 }
+
+/* thumbnail corresponding to selected image */
+.selected-gallery-image {
+  border: 3px solid whitesmoke;
+}
+
+
+
+
+
+
+/* STYLE SELECT AND CHECKOUT: */
 
 .former-price {
   text-decoration: line-through;
@@ -115,10 +131,52 @@
   color: red;
 }
 
+
+
+#style-select {
+  background-color: salmon;
+}
+
+#price {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  background-color: thistle;
+}
+
+#thumbnails {
+  background-color: tomato;
+}
+#style-description {
+  color: lightblue;
+}
+
+#thumbnail-container {
+  background-color: turquoise;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
 .style-thumbnail {
   border: 1px solid black;
+  border-radius: 30%;
+  width: 40px;
+  font-size: 8pt;
+  padding: 2px;
+  margin-left: 2em;
+  margin-right: 1.5em;
 }
 
 .current-style-thumbnail {
   border: 2px solid lime;
 }
+
+
+
+
+

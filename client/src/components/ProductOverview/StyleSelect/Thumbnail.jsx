@@ -33,7 +33,7 @@ var Thumbnail = (props) => {
 
 
   return (
-    <span className="thumbnail" data-testid={props.testKey} onClick={changeStyle} className={'style-thumbnail ' + selectedStatus} >
+    <span data-testid={props.testKey} onClick={changeStyle} className={'style-thumbnail ' + selectedStatus} >
       {props.styleObject.name}
     </span>
   );

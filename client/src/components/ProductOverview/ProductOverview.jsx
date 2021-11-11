@@ -31,7 +31,6 @@ var ProductOverview = (props) => {
               </div>
               {/* has id="images-and-styles" */}
               <StyleSelect />
-
             </div>
           </ExpandedView.Provider>
         </Style.Provider>
