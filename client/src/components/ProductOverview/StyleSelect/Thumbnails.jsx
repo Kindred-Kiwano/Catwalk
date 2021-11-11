@@ -11,9 +11,10 @@ var Thumbnails = () => {
   var [style, updateStyle] = React.useContext(Style);
 
   return (
-    <div>
-      <p>Style: {style.name}</p>
-      <div>
+    <div id="thumbnails">
+      <p id="style-description">Style: {style.name}</p>
+      <div id="thumbnail-container">
+        {/* returns an array of divs (rows) */}
         {decorate.parseThumbnailRows(product.styles.results)}
       </div>
     </div>

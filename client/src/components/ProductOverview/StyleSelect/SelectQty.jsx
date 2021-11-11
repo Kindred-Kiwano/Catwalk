@@ -14,7 +14,7 @@ var SelectQty = (props) => {
   } else {
 
     return (
-      <div>
+      <div id="select-quantity-container">
         <select>
           {/* TODO project requirement: dropdown should be disabled until a size is selected (already took care of displaying "-") */}
           {props.qtyList.map((qty) => {

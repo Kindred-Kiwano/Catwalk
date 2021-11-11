@@ -10,22 +10,29 @@ import StyleSelect from './StyleSelect/StyleSelect.jsx';
 // import Product from '../../../../fakeData/product.js';
 export var FakeProduct = React.createContext();
 export var Style = React.createContext();
+export var ExpandedView = React.createContext();
 
 // product that the page refers to
 var ProductOverview = (props) => {
 
   var [product, updateProduct] = React.useState(props.productState);
   var [style, updateStyle] = React.useState(props.productState.styles.results[0]);
+  var [expand, updateExpand] = React.useState(false);
 
   return (
     <div>
       <FakeProduct.Provider value={[product, updateProduct]}>
         <Style.Provider value={[style, updateStyle]} >
-          <div id="main-block">
-            <CategoryAndName />
-            <ProductInfo />
-            <StyleSelect />
-          </div>
+          <ExpandedView.Provider value={[expand, updateExpand]} >
+            <div id="main-block">
+              <div id="top-cell">
+                <CategoryAndName />
+                <ProductInfo />
+              </div>
+              {/* has id="images-and-styles" */}
+              <StyleSelect />
+            </div>
+          </ExpandedView.Provider>
         </Style.Provider>
       </FakeProduct.Provider>
     </div>

@@ -16,15 +16,15 @@ var decorate = {
     var allRows = [];
     var row = [];
     for (var i = 0; i < styles.length; i++) {
-      if (i % 4 === 0) {
-        allRows.push(<div>{row}</div>);
+      if (i % 4 === 0 && i !== 0) {
+        allRows.push(<div className="row" >{row}</div>);
         row = [];
       }
 
       row.push(<Thumbnail testKey={`style-${i}`} styleObject={styles[i]} />);
       if (i === styles.length - 1) {
         // push any remaing row being built
-        allRows.push(<div>{row}</div>);
+        allRows.push(<div className="row" >{row}</div>);
       }
     }
 

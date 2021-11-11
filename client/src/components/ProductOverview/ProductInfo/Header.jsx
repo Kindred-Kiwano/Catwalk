@@ -15,19 +15,26 @@ var totalRatings = (reviewsMeta) => {
   return ratingsSum;
 };
 
+var scrollToReviews = (event) => {
+  event.preventDefault();
+  var [reviews] = document.getElementsByClassName('ratings-and-reviews');
+  reviews.scrollIntoView();
+};
+
 
 var Header = (props) => {
   var [product, updateProduct] = React.useContext(FakeProduct);
   var [style, updateStyle] = React.useContext(Style);
+  var numberOfRatings = totalRatings(product.reviews);
 
   return (
     <div id="header">
-      {/* TODO project requirement: hide the reviews <span> if there are no reviews */}
-      <div>
-        <DisplayStarRating ratings={product.reviews.ratings} />
-        <span>Read all {totalRatings(product.reviews)} reviews |</span>
-
-      </div>
+      {numberOfRatings ?
+        <React.Fragment>
+          <DisplayStarRating ratings={product.reviews.ratings} />
+          <a href="#" onClick={scrollToReviews}>Read all {numberOfRatings} reviews</a>
+        </React.Fragment> :
+        <></>}
       <span>{getStock.getTotal(style)} in stock</span>
       <Price />
     </div>

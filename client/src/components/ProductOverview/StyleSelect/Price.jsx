@@ -5,9 +5,9 @@ import '../styles.css';
 var Price = () => {
   var [style, updateStyle] = React.useContext(Style);
   return (
-    <div>
-      Price: {getPrice(style)}
-    </div>
+    <React.Fragment>
+      {getPrice(style)}
+    </React.Fragment>
   );
 };
 
@@ -16,13 +16,14 @@ var getPrice = (style) => {
   var regular = style.original_price;
   var discounted = style.sale_price;
   if (style.sale_price === null) {
-    return <span>${regular}</span>;
+    return <p id="price">Price: ${regular}</p>;
   } else {
     return (
-      <span>
+      <p id="price">
+        Price:
         <span className="discount-price">${discounted}</span>
         <span className="former-price">${regular}</span>
-      </span>
+      </p>
     );
   }
 

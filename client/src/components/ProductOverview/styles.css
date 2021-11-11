@@ -1,73 +1,126 @@
+/* HEADER ELEMENTS */
+
 #category-name {
   text-align: center;
+  background-color: darkcyan;
 }
 
 #main-block {
-  margin: 2.5em;
+  margin: 15px;
 }
 
 #header, #description-and-share {
   display: flex;
   flex-direction: row;
-  background-color: rgb(204, 198, 198);
+  background-color: rgb(230, 241, 181);
   justify-content: space-evenly;
 }
-
 #description-and-share {
   background-color: lightblue;
 }
 
-#share {
-  text-align: right;
+#description {
+  background-color: burlywood;
 }
 
+#share {
+  background-color: coral;
+}
+
+
+/* IMAGES */
 
 #images-and-styles {
   margin-top: 2em;
   margin-bottom: 2em;
   display: grid;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: 65% 35%;
 }
 
-#all-images, #style-select-panel {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+#images, #style-select {
+  height: 600px;
   background-color: sandybrown;
-
-}
-#style-select-panel {
-  justify-content: space-evenly;
-  align-items: flex-start;
-  padding: 2em;
-  background-color: salmon;
-
 }
 
-
-
-#carousel-and-buttons {
+.selected-container {
+  height: 500px;
+  background-color: black;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
 }
-
 
 /* currently selected image */
 .selected {
-  height: 300px;
+  height: inherit;
+  max-width: 600px;
+  cursor: zoom-in;
+}
+
+
+.main-arrow-container-left, .main-arrow-container-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1em;
+}
+
+.main-arrow-container-right {
+  margin-left: 0;
+  margin-right: 1em;
+}
+
+.main-arrow {
+  color: cornflowerblue;
+}
+
+/* expanded view === true */
+/* todo */
+/* #selected-expand-container {
+  (this allows zoom-in)
+  overflow: hidden;
+}
+.selected-expand {
+  width: 100%;
+}
+*/
+
+#carousel {
+  /* eventually change width and justify-content properties */
+  margin-top: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#gallery {
+  display: flex;
+  flex-direction: row;
   width: 300px;
+  justify-content: space-evenly;
+  background-color: darkgreen;
 }
 
-/* thumbnail corresponding to selected image */
-.selected-thumbnail {
-  border: 3px solid lime;
-}
-
+/* later add container to allow aspect ratio like you did for selected image */
 .gallery-image {
   height: 40px;
   width: 40px;
 }
+
+/* thumbnail corresponding to selected image */
+.selected-gallery-image {
+  border: 3px solid whitesmoke;
+}
+
+.placeholder-dot {
+  font-size: 32pt;
+  color: yellow;
+}
+
+
+
+/* STYLE-SELECTION PANEL: */
 
 .former-price {
   text-decoration: line-through;
@@ -77,10 +130,64 @@
   color: red;
 }
 
-.style-thumbnail {
+#style-select {
+  background-color: salmon;
+}
+
+#thumbnails {
+  background-color: tomato;
+  margin-bottom: 2em;
+}
+#style-description {
+  color: lightblue;
+}
+
+#thumbnail-container {
+  background-color: turquoise;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.style-thumbnail, .current-style-thumbnail {
   border: 1px solid black;
+  border-radius: 30%;
+  width: 40px;
+  font-size: 8pt;
+  padding: 2px;
+  margin-left: 2em;
+  margin-right: 1.5em;
 }
 
 .current-style-thumbnail {
   border: 2px solid lime;
 }
+
+#check-out {
+  background-color: red;
+}
+
+
+/* CHECK-OUT PANEL */
+
+#check-out-options-container {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#reminder-to-select-size {
+  color: darkred;
+}
+
+
+/* some ideas:
+border radius and slight shaddow on image thumbnails
+look into z-index for hovering one element over the other (when image grows to expandedview)
+*/

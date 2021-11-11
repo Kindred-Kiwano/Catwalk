@@ -6,7 +6,7 @@ import Description from './Description.jsx';
 import Share from './Share/Share.jsx';
 var ProductInfo = (props) => {
   return (
-    <div>
+    <div id="product-info">
       <Header />
       <div id="description-and-share">
         <Description />

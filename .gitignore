@@ -7,5 +7,4 @@ coverage
 .DS_Store
 .vscode*
 *.excalidraw
-*.gitignore*
 package-lock.json
