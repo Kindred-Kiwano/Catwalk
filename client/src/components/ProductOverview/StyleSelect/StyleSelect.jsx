@@ -5,6 +5,7 @@ import Thumbnails from './Thumbnails.jsx';
 import CartOptions from './CartOptions.jsx';
 import { Style } from '../ProductOverview.jsx';
 import decorate from '../methods/decorate.js';
+import { ExpandedView } from '../ProductOverview.jsx';
 
 // new contexts
 export var ImagesOfSelectedStyle = React.createContext();
@@ -14,6 +15,7 @@ var StyleSelect = () => {
 
   // on page load, the default image should be the first in the gallery – ** however, the currently selected image's index should be maintained when switching to another style
   var [style, updateStyle] = React.useContext(Style);
+  var [expand, updateExpand] = React.useContext(ExpandedView);
 
   // photosArray will give each photo object an index number to reference later
   var photosArray = decorate.addIndexRefs(style.photos);
@@ -28,19 +30,22 @@ var StyleSelect = () => {
 
   // initial selected is first image
   var [selected, updateSelected] = React.useState(imageGallery[0]);
+  var proportions = expand ? '100% 0%' : '65% 35%';
 
   return (
-    <div id="images-and-styles">
+    <div id="images-and-styles" style={{'grid-template-columns': proportions}}>
       <ImagesOfSelectedStyle.Provider value={[imageGallery, updateImageGallery]}>
         <CurrentlySelectedImage.Provider value={[selected, updateSelected]}>
           {/* has id="all-images" */}
           <Images />
-          <div id="style-select">
-            <Price />
-            <Thumbnails />
-            <CartOptions />
-            <p id="reminder-to-select-size"></p> {/* insert text here if user tries adding to cart before selecting */}
-          </div>
+          { expand ? <></> :
+            <div id="style-select">
+              <Price />
+              <Thumbnails />
+              <CartOptions />
+              <p id="reminder-to-select-size"></p> {/* insert text here if user tries adding to cart before selecting */}
+            </div>
+          };
         </CurrentlySelectedImage.Provider>
       </ImagesOfSelectedStyle.Provider>
     </div>

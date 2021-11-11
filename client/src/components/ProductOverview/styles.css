@@ -6,7 +6,7 @@
 }
 
 #main-block {
-  margin: 2.5em;
+  margin: 15px;
 }
 
 #header, #description-and-share {
@@ -38,12 +38,12 @@
 }
 
 #images, #style-select {
-  height: 550px;
+  height: 600px;
   background-color: sandybrown;
 }
 
 .selected-container {
-  height: 450px;
+  height: 500px;
   background-color: black;
   display: flex;
   flex-direction: row;
@@ -54,12 +54,9 @@
 .selected {
   height: inherit;
   max-width: 600px;
-}
-.selected:hover {
-  cursor: -moz-zoom-in;
-  cursor: -webkit-zoom-in;
   cursor: zoom-in;
 }
+
 
 .main-arrow-container-left, .main-arrow-container-right {
   display: flex;
