@@ -22,7 +22,9 @@ document.querySelector('*').addEventListener('click', (event) => {
   } else {
     selector = target.nodeName;
   }
-
+  console.log('event target: ', event.target);
+  //get other parent elements of the click
+  //if that list includes
   var dataToSend = {
     element: selector,
     widget: 'ProductOverview',
@@ -38,6 +40,18 @@ var ProductOverview = (props) => {
   var [product, updateProduct] = React.useState(props.productState);
   var [style, updateStyle] = React.useState(props.productState.styles.results[0]);
   var [expand, updateExpand] = React.useState(false);
+
+  React.useEffect(()=>{
+    // reset product
+    console.log('CALLING USEEFFECT TO UPDATE PRODUCT');
+    updateProduct(props.productState);
+  }, [JSON.stringify(props.productState)]);
+
+  React.useEffect(()=>{
+    // reset styles
+    console.log('CALLING USEEFFECT TO UPDATE STYLES');
+    updateStyle(props.productState.styles.results[0]);
+  }, [JSON.stringify(props.productState.styles.results[0])]);
 
   return (
     <div>

@@ -8,7 +8,7 @@ const CharList = ( { handleChange, char } ) => {
     <div className="CharList">
       <fieldset>
         <legend>Characteristics</legend>
-        <div>
+        <div className="actualList">
           {char.map((item) => {
             return (
               <Characteristics

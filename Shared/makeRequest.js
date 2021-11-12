@@ -42,7 +42,7 @@ export const addToCart = (sku_id) => {
 export const postClickTracking = (paramsObject) => {
   axios.post('/interactions', paramsObject)
     .then((response) => {
-      console.log('posted! ', response)
+      console.log('posted! ', response);
     })
     .catch((err) => {
       console.log('error posting user interactions');
@@ -52,7 +52,12 @@ export const postClickTracking = (paramsObject) => {
 
 
 export const getReviews = (productId, count, sortBy) => {
+
   return axios.get(`/reviews?product_id=${productId}&count=${count}&sort=${sortBy}`);
+};
+
+export const getReviewsMeta = (productId) => {
+  return axios.get(`/reviews/meta?product_id=${productId}`);
 };
 
 // for checking certain edgecases

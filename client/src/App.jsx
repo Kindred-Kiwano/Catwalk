@@ -8,7 +8,7 @@ var App = () => {
     <React.Fragment>
       <LoadProduct />
       <Carousels />
-      <RatingsAndReviews />
+      {/* <RatingsAndReviews /> */}
     </React.Fragment>
   );
 

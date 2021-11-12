@@ -1,37 +1,30 @@
 // write here.
 import React from 'react';
 import { useState } from 'react';
-import testReviews from '../../../../../fakeData/reviews.js';
+import Bars from './Bars.jsx';
 import DisplayStarRating from '../../../../../Shared/DisplayStarRating.jsx';
 import '../styles/style.css';
+import getPercentage from './getPercentage.js';
+import getAverageScore from './getAverageRating.js';
 
-var RatingBreakdown = (props) => {
-  const handleReport = () => {
-    alert('something will happen here');
-  };
+var RatingBreakdown = ( {reviewsInfo, handleStarNumClick} ) => {
+
+
+  const avgScore = getAverageScore(reviewsInfo.ratings);
+  const reviewBars = getPercentage(reviewsInfo.ratings);
 
   return (
     <div className="ratingsBreakdown">
       <div className="topSectionRatings">
-        {/* <h1>{RatingsAvg(testReviews)}</h1> */}
+        <h1> {avgScore} <DisplayStarRating ratings={reviewsInfo.ratings} /> </h1>
       </div>
-      <DisplayStarRating ratings={testReviews.meta.ratings} />
-      <div className="Bars" style={{"--rating": `2.4`}}>
-        1 Star
+      <div>
+        {reviewBars.map((item, i) => {
+          return (
+            <Bars percentRating={item} starNum={i+1} handleStarNumClick={handleStarNumClick} />
+          );
+        })}
       </div>
-      <div className="Bars" style={{"--rating": `5`}}>
-        2 Stars
-      </div>
-      <div className="Bars" style={{"--rating": `1.2`}}>
-        3 Stars
-      </div>
-      <div className="Bars" style={{"--rating": `2.1`}}>
-        4 Stars
-      </div>
-      <div className="Bars" style={{"--rating": `4`}}>
-        5 Stars
-      </div>
-
     </div>
   );
 };
