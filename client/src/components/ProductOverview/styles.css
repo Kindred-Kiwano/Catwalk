@@ -43,7 +43,7 @@
 
 #images, #style-select {
   /* height: 600px; */
-  background-color: sandybrown;
+  /* background-color: sandybrown; */
 }
 
 #images {
@@ -53,6 +53,8 @@
 .selected-container {
   height: 500px;
   background-color: black;
+  border-radius: 10px 0 0 10px;
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -129,8 +131,22 @@
 }
 
 
-
 /* STYLE-SELECTION PANEL: */
+
+#style-select {
+  padding: 1em;
+  background: rgb(2,0,36);
+  background: -moz-linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(204,63,31,1) 53%, rgba(0,212,255,1) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(204,63,31,1) 53%, rgba(0,212,255,1) 100%);
+  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(204,63,31,1) 53%, rgba(0,212,255,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#00d4ff",GradientType=1);
+  border-radius: 0 10px 10px 0;
+
+}
+
+#style-price, #style-description {
+  margin-left: 1.5em;
+}
 
 .former-price {
   text-decoration: line-through;
@@ -140,31 +156,15 @@
   color: red;
 }
 
-#style-select {
-  background: rgb(2,0,36);
-  background: -moz-linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(204,63,31,1) 53%, rgba(0,212,255,1) 100%);
-  background: -webkit-linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(204,63,31,1) 53%, rgba(0,212,255,1) 100%);
-  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(204,63,31,1) 53%, rgba(0,212,255,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#00d4ff",GradientType=1);
-}
+
 
 #thumbnails {
   /* background-color: tomato; */
   margin-bottom: 2em;
 }
-/* #style-description {
-  color: lightblue;
-} */
 
-#thumbnail-container {
-  /* background-color: turquoise; */
-  /* border: 3px dashed turquoise; */
-  /* width: 85%;
-  display: flex; */
 
-}
-
-hr {
+#thumbnail-container > hr {
   width: 96%;
   background-color: black;
   height: 1px;
@@ -196,9 +196,11 @@ hr {
   border: 2px solid lime;
 }
 
+
+/*
 #check-out {
-  /* background-color: red; */
-}
+
+} */
 
 
 /* CHECK-OUT PANEL */

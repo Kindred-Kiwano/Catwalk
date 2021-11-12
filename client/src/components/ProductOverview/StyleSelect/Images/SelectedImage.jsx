@@ -38,12 +38,17 @@ var SelectedImage = () => {
   var [leftButtonDisplay, rightButtonDisplay] = sharedHelpers.setButtonDisplay(selected, imageGallery);
 
   var height = expand ? '600px' : '500px';
+  var containerStyle = {
+    height: height
+  };
+  containerStyle['border-radius'] = expand ? '10px' : undefined;
+
   var cursor = expand ? 'zoom-out' : 'zoom-in';
 
   console.log('selected image is: ', selected.index);
   console.log('selected url is: ', selected.url);
   return (
-    <div className='selected-container' style={{height}} >
+    <div className='selected-container' style={containerStyle} >
       <div className="main-arrow-container-left">
         <button style={leftButtonDisplay} className="main-arrow" onClick={handleArrowClick}>
           {'<'}

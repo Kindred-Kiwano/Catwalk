@@ -40,7 +40,9 @@ var StyleSelect = () => {
           <Images />
           { expand ? <></> :
             <div id="style-select">
-              <Price />
+              <div id="style-price">
+                <Price />
+              </div>
               <Thumbnails />
               <hr></hr>
               <CartOptions />
