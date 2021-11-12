@@ -4,7 +4,7 @@ import { getFiveRandomProducts, getProductInfoById, getAllStyles, getReviewCount
 
 
 var LoadProduct = () => {
-
+// Sam and David may want to use setProductState
   var [productState, setProductState] = React.useState(null);
   var Product = {};
 
@@ -48,3 +48,4 @@ var LoadProduct = () => {
 };
 
 export default LoadProduct;
+
