@@ -4,6 +4,7 @@
   border: 0;
   z-index: 0;
   box-sizing: border-box;
+  transition: 250ms ease-in-out;
 }
 
 body {
@@ -14,12 +15,13 @@ body {
 
 #app {
   width: 100%;
-  /* height: 100%; */
 }
 
 #related>* {
+  user-select: none;
   z-index: 0;
 }
+
 
 #related {
   margin: 5%;
@@ -31,17 +33,22 @@ main.carousel {
   background-color: rgb(233, 233, 233);
   display: inline-flex;
   scroll-snap-type: x mandatory;
-  box-sizing: border-box;
+  box-sizing: content-box;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
   width: 100%;
-  height: 40vh;
+  height: 60vh;
   margin: 1em;
-  /* height: 375px; */
-  /* overscroll-behavior: none; */
   align-content: center;
-  padding: 1.5em;
+  padding: 2%;
+  scroll-padding: 1em;
+  border-radius: 30px;
+  /* box-shadow:
+  -12.5px -12.5px -10px rgba(0, 0, 0, 0.035),
+  -100px -100px -80px rgba(0, 0, 0, 0.11); */
+
+
 }
 
 .carousel::-webkit-scrollbar {
@@ -62,7 +69,9 @@ div.card {
   height: inherit;
   width: 350px;
   position: relative;
-  box-shadow: 0 2px 20px #ccc;
+  box-shadow:
+  12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+  100px 100px 80px rgba(0, 0, 0, 0.07);
 }
 
 div.card>* {
@@ -84,16 +93,13 @@ header button.card-btn {
 
 div.card:hover,
 header button:hover,
-button.card-btn:hover {
+header>button {
   cursor: pointer;
   transform: scale(1.02);
-  transition: 200ms ease;
   color: orangered;
-}
-
-div.card:hover,
-footer p :hover {
-  color: rgb(51, 51, 51);
+  box-shadow:
+  12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+  100px 100px 80px rgba(0, 0, 0, 0.11);
 }
 
 header.card {
@@ -103,8 +109,9 @@ header.card {
 header.card img {
   border-radius: 20px 20px 0 0;
   z-index: 0;
-  height: 70%;
-  width: 350px;
+  /* height: 70%; */
+  height: 40vh;
+  width: 40vh;
   object-fit: cover;
 }
 
@@ -129,6 +136,10 @@ footer.card-info {
 
 footer p.price-sale {
   color: red;
+}
+
+footer>*:hover {
+  filter: brightness(1.2);
 }
 
 footer p.category {
