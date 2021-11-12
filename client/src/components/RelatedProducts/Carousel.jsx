@@ -2,35 +2,41 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Product from '../../../../fakeData/product.js';
 import productList from '../../../../fakeData/productList.js';
+// import { fakeProductList } from './utils/data.js'
 
-import {fakeProductList} from './data.js';
+
+import { fakeProductList } from './data.js';
+import { relatedProps, outfitProps, addToOutfitProps } from './utils/props.js';
 
 import UserContext from './UserContext.jsx';
 import Card from './Card.jsx';
 
 
 import './styles/carouselStyle.css';
-import './styles/modalStyle.css';
 
 const Carousel = (props) => {
 
-  console.log(fakeProductList)
+  // console.log(props.data, 'carousel props')
 
-  let {list, type} = props.data;
+  let { list, data, label, title, method } = props;
+  let click = method[label]
 
-  if (type === 'outfit') {
-    list = [...list];
+  if (label === 'outfit') {
+    // list = [...list];
   }
-  let {info, styles} = Product;
+  let { info, styles } = Product;
 
-  list = fakeProductList;
+  // list = fakeProductList;
 
   return (
-    <main className="carousel">
-      { list.map(prod => (
-        <Card product={prod} type={type} key={prod.id} />
-      )) }
-    </main>
+    <>
+      <header><h2>{title}</h2></header>
+      <main className="carousel" id={label + '-carousel'} title={title}>
+        {data.map(prod => (
+          <Card product={prod} label={label} key={prod.id} click={click} />
+        ))}
+      </main>
+    </>
   );
 };
 

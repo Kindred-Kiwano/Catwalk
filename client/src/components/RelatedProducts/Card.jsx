@@ -1,40 +1,36 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+
 import CardButton from './CardButton.jsx';
 import CardImage from './CardImage.jsx';
 import CardInfo from './CardInfo.jsx';
 import UserContext from './UserContext.jsx';
-import Outfit from './Outfit.jsx';
+
+
+
+import { relatedProps, outfitProps, addToOutfitProps } from './utils/props.js';
 
 
 let imgSrc = 'https://images.unsplash.com/photo-1477420143023-6a0e0b04b69a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80';
 
 const Card = (props) => {
-  let { product, type } = props;
-
-  // let { name, default_price, style, category, description } = product;
-
-
-  // let {button, click, list, update} = type;
-
-  if (type === 'outfit') {
-    list = [...list]
-  }
-
-  const handleClick = (id) => {
-    update(id);
-  };
+  console.log(props, 'card props')
+  let { product, label, click } = props;
+    let {img, images, name, price, sale, thumbnails, description, category, id} = product;
 
   return (
-    // <div className='card' id={id} onClick={() => update(product)}>
     <div className='card'>
       <header className='card'>
-        <CardButton button={'★'} click={()=>{console.log('Hello')}} />
-        <CardImage img={imgSrc} onClick={() => console.log(product)} />
+        <CardButton buttonText={'★'} click={click.click} />
+        {img ?
+          <CardImage img={img} click={click.click} />
+          :
+          <img src='assets/loading.gif'/>
+        }
       </header>
       <CardInfo product={product} />
     </div>
-  )
+  );
 };
 
 export default Card;
+
