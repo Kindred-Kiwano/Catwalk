@@ -6,6 +6,7 @@ var ReviewItem = (props) => {
 
   const [currentHelpfulCount, setCurrentHelpfulCount] = useState(props.review.helpfulness);
   const [alreadyClicked, setAlreadyClicked] = useState(false);
+
   const handleHelpfulClick = () => {
     if (alreadyClicked === false) {
       props.review.helpfulness++;
@@ -15,6 +16,7 @@ var ReviewItem = (props) => {
       alert('You already clicked that.');
     }
   };
+
   const handleReport = () => {
     alert('something will happen here');
   };
