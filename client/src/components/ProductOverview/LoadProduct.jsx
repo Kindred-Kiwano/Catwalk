@@ -4,6 +4,8 @@ import { getFiveRandomProducts, getProductInfoById, getAllStyles, getReviewCount
 import RatingsAndReviews from '../../components/Reviews/main.jsx';
 
 
+// wrap setProductState in another function that formats the data and takes in an ID
+
 var LoadProduct = () => {
 // Sam and David may want to use setProductState
   var [productState, setProductState] = React.useState(null);

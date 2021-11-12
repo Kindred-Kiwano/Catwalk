@@ -22,7 +22,9 @@ document.querySelector('*').addEventListener('click', (event) => {
   } else {
     selector = target.nodeName;
   }
-
+  console.log('event target: ', event.target);
+  //get other parent elements of the click
+  //if that list includes
   var dataToSend = {
     element: selector,
     widget: 'ProductOverview',
