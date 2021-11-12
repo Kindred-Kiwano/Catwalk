@@ -2,14 +2,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import FakeRating from './FakeRating.jsx';
-import productList from '../../../../fakeData/productList.js';
+// import productList from '../../../../fakeData/productList.js';
 
 
 const CardInfo = (props) => {
 
   // let { id, name, default_price, category } = props.product;
   // let price = default_price;
-  console.log(props)
+  // console.log(props)
   let { id, name, default_price, category } = props.product
   let price = default_price;
 

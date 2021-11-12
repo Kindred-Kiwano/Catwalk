@@ -8,7 +8,7 @@ const CardButton = (props) => (
     role={'button'}
     onClick={props.click}
   >
-    {props.button}
+    {props.buttonText}
   </button>
 );
 

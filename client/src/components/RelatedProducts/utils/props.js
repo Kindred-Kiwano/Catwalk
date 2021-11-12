@@ -10,15 +10,13 @@ export const relatedProps = {
 export const outfitProps = {
   label: 'outfit',
   title: 'Create Your Outfit',
-  buttonText: 'ⓧ',
-  click: () => console.log('this is an outfit')
+  buttonText: 'ⓧ'
 };
 
 export const addToOutfitProps = {
   label: 'addToOutfit',
   title: 'Add To Outfit',
-  buttonText: '+',
-  click: () => console.log('addToOutfit')
+  buttonText: '+'
 };
 
 /*

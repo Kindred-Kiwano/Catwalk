@@ -10,7 +10,10 @@ let { modal } = Related;
 
 const Modal = (props) => {
 
-  let {visible, toggle} = props
+  let {data, toggle} = props
+
+
+  let visible = data
 
   let {userOutfit, setUserOutfit} = React.useContext(UserContext);
   let {currentProduct, setCurrentProduct} = React.useContext(UserContext);

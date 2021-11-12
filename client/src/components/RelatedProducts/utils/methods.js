@@ -24,3 +24,5 @@ export const templatePrices = ({ price, sale }) => {
 
   return Prices;
 };
+
+
