@@ -1,14 +1,17 @@
 import React from 'react';
-import RelatedProductsAndOutfit from './components/RelatedProducts/RelatedProductsAndOutfit.jsx';
-import ProductOverview from './components/ProductOverview/ProductOverview.jsx';
+import LoadProduct from './components/ProductOverview/LoadProduct.jsx';
+import Carousels from './components/RelatedProducts/RelatedProductsAndOutfit.jsx';
 import RatingsAndReviews from './components/Reviews/main.jsx';
 
-const App = () => (
-  <>
-    {/* <ProductOverview /> */}
-    <RelatedProductsAndOutfit />
-    <RatingsAndReviews />
-  </>
-);
+var App = () => {
+  return (
+    <React.Fragment>
+      <LoadProduct />
+      <Carousels />
+      <RatingsAndReviews />
+    </React.Fragment>
+  );
+
+};
 
 export default App;
