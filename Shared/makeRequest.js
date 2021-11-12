@@ -42,7 +42,7 @@ export const addToCart = (sku_id) => {
 export const postClickTracking = (paramsObject) => {
   axios.post('/interactions', paramsObject)
     .then((response) => {
-      console.log('posted! ', response)
+      console.log('posted! ', response);
     })
     .catch((err) => {
       console.log('error posting user interactions');

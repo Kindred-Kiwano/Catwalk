@@ -1,10 +1,13 @@
 import React from 'react';
 import ProductOverview from './ProductOverview.jsx';
 import { getFiveRandomProducts, getProductInfoById, getAllStyles, getReviewCount } from '../../../../Shared/makeRequest.js';
+import RatingsAndReviews from '../../components/Reviews/main.jsx';
 
+
+// wrap setProductState in another function that formats the data and takes in an ID
 
 var LoadProduct = () => {
-
+// Sam and David may want to use setProductState
   var [productState, setProductState] = React.useState(null);
   var Product = {};
 
@@ -41,10 +44,16 @@ var LoadProduct = () => {
 
   } else {
     // after network request complete, re-render to produce the product overview
+
+    console.log('product object: ', productState);
     return (
-      <ProductOverview productState={productState} />
+      <>
+        <ProductOverview productState={productState} />
+        <RatingsAndReviews productId={productState.info.id}/>
+      </>
     );
   }
 };
 
 export default LoadProduct;
+
