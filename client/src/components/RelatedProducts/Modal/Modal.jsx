@@ -10,7 +10,7 @@ let { modal } = Related;
 
 const Modal = (props) => {
 
-  let {visible} = props
+  let {visible, toggle} = props
 
   let {userOutfit, setUserOutfit} = React.useContext(UserContext);
   let {currentProduct, setCurrentProduct} = React.useContext(UserContext);
@@ -23,7 +23,7 @@ const Modal = (props) => {
   return (
     <>
       { visible ?
-        <div id={'modal'} onClick={(visible)=>{visible = !visible}}>
+        <div id={'modal'} onClick={toggle}>
           <header>
             <h3>COMPARING</h3>
           </header>

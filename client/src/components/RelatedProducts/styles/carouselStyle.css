@@ -16,15 +16,18 @@ body {
   width: 100%;
 }
 
-#related>* {
+#related > * {
   user-select: none;
   z-index: 0;
 }
 
-
 #related {
   margin: 5%;
   padding: 5%;
+}
+
+header.carousel {
+  align-items: flex-start;
 }
 
 main.carousel {
@@ -50,12 +53,13 @@ main.carousel {
 }
 
 div.card {
+  box-sizing: content-box;
   border-radius: 20px;
   justify-content: center;
   z-index: 15;
   scroll-snap-align: start;
   display: inline-block;
-  margin: .5em;
+  margin: 0.5em;
   margin-right: 1em;
   /* margin-inline-start: 1em; */
   background-color: #f8f8f8;
@@ -64,12 +68,11 @@ div.card {
   /* width: 350px; */
   width: 40vh;
   position: relative;
-  box-shadow:
-  12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
-  100px 100px 80px rgba(0, 0, 0, 0.07);
+  box-shadow: 12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+    100px 100px 80px rgba(0, 0, 0, 0.07);
 }
 
-div.card>* {
+div.card > * {
   z-index: 5;
 }
 
@@ -88,13 +91,12 @@ header button.card-btn {
 
 div.card:hover,
 header button:hover,
-header>button {
+header > button {
   cursor: pointer;
   transform: scale(1.02);
   color: orangered;
-  box-shadow:
-  12.5px 8.5px 10px rgba(0, 0, 0, 0.042),
-  60px 80px 80px rgba(0, 0, 0, 0.151);
+  box-shadow: 12.5px 8.5px 10px rgba(0, 0, 0, 0.042),
+    60px 80px 80px rgba(0, 0, 0, 0.151);
 }
 
 header.card {
@@ -133,13 +135,14 @@ footer p.price-sale {
   color: red;
 }
 
-footer>*:hover {
+footer > *:hover {
   filter: brightness(1.2);
 }
 
 footer p.category {
   letter-spacing: 0.2rem;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 footer div.rating {

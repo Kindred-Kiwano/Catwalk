@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Product from '../../../../fakeData/product.js';
 import productList from '../../../../fakeData/productList.js';
 
+
 import { fakeProductList } from './data.js';
 
 import UserContext from './UserContext.jsx';
@@ -10,11 +11,10 @@ import Card from './Card.jsx';
 
 
 import './styles/carouselStyle.css';
-import './styles/modalStyle.css';
 
 const Carousel = (props) => {
 
-  console.log(props)
+  console.log(props, 'carousel props')
 
   let { list, label, title, method } = props;
   let click = method[label]
@@ -27,11 +27,14 @@ const Carousel = (props) => {
   list = fakeProductList;
 
   return (
-    <main className="carousel" id={label + '-carousel'} title={title}>
-      {list.map(prod => (
-        <Card product={prod} label={label} key={prod.id} />
-      ))}
-    </main>
+    <>
+      <header><h2>{title}</h2></header>
+      <main className="carousel" id={label + '-carousel'} title={title}>
+        {list.map(prod => (
+          <Card product={info} label={label} key={prod.id} click={click} />
+        ))}
+      </main>
+    </>
   );
 };
 

@@ -10,16 +10,14 @@ import Outfit from './Outfit.jsx';
 let imgSrc = 'https://images.unsplash.com/photo-1477420143023-6a0e0b04b69a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80';
 
 const Card = (props) => {
-  let { product, type } = props;
+  console.log(props, 'card props')
+  let { product, label, click } = props;
 
   // let { name, default_price, style, category, description } = product;
 
 
   // let {button, click, list, update} = type;
 
-  if (type === 'outfit') {
-    list = [...list]
-  }
 
   const handleClick = (id) => {
     update(id);
@@ -29,8 +27,8 @@ const Card = (props) => {
     // <div className='card' id={id} onClick={() => update(product)}>
     <div className='card'>
       <header className='card'>
-        <CardButton button={'★'} click={()=>{console.log('Hello')}} />
-        <CardImage img={imgSrc} onClick={() => console.log(product)} />
+        <CardButton button={'★'} onClick={click} />
+        <CardImage img={imgSrc} onClick={click} />
       </header>
       <CardInfo product={product} />
     </div>
