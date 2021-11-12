@@ -57,7 +57,10 @@ module.exports = {
   },
 
   extendStyleToProduct: (style, data) => {
-    return $.extend(style, data); // Not currently using this
+    for (var key in data) {
+      if (!style[key]) style[key] = data[key]
+    }
+    return style
   },
 
   parseArrayParams: (url) => {
@@ -70,4 +73,3 @@ module.exports = {
 
   hasArrayParams: url => url.includes(',')
 };
-
