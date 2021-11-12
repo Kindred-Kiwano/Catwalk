@@ -15,7 +15,7 @@ var LoadProduct = () => {
     // make network requests and re-render on success
     getFiveRandomProducts()
       .then((fiveProducts) => {
-        return getProductInfoById( 61588 /* fiveProducts.data[1].id */); // gives the product id of first one
+        return getProductInfoById(fiveProducts.data[0].id); // gives the product id of first one
       })
       .then((productInfo) => {
         Product.info = productInfo.data;
