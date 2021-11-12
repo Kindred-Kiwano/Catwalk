@@ -1,8 +1,7 @@
 /* HEADER ELEMENTS */
 
 #category-name {
-  text-align: center;
-  background-color: darkcyan;
+  margin-bottom: 1em;
 }
 
 #main-block {
@@ -12,20 +11,30 @@
 #header, #description-and-share {
   display: flex;
   flex-direction: row;
-  background-color: rgb(230, 241, 181);
+  background-color: darkcyan;
+  color: whitesmoke;
   justify-content: space-evenly;
+  border: 2px solid firebrick;
 }
+
+#star-rating-container {
+  vertical-align: center;
+}
+
 #description-and-share {
-  background-color: lightblue;
-}
-
-#description {
-  background-color: burlywood;
-}
-
-#share {
   background-color: coral;
+  border-radius: 0 0 7px 7px;
 }
+
+#description, #share {
+  display: inline-block;
+  border: 1px solid firebrick;
+  background-color: green;
+  padding: 4px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
 
 
 /* IMAGES */
@@ -38,13 +47,26 @@
 }
 
 #images, #style-select {
-  height: 600px;
-  background-color: sandybrown;
+  /* height: 600px; */
+  /* background-color: sandybrown; */
 }
+
+#images {
+  position: relative;
+}
+
+/*
+#images > button {
+  color: whitesmoke;
+  background-color: black;
+  border-color: whitesmoke;
+} */
 
 .selected-container {
   height: 500px;
   background-color: black;
+  border-radius: 10px 0 0 10px;
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -53,7 +75,7 @@
 /* currently selected image */
 .selected {
   height: inherit;
-  max-width: 600px;
+  max-width: 500px;
   cursor: zoom-in;
 }
 
@@ -75,23 +97,22 @@
   color: cornflowerblue;
 }
 
-/* expanded view === true */
-/* todo */
-/* #selected-expand-container {
-  (this allows zoom-in)
-  overflow: hidden;
-}
-.selected-expand {
-  width: 100%;
-}
-*/
-
 #carousel {
   /* eventually change width and justify-content properties */
-  margin-top: 1em;
+  position: absolute;
+  z-index: 50;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  border: 1px solid whitesmoke;
+  border-radius: 4px;
+  width: fit-content;
 }
 
 #gallery {
@@ -99,13 +120,16 @@
   flex-direction: row;
   width: 300px;
   justify-content: space-evenly;
-  background-color: darkgreen;
+  align-items: center;
+
 }
 
 /* later add container to allow aspect ratio like you did for selected image */
 .gallery-image {
   height: 40px;
   width: 40px;
+  border-radius: 3px;
+  box-shadow: 3px 2px 1px black;
 }
 
 /* thumbnail corresponding to selected image */
@@ -119,8 +143,22 @@
 }
 
 
-
 /* STYLE-SELECTION PANEL: */
+
+#style-select {
+  padding: 1em;
+  background: rgb(2,0,36);
+  background: -moz-linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(204,63,31,1) 53%, rgba(0,212,255,1) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(204,63,31,1) 53%, rgba(0,212,255,1) 100%);
+  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(204,63,31,1) 53%, rgba(0,212,255,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#00d4ff",GradientType=1);
+  border-radius: 0 10px 10px 0;
+
+}
+
+#style-price, #style-description {
+  margin-left: 1.5em;
+}
 
 .former-price {
   text-decoration: line-through;
@@ -130,28 +168,27 @@
   color: red;
 }
 
-#style-select {
-  background-color: salmon;
-}
+
 
 #thumbnails {
-  background-color: tomato;
+  /* background-color: tomato; */
   margin-bottom: 2em;
 }
-#style-description {
-  color: lightblue;
-}
 
-#thumbnail-container {
-  background-color: turquoise;
+
+#thumbnail-container > hr {
+  width: 96%;
+  background-color: black;
+  height: 1px;
+  margin-bottom: 5px;
 }
 
 .row {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  margin-bottom: 5px;
-  margin-top: 5px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .style-thumbnail, .current-style-thumbnail {
@@ -159,31 +196,57 @@
   border-radius: 30%;
   width: 40px;
   font-size: 8pt;
+  line-height: 8pt;
   padding: 2px;
   margin-left: 2em;
   margin-right: 1.5em;
+  box-shadow: 3px 2px 2px firebrick;
+
 }
 
 .current-style-thumbnail {
   border: 2px solid lime;
 }
 
+
+/*
 #check-out {
-  background-color: red;
-}
+
+} */
 
 
 /* CHECK-OUT PANEL */
 
-#check-out-options-container {
-  width: 70%;
+#select-size-qty {
+  width: 60%;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+  margin: 30px;
+}
+
+#select-size, #select-quantity, #add-to-cart {
+  background-color: black;
+  color: oldlace;
+  border-radius: 6px;
+  margin-right: 20px;
+
+
+}
+
+#add-to-cart {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 80%;
+  background-color: darkgreen;
+  border: 2px solid black;
 }
 
 #reminder-to-select-size {
-  color: darkred;
+  color: lightcyan;
+  text-align: center;
 }
 
 
@@ -191,3 +254,5 @@
 border radius and slight shaddow on image thumbnails
 look into z-index for hovering one element over the other (when image grows to expandedview)
 */
+
+/* place carousel onto .selected-container */

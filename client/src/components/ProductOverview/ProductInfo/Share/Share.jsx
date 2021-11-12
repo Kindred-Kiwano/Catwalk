@@ -11,7 +11,9 @@ var Share = () => {
     <div id="share">
       <h5>Share on social media:</h5>
       <a href="#" onClick={alertComingSoon}>Facebook</a>
+      &ensp; • &ensp;
       <a href="#" onClick={alertComingSoon}>Twitter</a>
+      &ensp; • &ensp;
       <a href="#" onClick={alertComingSoon}>Pinterest</a>
     </div>
   );

@@ -1,0 +1,34 @@
+---
+name: Zoom
+route: /
+---
+
+import { Playground, PropsTable } from 'docz'
+import Zoom from '.'
+
+# Zoom
+
+<PropsTable of={Zoom} />
+
+## Basic usage
+
+<Playground>
+  <Zoom
+    img="https://www.lifeofpix.com/wp-content/uploads/2018/06/20180120-P1201659-1600x1089.jpg"
+    zoomScale={3}
+    height={600}
+    width={600}
+  />
+</Playground>
+
+## It is possible to change the transitionTime
+<Playground>
+  <Zoom
+    img="https://www.lifeofpix.com/wp-content/uploads/2018/06/20180120-P1201659-1600x1089.jpg"
+    zoomScale={3}
+    height={600}
+    width={600}
+    transitionTime={0.5}
+  />
+</Playground>
+

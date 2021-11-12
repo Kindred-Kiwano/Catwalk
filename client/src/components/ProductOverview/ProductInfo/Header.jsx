@@ -31,7 +31,9 @@ var Header = (props) => {
     <div id="header">
       {numberOfRatings ?
         <React.Fragment>
-          <DisplayStarRating ratings={product.reviews.ratings} />
+          <span id="star-rating-container">
+            <DisplayStarRating ratings={product.reviews.ratings} />
+          </span>
           <a href="#" onClick={scrollToReviews}>Read all {numberOfRatings} reviews</a>
         </React.Fragment> :
         <></>}

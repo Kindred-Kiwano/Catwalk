@@ -6,7 +6,7 @@ var CategoryAndName = () => {
 
   return (
     <div id='category-name'>
-      <p>{ `${product.info.category} > ${product.info.name}` }</p>
+      <h3>{ `${product.info.category} > ${product.info.name}` }</h3>
     </div>
   );
 
