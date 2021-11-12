@@ -41,6 +41,18 @@ var ProductOverview = (props) => {
   var [style, updateStyle] = React.useState(props.productState.styles.results[0]);
   var [expand, updateExpand] = React.useState(false);
 
+  React.useEffect(()=>{
+    // reset product
+    console.log('CALLING USEEFFECT TO UPDATE PRODUCT');
+    updateProduct(props.productState);
+  }, [JSON.stringify(props.productState)]);
+
+  React.useEffect(()=>{
+    // reset styles
+    console.log('CALLING USEEFFECT TO UPDATE STYLES');
+    updateStyle(props.productState.styles.results[0]);
+  }, [JSON.stringify(props.productState.styles.results[0])]);
+
   return (
     <div>
       <FakeProduct.Provider value={[product, updateProduct]}>
