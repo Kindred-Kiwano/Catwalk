@@ -17,7 +17,7 @@ var SelectSize = (props) => {
       <div id="select-size-container">
         {/* TODO project requirement: if none of selected style in stock, the drowdown should become disabled and read "OUT OF STOCK" */}
 
-        <select onChange={props.handleSizeSelection} >
+        <select id="select-size" onChange={props.handleSizeSelection} >
           <option>Select size</option>
           {sizes.map((size) => {
             return (<option value={size}>{size}</option>);

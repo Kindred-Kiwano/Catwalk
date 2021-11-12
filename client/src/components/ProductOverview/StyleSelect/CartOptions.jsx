@@ -32,11 +32,12 @@ var CartOptions = () => {
 
   return (
     <div id="check-out">
-      <div id="check-out-options-container">
+      <div id="select-size-qty">
         <SelectSize sizesObject={sizesObject} handleSizeSelection={handleSizeSelection}/>
         <SelectQty sizeSelected={sizeSelected} qtyList={qtyList} />
-        <AddToCart sizeSelected={sizeSelected} sizesObject={sizesObject}/>
       </div>
+      <AddToCart sizeSelected={sizeSelected} sizesObject={sizesObject}/>
+      <p id="reminder-to-select-size"></p>
     </div>
   );
 };

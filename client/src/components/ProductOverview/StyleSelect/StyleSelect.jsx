@@ -33,17 +33,20 @@ var StyleSelect = () => {
   var proportions = expand ? '100% 0%' : '65% 35%';
 
   return (
-    <div id="images-and-styles" style={{'grid-template-columns': proportions}}>
+    <div id="images-and-styles" style={{'gridTemplateColumns': proportions}}>
       <ImagesOfSelectedStyle.Provider value={[imageGallery, updateImageGallery]}>
         <CurrentlySelectedImage.Provider value={[selected, updateSelected]}>
           {/* has id="all-images" */}
           <Images />
           { expand ? <></> :
             <div id="style-select">
-              <Price />
+              <div id="style-price">
+                <Price />
+              </div>
               <Thumbnails />
+              <hr></hr>
               <CartOptions />
-              <p id="reminder-to-select-size"></p> {/* insert text here if user tries adding to cart before selecting */}
+
             </div>
           };
         </CurrentlySelectedImage.Provider>
