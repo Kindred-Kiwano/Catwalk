@@ -8,7 +8,6 @@
 }
 
 body {
-  /* position: fixed; */
   width: 100%;
   height: 100%;
 }
@@ -44,11 +43,6 @@ main.carousel {
   padding: 2%;
   scroll-padding: 1em;
   border-radius: 30px;
-  /* box-shadow:
-  -12.5px -12.5px -10px rgba(0, 0, 0, 0.035),
-  -100px -100px -80px rgba(0, 0, 0, 0.11); */
-
-
 }
 
 .carousel::-webkit-scrollbar {
@@ -67,7 +61,8 @@ div.card {
   background-color: #f8f8f8;
   /* height: 500px; */
   height: inherit;
-  width: 350px;
+  /* width: 350px; */
+  width: 40vh;
   position: relative;
   box-shadow:
   12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
@@ -98,8 +93,8 @@ header>button {
   transform: scale(1.02);
   color: orangered;
   box-shadow:
-  12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
-  100px 100px 80px rgba(0, 0, 0, 0.11);
+  12.5px 8.5px 10px rgba(0, 0, 0, 0.042),
+  60px 80px 80px rgba(0, 0, 0, 0.151);
 }
 
 header.card {

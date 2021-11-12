@@ -2,7 +2,7 @@
 import React from 'react';
 import Related from './Related.jsx';
 import Carousel from './Carousel.jsx';
-import Card from './Card.jsx';
+// import Card from './Card.jsx';
 import Wrapper from './Wrapper.jsx';
 import UserContext from './UserContext.jsx';
 import Modal from './Modal/Modal.jsx';
@@ -17,7 +17,7 @@ const App = () => {
   let [userOutfit, setUserOutfit] = React.useState([]);
   let [modal, setModal] = React.useState(false);
 
-  var carouselMethods = {
+  var methods = {
     outfit: {
       click: (product) => setUserOutfit(userOutfit.filter(prod => prod.id !== product.id))
     },
@@ -32,9 +32,9 @@ const App = () => {
   };
   console.log;
 
-  let RelatedProductsCarousel = Wrapper(Carousel, relatedProducts, {method: carouselMethods, label: 'related', title: 'Related Products', list: info});
+  let RelatedProductsCarousel = Wrapper(Carousel, relatedProducts, {method: methods, label: 'related', title: 'Related Products', list: info});
 
-  let UserOutfitCarousel = Wrapper(Carousel, userOutfit, {method: carouselMethods, label: 'outfit', title: 'Create Your Outfit', list: info});
+  let UserOutfitCarousel = Wrapper(Carousel, userOutfit, {method: methods, label: 'outfit', title: 'Create Your Outfit', list: info});
 
   let ComparisonModal = Wrapper(Modal, modal, {toggle: setModal});
 
