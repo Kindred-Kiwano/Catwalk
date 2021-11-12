@@ -52,7 +52,12 @@ export const postClickTracking = (paramsObject) => {
 
 
 export const getReviews = (productId, count, sortBy) => {
+
   return axios.get(`/reviews?product_id=${productId}&count=${count}&sort=${sortBy}`);
+};
+
+export const getReviewsMeta = (productId) => {
+  return axios.get(`/reviews/meta?product_id=${productId}`);
 };
 
 // for checking certain edgecases
