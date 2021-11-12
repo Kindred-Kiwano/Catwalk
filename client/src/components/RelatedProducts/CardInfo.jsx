@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import FakeRating from './FakeRating.jsx';

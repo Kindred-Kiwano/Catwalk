@@ -2,35 +2,46 @@
   margin: 0;
   padding: 0;
   border: 0;
-  overscroll-behavior: none;
+  z-index: 0;
+  box-sizing: border-box;
 }
 
 body {
-  position: fixed;
+  /* position: fixed; */
   width: 100%;
   height: 100%;
 }
 
 #app {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
 }
 
-.carousel {
+#related>* {
+  z-index: 0;
+}
+
+#related {
+  margin: 5%;
+  padding: 5%;
+}
+
+main.carousel {
+  align-items: center;
+  background-color: rgb(233, 233, 233);
   display: inline-flex;
   scroll-snap-type: x mandatory;
-  margin: 1em;
-  margin-right: 2em;
-  padding: 0 1em;
   box-sizing: border-box;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
   width: 100%;
-  height: 500px;
+  height: 40vh;
+  margin: 1em;
   /* height: 375px; */
-  overscroll-behavior: none;
+  /* overscroll-behavior: none; */
   align-content: center;
+  padding: 1.5em;
 }
 
 .carousel::-webkit-scrollbar {
@@ -38,28 +49,24 @@ body {
 }
 
 div.card {
+  border-radius: 20px;
   justify-content: center;
-  z-index: 0;
+  z-index: 15;
   scroll-snap-align: start;
   display: inline-block;
+  margin: .5em;
   margin-right: 1em;
   /* margin-inline-start: 1em; */
-  background-color: #eee;
-  height: 500px;
+  background-color: #f8f8f8;
+  /* height: 500px; */
+  height: inherit;
   width: 350px;
   position: relative;
-
+  box-shadow: 0 2px 20px #ccc;
 }
 
-header.card {
-  align-content: center;
-}
-
-header.card img {
-  z-index: 0;
-  height: 350px;
-  width: 350px;
-  object-fit: cover;
+div.card>* {
+  z-index: 5;
 }
 
 header button.card-btn {
@@ -72,16 +79,37 @@ header button.card-btn {
   padding: 20px;
   top: 0;
   right: 0;
-
-
   z-index: 20;
 }
 
-/* header button.card-btn:hover {
+div.card:hover,
+header button:hover,
+button.card-btn:hover {
+  cursor: pointer;
   transform: scale(1.02);
-} */
+  transition: 200ms ease;
+  color: orangered;
+}
 
-footer.card {
+div.card:hover,
+footer p :hover {
+  color: rgb(51, 51, 51);
+}
+
+header.card {
+  align-content: center;
+}
+
+header.card img {
+  border-radius: 20px 20px 0 0;
+  z-index: 0;
+  height: 70%;
+  width: 350px;
+  object-fit: cover;
+}
+
+footer.card-info {
+  height: 30%;
   width: 90%;
   margin: auto;
   display: flex;
@@ -90,11 +118,12 @@ footer.card {
   justify-content: left;
   padding-left: 1em;
   align-content: space-between;
-  padding: auto ;
+  padding: auto;
   line-height: 1.2em;
 }
 
 footer.card-info {
+  display: block;
   width: 90%;
 }
 
@@ -108,5 +137,5 @@ footer p.category {
 }
 
 footer div.rating {
-  color: red;
+  color: rgb(214, 167, 0);
 }

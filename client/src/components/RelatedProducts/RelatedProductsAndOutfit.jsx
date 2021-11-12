@@ -30,7 +30,7 @@ const App = () => {
       }
     }
   };
-  console.log
+  console.log;
 
   let RelatedProductsCarousel = Wrapper(Carousel, relatedProducts, {method: carouselMethods, label: 'related', title: 'Related Products', list: info});
 
@@ -49,12 +49,11 @@ const App = () => {
 
   return (
     <UserContext.Provider value={ initialState }>
-      <>
+      <div id='related'>
         <ComparisonModal />
         <RelatedProductsCarousel />
         <UserOutfitCarousel />
-        <Card/>
-      </>
+      </div>
     </UserContext.Provider>
   );
 };
