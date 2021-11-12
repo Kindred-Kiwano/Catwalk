@@ -16,7 +16,7 @@ import './styles/carouselStyle.css';
 
 const Carousel = (props) => {
 
-  console.log(props.data, 'carousel props')
+  // console.log(props.data, 'carousel props')
 
   let { list, data, label, title, method } = props;
   let click = method[label]

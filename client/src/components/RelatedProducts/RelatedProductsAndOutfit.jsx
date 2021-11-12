@@ -1,6 +1,6 @@
 
-import React from 'react';
-import Related from './Related.jsx';
+import React, { useEffect, useState, useContext } from 'react';
+// import Related from './Related.jsx';
 import Carousel from './Carousel.jsx';
 // import Card from './Card.jsx';
 import Wrapper from './Wrapper.jsx';
@@ -9,18 +9,30 @@ import Modal from './Modal/Modal.jsx';
 import Products from '../../../../fakeData/product.js';
 import { fakeProductList } from './data.js'
 import { relatedProps, outfitProps, addToOutfitProps } from './utils/props.js';
-import { retrieveLocalOutfit, saveLocalOutfit } from './utils/methods.js'
+import { retrieveLocalOutfit, saveLocalOutfit } from './utils/methods.js';
+// import cors from 'cors';
 
-let { info, styles } = Products;
+import axios from 'axios';
+
+const productEndpoint = axios.create({baseURL: 'http://localhost:3000/products', headers: {'Access-Control-Allow-Origin': true}})
 
 
 const RelatedProductsAndOutfit = () => {
 
-  let [currentProduct, setCurrentProduct] = React.useState(fakeProductList[0]);
-  let [currentProductId, setCurrentProductId] = React.useState(61588)
-  let [relatedProducts, setRelatedProducts] = React.useState(fakeProductList);
-  let [userOutfit, setUserOutfit] = React.useState(retrieveLocalOutfit());
-  let [modal, setModal] = React.useState(false);
+
+  let [currentProduct, setCurrentProduct] = useState(fakeProductList[0]); //not using this
+  let [currentProductId, setCurrentProductId] = useState(61594)
+  let [relatedProducts, setRelatedProducts] = useState([]);
+  let [userOutfit, setUserOutfit] = useState(retrieveLocalOutfit());
+  let [modal, setModal] = useState(false);
+
+  useEffect(() => {
+    productEndpoint.get(`/related/all/${currentProductId}`)
+      .then(results => setRelatedProducts(results.data))
+      .catch(() => setRelatedProducts(fakeProductList))
+  }, []);
+
+  // Fix second argument
 
   let toggle = () => setModal(modal = !modal);
 
@@ -37,8 +49,6 @@ const RelatedProductsAndOutfit = () => {
       }
     }
   };
-
-  console.log;
 
   let RelatedProductsCarousel = Wrapper(Carousel, relatedProducts, { method: methods, label: 'related', title: 'Related Products', list: relatedProducts, utils: relatedProps });
 

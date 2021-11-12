@@ -24,7 +24,7 @@ module.exports = {
 
   formatInfo:  ({ name, slogan, description, category, default_price, original_price, features }) => {
 
-    features = features && features.map(Object.entries)
+    features = features && features.map(Object.values)
 
     return {
       name,

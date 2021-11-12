@@ -10,14 +10,12 @@ const Feature = (props) => {
 
   return (
     <li className={'feature'}>
-      {/* {feature} */}
       <p className={'feature-title'}>
         <em>{feature}</em><br/>
         {
           value ? <p classname={'feature-value'}>{value}<br/></p> : null
         }
       </p>
-      {/* {feature} */}
     </li>
   );
 };

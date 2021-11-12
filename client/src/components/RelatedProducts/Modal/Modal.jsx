@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import UserContext from '../UserContext.jsx';
-import Related from '../Related.jsx';
+// import Related from '../Related.jsx';
 import Feature from './Feature.jsx';
 import FeatureList from './FeatureList.jsx';
 
 import '../styles/modalStyle.css';
-let { modal } = Related;
+// let { modal } = Related;
 
 const Modal = (props) => {
 
@@ -20,7 +20,7 @@ const Modal = (props) => {
 
   let features = [];
   if (currentProduct) {
-    features = modal(currentProduct, 61590);
+    // features = modal(currentProduct, 61590);
   }
 
   return (
