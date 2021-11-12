@@ -34,7 +34,9 @@ var LoadProduct = () => {
   // on loading the page for the first time, we just select an arbitrary first product
   if (productState === null) {
     // arbitrarily choosing the 'camo onsie' when the page loads
-    changeProduct(61575);
+    changeProduct(61579);
+
+    // 61575
 
     return (
       <p>
