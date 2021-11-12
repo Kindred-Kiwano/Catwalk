@@ -4,6 +4,7 @@
   border: 0;
   z-index: 0;
   box-sizing: border-box;
+  transition: 250ms ease-in-out;
 }
 
 body {
@@ -96,7 +97,6 @@ header button:hover,
 header>button {
   cursor: pointer;
   transform: scale(1.02);
-  transition: 200ms ease-in-out;
   color: orangered;
   box-shadow:
   12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
@@ -139,9 +139,8 @@ footer p.price-sale {
   color: red;
 }
 
-footer>p:hover {
-  filter: brightness(1.4);
-  transition: ease-in 80ms;
+footer>*:hover {
+  filter: brightness(1.2);
 }
 
 footer p.category {
