@@ -1,33 +1,36 @@
 import React from 'react';
-import Card from './Card/Card.jsx';
-import ProductCard from './Card/ProductCard.jsx';
+import ReactDOM from 'react-dom';
+import Product from '../../../../fakeData/product.js';
+import productList from '../../../../fakeData/productList.js';
+
+import {fakeProductList} from './data.js';
+
 import UserContext from './UserContext.jsx';
+import Card from './Card.jsx';
+
 
 import './styles/carouselStyle.css';
-
+import './styles/modalStyle.css';
 
 const Carousel = (props) => {
-  let { method, label, data, title } = props;
-  let click = method[label];
 
-  let list = data ? data.map(id => (
-    <ProductCard {...{label, click, id}} />
-  )) : <></>;
+  console.log(fakeProductList)
 
-  if (label === 'outfit') {
-    list = [ <Card label={'addToOutfit'} click={method.addToOutfit}/> ].concat(list);
+  let {list, type} = props.data;
+
+  if (type === 'outfit') {
+    list = [...list];
   }
-  //fix CSS so this doesn't collapse when adding new products
+  let {info, styles} = Product;
+
+  list = fakeProductList;
 
   return (
-    <>
-      <div id={`carousel-${label}`} className={'carousel container'}>
-        <header title={title}><h3><a href='/products/related/61588'>{title}</a></h3></header>
-        <div className={'carousel'} id={`carousel-${label}`}>
-          { list }
-        </div>
-      </div>
-    </>
+    <main className="carousel">
+      { list.map(prod => (
+        <Card product={prod} type={type} key={prod.id} />
+      )) }
+    </main>
   );
 };
 

@@ -2,22 +2,24 @@ import React from 'react';
 
 
 const Feature = (props) => {
-  let {feature, value, current, target} = props;
+  let {feature, value} = props
+  // if () {
+
+  // }
 
   let sample = {feature: 'Satisfaction Guaranteed', value: 'ok'};
 
-  if (current && target) {
-    //conditionally render
-  }
 
   return (
     <li className={'feature'}>
+      {/* {feature} */}
       <p className={'feature-title'}>
         <em>{feature}</em><br/>
+        {
+          value ? <p classname={'feature-value'}>{value}<br/></p> : null
+        }
       </p>
-      {
-        value ? <p className={'feature-value'}>{value}<br/></p> : <></>
-      }
+      {/* {feature} */}
     </li>
   );
 };

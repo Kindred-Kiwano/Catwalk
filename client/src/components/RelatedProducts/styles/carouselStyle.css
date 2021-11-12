@@ -2,35 +2,46 @@
   margin: 0;
   padding: 0;
   border: 0;
+  z-index: 0;
+  box-sizing: border-box;
 }
 
-html {
-  position: static;
-  width: 90%;
-  height: 100%;
-  overscroll-behavior: none;
-}
-
-#app {
-  margin: 0 1em;
+body {
+  /* position: fixed; */
   width: 100%;
   height: 100%;
 }
 
-.carousel {
+#app {
+  width: 100%;
+  /* height: 100%; */
+}
+
+#related>* {
+  z-index: 0;
+}
+
+#related {
+  margin: 5%;
+  padding: 5%;
+}
+
+main.carousel {
+  align-items: center;
+  background-color: rgb(233, 233, 233);
   display: inline-flex;
   scroll-snap-type: x mandatory;
-  padding: 1em;
-  margin: 2em;
   box-sizing: border-box;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
   width: 100%;
-  height: 500px;
-  /* height: 375px; */ 
+  height: 40vh;
+  margin: 1em;
+  /* height: 375px; */
   /* overscroll-behavior: none; */
   align-content: center;
+  padding: 1.5em;
 }
 
 .carousel::-webkit-scrollbar {
@@ -38,53 +49,67 @@ html {
 }
 
 div.card {
+  border-radius: 20px;
   justify-content: center;
-  z-index: 0;
+  z-index: 15;
   scroll-snap-align: start;
   display: inline-block;
+  margin: .5em;
   margin-right: 1em;
   /* margin-inline-start: 1em; */
-  background-color: #eee;
-  height: 500px;
+  background-color: #f8f8f8;
+  /* height: 500px; */
+  height: inherit;
   width: 350px;
   position: relative;
+  box-shadow: 0 2px 20px #ccc;
 }
 
-
-header.carousel {
-  align-content: center;
+div.card>* {
+  z-index: 5;
 }
 
-header img {
-  z-index: 0;
-  height: 350px;
-  width: 350px;
-  object-fit: cover;
-}
-
-button.card {
+header button.card-btn {
+  display: block;
   background: none;
-  font-size: 30px;
+  position: absolute;
+  font-size: 40px;
   color: white;
   position: absolute;
   padding: 20px;
   top: 0;
   right: 0;
   z-index: 20;
-
 }
 
-button.card.addToOutfit {
+div.card:hover,
+header button:hover,
+button.card-btn:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+  transition: 200ms ease;
+  color: orangered;
+}
+
+div.card:hover,
+footer p :hover {
+  color: rgb(51, 51, 51);
+}
+
+header.card {
+  align-content: center;
+}
+
+header.card img {
+  border-radius: 20px 20px 0 0;
+  z-index: 0;
+  height: 70%;
   width: 350px;
-  height: 100%;
-  font-size: 300px;
-  top: auto;
-  right: auto;
-  padding: auto;
-
+  object-fit: cover;
 }
 
-footer {
+footer.card-info {
+  height: 30%;
   width: 90%;
   margin: auto;
   display: flex;
@@ -93,12 +118,12 @@ footer {
   justify-content: left;
   padding-left: 1em;
   align-content: space-between;
-  padding: auto ;
+  padding: auto;
   line-height: 1.2em;
-  border-bottom-right-radius: 20px;
 }
 
-footer p {
+footer.card-info {
+  display: block;
   width: 90%;
 }
 
@@ -112,6 +137,5 @@ footer p.category {
 }
 
 footer div.rating {
-  padding: 1em 0;
-  color: red;
+  color: rgb(214, 167, 0);
 }

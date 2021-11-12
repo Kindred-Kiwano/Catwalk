@@ -1,3 +1,10 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
-export default React.createContext(null);
+const UserContext = React.createContext({});
+
+
+
+
+
+export default UserContext;

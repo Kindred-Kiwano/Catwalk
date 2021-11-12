@@ -4,25 +4,48 @@ import Feature from './Feature.jsx';
 
 const FeatureList = (props) => {
 
-  let { features } = props;
+  let { list } = props;
 
-  //get current product features from context
-  //write helper function to compare and conditionally render
+  let sampleListA = [
+    {
+      'feature': 'Sole',
+      'value': 'Rubber'
+    },
+    {
+      'feature': 'Material',
+      'value': 'FullControlSkin'
+    },
+    {
+      'feature': 'Mid-Sole',
+      'value': 'ControlSupport Arch Bridge'
+    },
+    {
+      'feature': 'Stitching',
+      'value': 'Double Stitch'
+    }
+  ];
 
-  let featureList = features.map(spec =>
-    <Feature
-      feature={ spec.feature }
-      value={ spec.value }
-      current={ true }
-      target={ false }
-    />
-  );
+
+  let sampleListB = [
+    {
+      'feature': 'Mid-Sole',
+      'value': 'ControlSupport Arch Bridge'
+    },
+    {
+      'feature': 'Stitching',
+      'value': 'Double'
+    }
+  ];
+
+  let featureList = sampleListA.map(spec => {
+    <Feature feature={spec.feature} value={spec.value}/>
+  })
 
   return (
-    <ul className='features'>
-      { featureList }
+    <ul>
+      {featureList}
     </ul>
-  );
+  )
 };
 
 export default FeatureList;
