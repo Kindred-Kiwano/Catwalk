@@ -34,6 +34,7 @@ const RelatedProductsAndOutfit = () => {
 
   // Fix second argument
 
+  
   let toggle = () => setModal(modal = !modal);
 
   var methods = {
