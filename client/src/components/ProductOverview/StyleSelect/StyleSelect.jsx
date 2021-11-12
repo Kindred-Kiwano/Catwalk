@@ -22,14 +22,22 @@ var StyleSelect = () => {
   var [imageGallery, updateImageGallery] = React.useState(photosArray);
 
   // update state on new style selection
-  // TODO: only update when the style changes
   React.useEffect(() => {
-    console.log('called useEffect to update the whole gallery');
+    console.log('called useEffect to update the WHOLE GALLERY');
     updateImageGallery(photosArray);
   }, [JSON.stringify(photosArray)]);
 
   // initial selected is first image
   var [selected, updateSelected] = React.useState(imageGallery[0]);
+  React.useEffect(() => {
+    console.log('calle useEffect to update the SELECTED PHOTO');
+    updateSelected(imageGallery[0]);
+  }, [JSON.stringify(imageGallery[0])]);
+
+
+
+
+
   var proportions = expand ? '100% 0%' : '65% 35%';
 
   return (

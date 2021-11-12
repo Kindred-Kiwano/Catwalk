@@ -9,7 +9,7 @@ const Characteristics = ( { handleChange, title, properTitle, messageOptions, le
   const [messageColor, setMessageColor] = useState(null);
   const colorArray = ['black', 'red', 'orange', 'green', 'blue', 'purple'];
   return (
-    <div className={title}>
+    <div className="individualChar">
       <h1>{properTitle}</h1>
       <p>How would you describe the {title} of the item?</p>
       <span> {leftWord}
