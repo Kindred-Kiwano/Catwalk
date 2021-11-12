@@ -1,6 +1,7 @@
 import React from 'react';
 import ProductOverview from './ProductOverview.jsx';
 import { getFiveRandomProducts, getProductInfoById, getAllStyles, getReviewCount } from '../../../../Shared/makeRequest.js';
+import RatingsAndReviews from '../../components/Reviews/main.jsx';
 
 
 var LoadProduct = () => {
@@ -12,7 +13,7 @@ var LoadProduct = () => {
     // make network requests and re-render on success
     getFiveRandomProducts()
       .then((fiveProducts) => {
-        return getProductInfoById(fiveProducts.data[0].id); // gives the product id of first one
+        return getProductInfoById( 61588 /* fiveProducts.data[1].id */); // gives the product id of first one
       })
       .then((productInfo) => {
         Product.info = productInfo.data;
@@ -41,8 +42,13 @@ var LoadProduct = () => {
 
   } else {
     // after network request complete, re-render to produce the product overview
+
+    console.log('product object: ', productState);
     return (
-      <ProductOverview productState={productState} />
+      <>
+        <ProductOverview productState={productState} />
+        <RatingsAndReviews productId={productState.info.id}/>
+      </>
     );
   }
 };
