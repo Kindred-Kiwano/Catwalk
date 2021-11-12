@@ -2,17 +2,16 @@
   margin: 0;
   padding: 0;
   border: 0;
-}
-
-html {
-  position: static;
-  width: 90%;
-  height: 100%;
   overscroll-behavior: none;
 }
 
+body {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
 #app {
-  margin: 0 1em;
   width: 100%;
   height: 100%;
 }
@@ -20,16 +19,17 @@ html {
 .carousel {
   display: inline-flex;
   scroll-snap-type: x mandatory;
-  padding: 1em;
-  margin: 2em;
+  margin: 1em;
+  margin-right: 2em;
+  padding: 0 1em;
   box-sizing: border-box;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
   width: 100%;
   height: 500px;
-  /* height: 375px; */ 
-  /* overscroll-behavior: none; */
+  /* height: 375px; */
+  overscroll-behavior: none;
   align-content: center;
 }
 
@@ -48,43 +48,40 @@ div.card {
   height: 500px;
   width: 350px;
   position: relative;
+
 }
 
-
-header.carousel {
+header.card {
   align-content: center;
 }
 
-header img {
+header.card img {
   z-index: 0;
   height: 350px;
   width: 350px;
   object-fit: cover;
 }
 
-button.card {
+header button.card-btn {
+  display: block;
   background: none;
-  font-size: 30px;
+  position: absolute;
+  font-size: 40px;
   color: white;
   position: absolute;
   padding: 20px;
   top: 0;
   right: 0;
+
+
   z-index: 20;
-
 }
 
-button.card.addToOutfit {
-  width: 350px;
-  height: 100%;
-  font-size: 300px;
-  top: auto;
-  right: auto;
-  padding: auto;
+/* header button.card-btn:hover {
+  transform: scale(1.02);
+} */
 
-}
-
-footer {
+footer.card {
   width: 90%;
   margin: auto;
   display: flex;
@@ -95,10 +92,9 @@ footer {
   align-content: space-between;
   padding: auto ;
   line-height: 1.2em;
-  border-bottom-right-radius: 20px;
 }
 
-footer p {
+footer.card-info {
   width: 90%;
 }
 
@@ -112,6 +108,5 @@ footer p.category {
 }
 
 footer div.rating {
-  padding: 1em 0;
   color: red;
 }

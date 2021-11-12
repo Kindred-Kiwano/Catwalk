@@ -12,8 +12,8 @@
   z-index: 20;
 }
 
-ul.features {
-  /* list-style-type: none; */
+ul {
+  list-style-type: none;
 }
 
 .feature {
@@ -21,10 +21,10 @@ ul.features {
   text-align: center;
 }
 
-p.feature-title {
-  color: #999;
+.feature-title {
+  color: #000;
 }
 
-p.feature-value {
-  color: #000;
+.feature-value {
+
 }
