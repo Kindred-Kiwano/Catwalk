@@ -1,7 +1,7 @@
 /* HEADER ELEMENTS */
 
 #category-name {
-  text-align: center;
+  margin-bottom: 1em;
 }
 
 #main-block {
@@ -17,6 +17,10 @@
   border: 2px solid firebrick;
 }
 
+#star-rating-container {
+  vertical-align: center;
+}
+
 #description-and-share {
   background-color: coral;
   border-radius: 0 0 7px 7px;
@@ -25,6 +29,7 @@
 #description, #share {
   display: inline-block;
   border: 1px solid firebrick;
+  background-color: green;
   padding: 4px;
   margin: 5px;
   border-radius: 5px;
@@ -49,6 +54,13 @@
 #images {
   position: relative;
 }
+
+/*
+#images > button {
+  color: whitesmoke;
+  background-color: black;
+  border-color: whitesmoke;
+} */
 
 .selected-container {
   height: 500px;
