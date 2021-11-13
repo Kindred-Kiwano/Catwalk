@@ -37,9 +37,7 @@ const FeatureList = (props) => {
     }
   ];
 
-  let featureList = sampleListA.map(spec => {
-    <Feature feature={spec.feature} value={spec.value}/>
-  })
+  let featureList = sampleListA.map(spec => <Feature feature={spec.feature} value={spec.value}/> )
 
   return (
     <ul>
