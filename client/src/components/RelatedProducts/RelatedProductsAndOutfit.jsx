@@ -1,17 +1,16 @@
-
 import React, { useEffect, useState, useContext } from 'react';
 import Carousel from './Carousel.jsx';
 import Wrapper from './Wrapper.jsx';
 import UserContext from './UserContext.jsx';
 import Modal from './Modal/Modal.jsx';
 import Products from '../../../../fakeData/product.js';
-import { fakeProductList } from './data.js'
+import { fakeProductList } from './data.js';
 import { relatedProps, outfitProps, addToOutfitProps } from './utils/props.js';
 import { retrieveLocalOutfit, saveLocalOutfit } from './utils/methods.js';
 
 import axios from 'axios';
 
-const productEndpoint = axios.create({ baseURL: 'http://localhost:3000/products', headers: { 'Access-Control-Allow-Origin': true } })
+const productEndpoint = axios.create({ baseURL: 'http://localhost:3000/products', headers: { 'Access-Control-Allow-Origin': true } });
 
 const RelatedProductsAndOutfit = (props) => {
 
@@ -22,23 +21,23 @@ const RelatedProductsAndOutfit = (props) => {
   let [userOutfit, setUserOutfit] = useState([]);
   let [modal, setModal] = useState(false);
 
-  useEffect((productId) => {
-    setCurrentProductId(productId)
+  useEffect(productId => {
+    setCurrentProductId(props.productId);
     productEndpoint.get(`/related/all/${productId}`)
       .then(results => setRelatedProducts(results.data))
       .then(console.log)
       .catch(() => setRelatedProducts(fakeProductList));
-  }, [currentProductId]);
+  }, [currentProductId]); //getting debounced by API
 
   let updateOutfit = (product) => {
-    setUserOutfit([...userOutfit, product])
-    setUserOutfitIds([...userOutfitIds, product.id])
-  }
+    setUserOutfit([...userOutfit, product]);
+    setUserOutfitIds([...userOutfitIds, product.id]);
+  };
 
   if (userOutfitIds.length) {
     useEffect(userOutfitIds.map(id => {
       productEndpoint.get(`/all/${id}`)
-        .then(results => updateOutfit(resuts.data))
+        .then(results => updateOutfit(resuts.data));
     }), [currentProductId]);
   }
 
@@ -55,7 +54,7 @@ const RelatedProductsAndOutfit = (props) => {
     addToOutfit: {
       click: (product) => {
         setUserOutfit([...userOutfit, product.id]);
-        saveLocalOutfit(userOutfit.map(product => product.id)) //not being used
+        saveLocalOutfit(userOutfit.map(product => product.id)); //not being used
       }
     }
   };

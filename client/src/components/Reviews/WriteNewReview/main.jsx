@@ -170,8 +170,9 @@ const AddReview = () => {
         </div>
         <fieldset>
           <legend>Review Message</legend>
-          <div className="field">
-            <label htmlFor="reviewSummary">Review Summary</label>
+          <div className="infoList">
+            <h3><label htmlFor="reviewSummary">Review Summary</label></h3>
+            <div>
             <textarea
               name="reviewSummary"
               id="reviewSummary"
@@ -180,9 +181,11 @@ const AddReview = () => {
               placeholder="Example: Best purchase ever!"
               onChange={handleChange}>
             </textarea>
+            </div>
           </div>
-          <div className="field">
-            <label htmlFor="reviewBody">Review Summary</label>
+          <div className="infoList">
+            <h3><label htmlFor="reviewBody">Review Body</label></h3>
+            <div>
             <textarea
               name="reviewBody"
               id="reviewBody"
@@ -191,12 +194,14 @@ const AddReview = () => {
               placeholder="Why did you like the product or not?"
               onChange={handleChange}>
             </textarea>
+            </div>
           </div>
         </fieldset>
         <fieldset>
           <legend>Your Info</legend>
-          <div className="field">
-            <label htmlFor="nickname">What is your Nickname?</label>
+          <div className="infoList">
+            <h3><label htmlFor="nickname">What is your Nickname?</label></h3>
+            <div>
             <textarea
               name="nickname"
               id="nickname"
@@ -205,9 +210,11 @@ const AddReview = () => {
               placeholder="Example: jackson11!"
               onChange={handleChange}>
             </textarea>
+            </div>
           </div>
-          <div className="field">
-            <label htmlFor="email">What is your Email?</label>
+          <div className="infoList">
+            <h3><label htmlFor="email">What is your Email?</label></h3>
+            <div>
             <textarea
               name="email"
               id="email"
@@ -216,6 +223,7 @@ const AddReview = () => {
               placeholder="Example: jackson11@email.com"
               onChange={handleChange}>
             </textarea>
+            </div>
           </div>
         </fieldset>
         <fieldset>
