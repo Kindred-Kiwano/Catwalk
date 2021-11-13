@@ -1,12 +1,9 @@
 import React from 'react';
 import Gallery from './Gallery.jsx';
-import { CurrentlySelectedImage } from '../StyleSelect.jsx';
-// image gallery
-import { ImagesOfSelectedStyle } from '../StyleSelect.jsx';
+import { CurrentlySelectedImage, ImagesOfSelectedStyle } from '../StyleSelect.jsx';
 import { VisibleThumbnails } from './Images.jsx';
 import sharedHelpers from '../../../../../../Shared/sharedHelpers.js';
 import pickImage from '../../methods/pickImage.js';
-
 
 export var moveSelection = (nextTargetIndex, imageGallery, visibleThumbnails, updateVisibleThumbnails, updateSelected) => {
 

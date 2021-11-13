@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles.css';
+
 import { CurrentlySelectedImage } from '../StyleSelect.jsx';
 import { ExpandedView } from '../../ProductOverview.jsx';
 import { moveSelection } from './Carousel.jsx';

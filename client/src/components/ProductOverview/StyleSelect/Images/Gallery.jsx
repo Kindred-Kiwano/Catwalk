@@ -14,7 +14,6 @@ var Gallery = () => {
       })}
     </div>
   );
-
 };
 
 export default Gallery;

@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles.css';
 import CategoryAndName from './CategoryAndName/CategoryAndName.jsx';
 import ProductInfo from './ProductInfo/ProductInfo.jsx';
 import StyleSelect from './StyleSelect/StyleSelect.jsx';
