@@ -18,7 +18,7 @@ const Carousel = (props) => {
 
   // console.log(props.data, 'carousel props')
 
-  let { list, data, label, title, method } = props;
+  let { list, data, label, title, method, update } = props;
   let click = method[label]
 
   if (label === 'outfit') {
@@ -33,7 +33,7 @@ const Carousel = (props) => {
       <header><h2>{title}</h2></header>
       <main className="carousel" id={label + '-carousel'} title={title}>
         {data.map(prod => (
-          <Card product={prod} label={label} key={prod.id} click={click} />
+          <Card product={prod} label={label} key={prod.id} click={click} update={update} />
         ))}
       </main>
     </>

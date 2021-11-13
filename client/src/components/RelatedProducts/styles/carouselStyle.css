@@ -106,7 +106,6 @@ header.card {
 header.card img {
   border-radius: 20px 20px 0 0;
   z-index: 0;
-  /* height: 70%; */
   height: 40vh;
   width: 40vh;
   object-fit: cover;

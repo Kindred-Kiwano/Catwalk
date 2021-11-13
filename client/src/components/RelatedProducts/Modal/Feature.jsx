@@ -11,10 +11,7 @@ const Feature = (props) => {
   return (
     <li className={'feature'}>
       <p className={'feature-title'}>
-        <em>{feature}</em><br/>
-        {
-          value ? <p classname={'feature-value'}>{value}<br/></p> : null
-        }
+        <em>{feature}</em>{value ? `: ${value}` : ''}
       </p>
     </li>
   );

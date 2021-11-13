@@ -2,6 +2,7 @@ import React from 'react';
 import ProductOverview from './ProductOverview.jsx';
 import { getFiveRandomProducts, getProductInfoById, getAllStyles, getReviewCount } from '../../../../Shared/makeRequest.js';
 import RatingsAndReviews from '../../components/Reviews/main.jsx';
+import RelatedProductsAndOutfit from '../RelatedProducts/RelatedProductsAndOutfit.jsx';
 
 var LoadProduct = () => {
 // Sam and David may want to use setProductState
@@ -34,7 +35,7 @@ var LoadProduct = () => {
   // on loading the page for the first time, we just select an arbitrary first product
   if (productState === null) {
     // arbitrarily choosing the 'camo onsie' when the page loads
-    changeProduct(61575);
+    changeProduct(61588);
 
 
     return (
@@ -50,7 +51,7 @@ var LoadProduct = () => {
       <>
         <ProductOverview productState={productState} />
         <RatingsAndReviews productId={productState.info.id}/>
-        {/* @Sam - include your head component here and pass in the changeProduct function */}
+        <RelatedProductsAndOutfit productId={productState.info.id} updateGlobalId={changeProduct}/>
       </>
     );
   }
