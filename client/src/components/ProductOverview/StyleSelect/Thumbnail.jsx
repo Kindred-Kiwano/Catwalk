@@ -21,6 +21,8 @@ var Thumbnail = (props) => {
   var changeStyle = (event) => {
     // if this thumbnail isnt the current style:
     if (style.style_id !== props.styleObject.style_id) {
+      console.log('*** you clicked a new style ***');
+
       updateStyle(props.styleObject);
       // now image gallery is of the newly selected style
       var newSelected = props.styleObject.photos[selected.index];

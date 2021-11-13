@@ -44,13 +44,9 @@ var ProductOverview = (props) => {
     console.log('CALLING USEEFFECT TO UPDATE PRODUCT');
     console.log('The current product ID:', props.productState.info.id);
     updateProduct(props.productState);
+    updateStyle(props.productState.styles.results[0]);
   }, [props.productState.info.id]);
 
-  React.useEffect(() => {
-    // reset styles
-    console.log('CALLING USEEFFECT TO UPDATE STYLES');
-    updateStyle(props.productState.styles.results[0]);
-  }, [JSON.stringify(props.productState.styles.results[0])]);
 
   return (
     <div>
