@@ -18,30 +18,43 @@
   border: 2px solid firebrick;
 }
 
+#header {
+  border-radius: 7px 7px 0 0;
+}
+
 #star-rating-container {
   vertical-align: center;
 }
 
 #description-and-share {
+  border-radius: 0 0 7px 7px;
+
   background: rgb(173,190,186);
   background: -moz-linear-gradient(0deg, rgba(173,190,186,1) 0%, rgba(233,233,233,1) 100%);
   background: -webkit-linear-gradient(0deg, rgba(173,190,186,1) 0%, rgba(233,233,233,1) 100%);
   background: linear-gradient(0deg, rgba(173,190,186,1) 0%, rgba(233,233,233,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#adbeba",endColorstr="#e9e9e9",GradientType=1);
-  border-radius: 0 0 7px 7px;
 }
 
 #description, #share {
   display: inline-block;
-  border: 1px solid firebrick;
   color: black;
-  /* background-color: green; */
   padding: 4px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border-radius: 5px;
+  margin: 20px;
+  /* border: 1px solid firebrick;
+  border-radius: 5px; */
 }
 
+#description {
+  flex: 3 0 0;
+
+}
+
+#share {
+ flex: 1 0 0;
+ text-align: center;
+ border-left: 1px solid black;
+}
 
 
 /* IMAGES */
@@ -53,15 +66,9 @@
   grid-template-columns: 65% 35%;
 }
 
-#images, #style-select {
-  /* height: 600px; */
-  /* background-color: sandybrown; */
-}
-
 #images {
   position: relative;
 }
-
 
 #images > * button {
   color: whitesmoke;
@@ -79,13 +86,11 @@
   justify-content: space-between;
 }
 
-/* currently selected image */
 .selected {
   height: inherit;
   max-width: 500px;
   cursor: zoom-in;
 }
-
 
 .main-arrow-container-left, .main-arrow-container-right {
   display: flex;
@@ -105,7 +110,6 @@
 }
 
 #carousel {
-  /* eventually change width and justify-content properties */
   position: absolute;
   z-index: 50;
   margin-left: auto;
@@ -117,8 +121,8 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border: 1px solid whitesmoke;
-  border-radius: 4px;
+  /* border: 1px solid whitesmoke;
+  border-radius: 4px; */
   width: fit-content;
   padding-top: 3px;
   padding-bottom: 3px;
@@ -130,10 +134,8 @@
   width: 300px;
   justify-content: space-evenly;
   align-items: center;
-
 }
 
-/* later add container to allow aspect ratio like you did for selected image */
 .gallery-image {
   height: 40px;
   width: 40px;
@@ -141,18 +143,21 @@
   box-shadow: 3px 2px 1px black;
 }
 
-/* thumbnail corresponding to selected image */
 .selected-gallery-image {
   border: 2px solid white;
 }
 
 .placeholder-dot {
   font-size: 32pt;
-  color: yellow;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background-color: darkgray;
 }
 
 
-/* STYLE-SELECTION PANEL: */
+
+/* STYLE-SELECTION PANEL */
 
 #style-select {
   padding: 1em;
@@ -177,20 +182,16 @@
   color: red;
 }
 
-
-
 #thumbnails {
-  /* background-color: tomato; */
   margin-bottom: 2em;
 }
 
-
-#thumbnail-container > hr {
+/* #thumbnail-container > hr {
   width: 96%;
   background-color: black;
   height: 1px;
   margin-bottom: 5px;
-}
+} */
 
 .row {
   display: flex;
@@ -210,14 +211,10 @@
   height: 60px;
   font-size: 8pt;
   line-height: 9pt;
-  /* line-height: 7pt; */
   text-align: center;
-  /* vertical-align: text-bottom; */
   padding: 4px;
-
   margin-right: 20px;
   box-shadow: 3px 2px 2px firebrick;
-
 }
 
 .current-style-thumbnail {
@@ -226,45 +223,41 @@
 
 
 
-#check-out {
-  margin-left: 30px;
-}
-
-
 /* CHECK-OUT PANEL */
+
+#check-out, #add-to-cart-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
 
 #select-size-qty {
   width: 60%;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
 #select-size, #select-quantity, #add-to-cart {
-  /* background-color: oldlace; */
   border-radius: 6px;
-  /* margin-right: 20px; */
 }
 
-#select-size {
-  margin-right: 20px;
+
+#add-to-cart-container {
+  width: 60%;
 }
+
 
 
 #add-to-cart {
-  /* display: block; */
-  /* margin-left: auto;
-  margin-right: auto; */
-
-  width: 80%;
   margin-top: 20px;
+  width: 100%;
   background-color: rgb(214, 167, 0);
-
 }
 
 #reminder-to-select-size {
-  color: lightcyan;
-  text-align: center;
+  color: darkred;
 }
 
 

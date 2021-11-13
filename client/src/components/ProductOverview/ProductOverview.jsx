@@ -1,13 +1,9 @@
-// this file is the head component of the "product overview" tree
-
 import React from 'react';
 import CategoryAndName from './CategoryAndName/CategoryAndName.jsx';
 import ProductInfo from './ProductInfo/ProductInfo.jsx';
 import StyleSelect from './StyleSelect/StyleSelect.jsx';
 import { postClickTracking } from '../../../../Shared/makeRequest.js';
 
-// create a global contexts
-// import Product from '../../../../fakeData/product.js';
 export var FakeProduct = React.createContext();
 export var Style = React.createContext();
 export var ExpandedView = React.createContext();
@@ -22,36 +18,31 @@ document.querySelector('*').addEventListener('click', (event) => {
   } else {
     selector = target.nodeName;
   }
-  console.log('event target: ', event.target);
-  //get other parent elements of the click
-  //if that list includes
+
   var dataToSend = {
     element: selector,
-    widget: 'ProductOverview',
+    widget: 'product overview',
     time: JSON.stringify(new Date())
   };
 
   postClickTracking(dataToSend);
 });
 
-// product that the page refers to
 var ProductOverview = (props) => {
 
   var [product, updateProduct] = React.useState(props.productState);
   var [style, updateStyle] = React.useState(props.productState.styles.results[0]);
   var [expand, updateExpand] = React.useState(false);
 
-  React.useEffect(()=>{
-    // reset product
+  React.useEffect(() => {
     console.log('CALLING USEEFFECT TO UPDATE PRODUCT');
+    console.log('The current product ID:', props.productState.info.id);
     updateProduct(props.productState);
-  }, [JSON.stringify(props.productState)]);
-
-  React.useEffect(()=>{
-    // reset styles
-    console.log('CALLING USEEFFECT TO UPDATE STYLES');
     updateStyle(props.productState.styles.results[0]);
-  }, [JSON.stringify(props.productState.styles.results[0])]);
+  }, [props.productState.info.id]);
+
+  console.log('THE STYLE PHOTOS', style.photos[0].url, style.photos[0].thumbnail_url);
+
 
   return (
     <div>
@@ -63,7 +54,6 @@ var ProductOverview = (props) => {
                 <CategoryAndName />
                 <ProductInfo />
               </div>
-              {/* has id="images-and-styles" */}
               <StyleSelect />
             </div>
           </ExpandedView.Provider>
@@ -71,7 +61,6 @@ var ProductOverview = (props) => {
       </FakeProduct.Provider>
     </div>
   );
-
 };
 
 export default ProductOverview;

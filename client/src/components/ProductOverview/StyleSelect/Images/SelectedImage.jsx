@@ -35,7 +35,7 @@ var SelectedImage = () => {
     moveSelection(nextTargetIndex, imageGallery, visibleThumbnails, updateVisibleThumbnails, updateSelected);
   };
 
-  var [leftButtonDisplay, rightButtonDisplay] = sharedHelpers.setButtonDisplay(selected, imageGallery);
+  var [leftButtonDisplay, rightButtonDisplay] = sharedHelpers.setButtonDisplay(selected, imageGallery, 'visibility');
 
   var height = expand ? '600px' : '500px';
   var containerStyle = {
