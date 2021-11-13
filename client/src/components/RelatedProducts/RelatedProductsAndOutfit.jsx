@@ -22,13 +22,13 @@ const RelatedProductsAndOutfit = (props) => {
   let [userOutfit, setUserOutfit] = useState([]);
   let [modal, setModal] = useState(false);
 
-  useEffect((productId) => {
-    setCurrentProductId(productId)
+  useEffect(productId => {
+    setCurrentProductId(props.productId)
     productEndpoint.get(`/related/all/${productId}`)
       .then(results => setRelatedProducts(results.data))
       .then(console.log)
       .catch(() => setRelatedProducts(fakeProductList));
-  }, [currentProductId]);
+  }, [currentProductId]); //getting debounced by API
 
   let updateOutfit = (product) => {
     setUserOutfit([...userOutfit, product])

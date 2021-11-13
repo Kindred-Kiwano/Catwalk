@@ -43,9 +43,7 @@ var LoadProduct = () => {
 
 
     return (
-      <p>
-        Loading product details...
-      </p>
+      <></>
     );
 
   } else {

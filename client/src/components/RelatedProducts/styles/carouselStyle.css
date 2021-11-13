@@ -73,13 +73,14 @@ header button.card-btn {
   background: none;
   position: absolute;
   font-size: 40px;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255,255,255,0.4);
   position: absolute;
   padding: 20px;
   top: 0;
   right: 0;
   z-index: 20;
 }
+
 
 i.fas {
   color: rgb(200,200,200);
@@ -111,6 +112,7 @@ header > button {
   box-shadow: 12.5px 8.5px 10px rgba(0, 0, 0, 0.042),
   60px 80px 80px rgba(0, 0, 0, 0.151);
 }
+
 
 header button:hover {
   transform: scale(1.1);
