@@ -29,10 +29,12 @@ var StyleSelect = () => {
 
   // initial selected is first image
   var [selected, updateSelected] = React.useState(imageGallery[0]);
+
   React.useEffect(() => {
-    console.log('calle useEffect to update the SELECTED PHOTO');
-    updateSelected(imageGallery[0]);
-  }, [JSON.stringify(imageGallery[0])]);
+    console.log('called useEffect to update the SELECTED PHOTO');
+
+    updateSelected(imageGallery[selected.index]);
+  }, [JSON.stringify(imageGallery)]);
 
 
 

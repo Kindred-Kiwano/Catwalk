@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductOverview from './ProductOverview.jsx';
-import { getFiveRandomProducts, getProductInfoById, getAllStyles, getReviews, getReviewCount } from '../../../../Shared/makeRequest.js';
+import { getProductInfoById, getAllStyles, getReviews, getReviewCount } from '../../../../Shared/makeRequest.js';
 import RatingsAndReviews from '../../components/Reviews/main.jsx';
 import RelatedProductsAndOutfit from '../RelatedProducts/RelatedProductsAndOutfit.jsx';
 
@@ -39,9 +39,10 @@ var LoadProduct = () => {
   // on loading the page for the first time, we just select an arbitrary first product
   if (productState === null) {
     // arbitrarily choosing the 'camo onsie' when the page loads
-    changeProduct(61588);
+    changeProduct(61579);
 
 
+    // 61588
     return (
       <p>
         Loading product details...

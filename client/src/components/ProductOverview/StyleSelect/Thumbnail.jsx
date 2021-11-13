@@ -19,7 +19,7 @@ var Thumbnail = (props) => {
   var [imageGallery, updateImageGallery] = React.useContext(ImagesOfSelectedStyle);
 
   var changeStyle = (event) => {
-    // using props.styleObject to get reference to the item clicked (change later if you factor this function into another file)
+    // if this thumbnail isnt the current style:
     if (style.style_id !== props.styleObject.style_id) {
       updateStyle(props.styleObject);
       // now image gallery is of the newly selected style

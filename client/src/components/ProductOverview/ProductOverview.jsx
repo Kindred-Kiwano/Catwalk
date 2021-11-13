@@ -22,12 +22,10 @@ document.querySelector('*').addEventListener('click', (event) => {
   } else {
     selector = target.nodeName;
   }
-  console.log('event target: ', event.target);
-  //get other parent elements of the click
-  //if that list includes
+
   var dataToSend = {
     element: selector,
-    widget: 'ProductOverview',
+    widget: 'product overview',
     time: JSON.stringify(new Date())
   };
 
@@ -41,13 +39,14 @@ var ProductOverview = (props) => {
   var [style, updateStyle] = React.useState(props.productState.styles.results[0]);
   var [expand, updateExpand] = React.useState(false);
 
-  React.useEffect(()=>{
+  React.useEffect(() => {
     // reset product
     console.log('CALLING USEEFFECT TO UPDATE PRODUCT');
+    console.log('The current product ID:', props.productState.info.id);
     updateProduct(props.productState);
-  }, [JSON.stringify(props.productState)]);
+  }, [props.productState.info.id]);
 
-  React.useEffect(()=>{
+  React.useEffect(() => {
     // reset styles
     console.log('CALLING USEEFFECT TO UPDATE STYLES');
     updateStyle(props.productState.styles.results[0]);
