@@ -16,7 +16,7 @@ var AddToCart = (props) => {
       addToCart(selected_sku_id)
         .then((response) => {
           console.log('post successful! ', response);
-          alert('added to cart!');
+          alert('Added to cart!');
         })
         .catch((err) => {
           console.log('error adding to cart');

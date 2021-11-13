@@ -56,7 +56,7 @@ var StyleSelect = () => {
               <CartOptions />
 
             </div>
-          };
+          }
         </CurrentlySelectedImage.Provider>
       </ImagesOfSelectedStyle.Provider>
     </div>
