@@ -1,5 +1,4 @@
 import React from 'react';
-// import Carousel from './Carousel.jsx';
 
 import axios from '../../../../config/config.js';
 

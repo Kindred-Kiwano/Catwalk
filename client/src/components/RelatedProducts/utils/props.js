@@ -3,7 +3,7 @@ export const relatedProps = {
   title: 'Related Products',
   buttonText: '★',
   click: () => {
-    console.log('reltaed prodcsutz');
+    console.log('related productz');
   }
 };
 
