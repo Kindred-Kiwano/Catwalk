@@ -8,12 +8,9 @@ import { templatePrices } from './utils/methods.js';
 
 const CardInfo = (props) => {
   let { product, update } = props
-  // let { id, name, default_price, category } = props.product;
-  // let price = default_price;
-  // console.log(props)
-  let { id, name, default_price, category } = props.product
+  let { id, name, default_price, category } = product
   let price = default_price;
-  let Price = templatePrices(product) //not working as expected
+  // let Price = templatePrices(product) //not working as expected
 
   return (
     <footer className="card-info" onClick={() => update(id)}>
