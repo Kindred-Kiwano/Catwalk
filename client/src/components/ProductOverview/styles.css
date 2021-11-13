@@ -18,6 +18,10 @@
   border: 2px solid firebrick;
 }
 
+#header {
+  border-radius: 7px 7px 0 0;
+}
+
 #star-rating-container {
   vertical-align: center;
 }
