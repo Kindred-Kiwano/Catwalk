@@ -1,18 +1,14 @@
 import React from 'react';
 import ProductOverview from './ProductOverview.jsx';
-import { getFiveRandomProducts, getProductInfoById, getAllStyles, getReviews, getReviewCount } from '../../../../Shared/makeRequest.js';
+import { getProductInfoById, getAllStyles, getReviews, getReviewCount } from '../../../../Shared/makeRequest.js';
 import RatingsAndReviews from '../../components/Reviews/main.jsx';
 import RelatedProductsAndOutfit from '../RelatedProducts/RelatedProductsAndOutfit.jsx';
 
 var LoadProduct = () => {
-// Sam and David may want to use setProductState
   var [productState, setProductState] = React.useState(null);
   var Product = {};
 
   var changeProduct = (productId) => {
-    // makes network requests to build an object
-    //  on success, LoadProduct re-renders to send that object to our components
-
     getProductInfoById(productId)
       .then((productInfo) => {
         Product.info = productInfo.data;
@@ -36,12 +32,10 @@ var LoadProduct = () => {
       });
   };
 
-  // on loading the page for the first time, we just select an arbitrary first product
   if (productState === null) {
-    // arbitrarily choosing the 'camo onsie' when the page loads
-    changeProduct(61588);
+    changeProduct(61579);
 
-
+    // 61588
     return (
       <p>
         Loading product details...
@@ -49,7 +43,6 @@ var LoadProduct = () => {
     );
 
   } else {
-    // after network request complete, re-render to pass the data to our components
     console.log('product', productState);
     return (
       <>

@@ -5,14 +5,11 @@ import getStock from '../methods/getStock.js';
 import { FakeProduct } from '../ProductOverview.jsx';
 import DisplayStarRating from '../../../../../Shared/DisplayStarRating.jsx';
 
-
-
 var scrollToReviews = (event) => {
   event.preventDefault();
   var [reviews] = document.getElementsByClassName('ratings-and-reviews');
   reviews.scrollIntoView();
 };
-
 
 var Header = (props) => {
   var [product, updateProduct] = React.useContext(FakeProduct);
