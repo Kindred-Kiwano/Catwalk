@@ -1,3 +1,6 @@
+import React from 'react';
+
+
 export const retrieveLocalOutfit = () => {
   return JSON.parse(localStorage.getItem('outfit')) || [];
 };
@@ -8,14 +11,17 @@ export const saveLocalOutfit = (id) => {
 };
 
 export const templatePrices = ({ price, sale }) => {
+
+
+  // console.log(props, 'price template')
   price = { price, className: 'price' };
 
-  let Prices = createElement('span', { price });
+  let Prices = React.createElement('span', price, sale);
 
   if (sale) {
-    let Sale = createElement('span', { sale, className: 'price sale' });
+    let Sale = React.createElement('span', { sale, className: 'price sale' });
 
-    Prices = createElement(
+    Prices = React.createElement(
       'span',
       { price, className: 'price original' },
       <Sale />
@@ -24,5 +30,4 @@ export const templatePrices = ({ price, sale }) => {
 
   return Prices;
 };
-
 
