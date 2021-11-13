@@ -36,7 +36,6 @@ var Thumbnail = (props) => {
 
   var selectedStatus = '';
   if (style.style_id === props.styleObject.style_id) {
-    // later change this css class to produce a checkmark (or conditially render one here)
     selectedStatus = 'current-style-thumbnail';
   }
 
@@ -45,7 +44,9 @@ var Thumbnail = (props) => {
   return (
     <p data-testid={props.testKey} onClick={changeStyle} className={'style-thumbnail ' + selectedStatus} >
       {color1}
-      <br />
+      <br/>
+      +
+      <br/>
       {color2}
     </p>
   );

@@ -34,9 +34,8 @@ var LoadProduct = () => {
   // on loading the page for the first time, we just select an arbitrary first product
   if (productState === null) {
     // arbitrarily choosing the 'camo onsie' when the page loads
-    changeProduct(61579);
+    changeProduct(61575);
 
-    // 61575
 
     return (
       <p>
@@ -46,6 +45,7 @@ var LoadProduct = () => {
 
   } else {
     // after network request complete, re-render to pass the data to our components
+    console.log('product', productState);
     return (
       <>
         <ProductOverview productState={productState} />
