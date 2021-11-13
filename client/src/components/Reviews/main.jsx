@@ -37,7 +37,7 @@ const RatingsAndReviews = ( {productId} ) => {
       .then(response => getTotalReviews(response.data.ratings))
       .then(totalReviewCount => getReviews(productId, totalReviewCount, sortBy))
       .then(outcome => setReviews(outcome.data.results))
-  }, [sortBy]);
+  }, [productId, sortBy]);
 
 
   const renderForm = showForm ? (
