@@ -20,6 +20,10 @@ var LoadProduct = () => {
       })
       .then((productReviews) => {
         Product.reviews = productReviews.data;
+        return getReviewCount(Product.info.id);
+      })
+      .then((reviewsMeta) => {
+        Product.reviewsMeta = reviewsMeta.data;
         return getAllStyles(Product.info.id);
       })
       .then((productStyles) => {

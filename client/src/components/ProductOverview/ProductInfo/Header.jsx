@@ -5,15 +5,7 @@ import getStock from '../methods/getStock.js';
 import { FakeProduct } from '../ProductOverview.jsx';
 import DisplayStarRating from '../../../../../Shared/DisplayStarRating.jsx';
 
-var totalRatings = (reviewsMeta) => {
 
-  var ratingsSum = 0;
-  var ratingsToQty = reviewsMeta.ratings;
-  for (var rating in ratingsToQty) {
-    ratingsSum += Number(ratingsToQty[rating]);
-  }
-  return ratingsSum;
-};
 
 var scrollToReviews = (event) => {
   event.preventDefault();
@@ -25,16 +17,16 @@ var scrollToReviews = (event) => {
 var Header = (props) => {
   var [product, updateProduct] = React.useContext(FakeProduct);
   var [style, updateStyle] = React.useContext(Style);
-  var numberOfRatings = totalRatings(product.reviews);
+  var numberOfReviews = product.reviews.results.length;
 
   return (
     <div id="header">
-      {numberOfRatings ?
+      {numberOfReviews ?
         <React.Fragment>
           <span id="star-rating-container">
-            <DisplayStarRating ratings={product.reviews.ratings} />
+            <DisplayStarRating ratings={product.reviewsMeta.ratings} />
           </span>
-          <a href="#" onClick={scrollToReviews}>Read all {numberOfRatings} reviews</a>
+          <a href="#" onClick={scrollToReviews}>Read all {numberOfReviews} reviews</a>
         </React.Fragment> :
         <></>}
       <span>{getStock.getTotal(style)} in stock</span>
