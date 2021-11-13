@@ -43,8 +43,6 @@ var StyleSelect = () => {
     updateSelected(imageGallery[0]);
   }, [product.info.id]);
 
-
-
   var proportions = expand ? '100% 0%' : '65% 35%';
 
   return (

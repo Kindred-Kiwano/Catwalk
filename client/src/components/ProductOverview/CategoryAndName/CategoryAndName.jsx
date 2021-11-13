@@ -9,7 +9,6 @@ var CategoryAndName = () => {
       <h3>{ `${product.info.category} > ${product.info.name}` }</h3>
     </div>
   );
-
 };
 
 export default CategoryAndName;
