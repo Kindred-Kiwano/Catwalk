@@ -45,7 +45,7 @@ var Thumbnail = (props) => {
     <p data-testid={props.testKey} onClick={changeStyle} className={'style-thumbnail ' + selectedStatus} >
       {color1}
       <br/>
-      +
+      *
       <br/>
       {color2}
     </p>

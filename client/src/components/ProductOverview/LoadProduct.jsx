@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductOverview from './ProductOverview.jsx';
-import { getFiveRandomProducts, getProductInfoById, getAllStyles, getReviewCount } from '../../../../Shared/makeRequest.js';
+import { getFiveRandomProducts, getProductInfoById, getAllStyles, getReviews, getReviewCount } from '../../../../Shared/makeRequest.js';
 import RatingsAndReviews from '../../components/Reviews/main.jsx';
 import RelatedProductsAndOutfit from '../RelatedProducts/RelatedProductsAndOutfit.jsx';
 
@@ -16,7 +16,7 @@ var LoadProduct = () => {
     getProductInfoById(productId)
       .then((productInfo) => {
         Product.info = productInfo.data;
-        return getReviewCount(productInfo.data.id);
+        return getReviews(productInfo.data.id, 1000, 'newest');
       })
       .then((productReviews) => {
         Product.reviews = productReviews.data;
@@ -50,8 +50,8 @@ var LoadProduct = () => {
     return (
       <>
         <ProductOverview productState={productState} />
-        <RatingsAndReviews productId={productState.info.id}/>
         <RelatedProductsAndOutfit productId={productState.info.id} updateGlobalId={changeProduct}/>
+        <RatingsAndReviews productId={productState.info.id}/>
       </>
     );
   }
