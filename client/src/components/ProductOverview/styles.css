@@ -34,14 +34,23 @@
 
 #description, #share {
   display: inline-block;
-  border: 1px solid firebrick;
   color: black;
   padding: 4px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border-radius: 5px;
+  margin: 20px;
+  /* border: 1px solid firebrick;
+  border-radius: 5px; */
 }
 
+#description {
+  flex: 3 0 0;
+
+}
+
+#share {
+ flex: 1 0 0;
+ text-align: center;
+ border-left: 1px solid black;
+}
 
 
 /* IMAGES */
