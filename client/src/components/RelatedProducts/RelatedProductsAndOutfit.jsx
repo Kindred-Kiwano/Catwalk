@@ -1,8 +1,6 @@
 
 import React, { useEffect, useState, useContext } from 'react';
-// import Related from './Related.jsx';
 import Carousel from './Carousel.jsx';
-// import Card from './Card.jsx';
 import Wrapper from './Wrapper.jsx';
 import UserContext from './UserContext.jsx';
 import Modal from './Modal/Modal.jsx';
@@ -10,31 +8,30 @@ import Products from '../../../../fakeData/product.js';
 import { fakeProductList } from './data.js'
 import { relatedProps, outfitProps, addToOutfitProps } from './utils/props.js';
 import { retrieveLocalOutfit, saveLocalOutfit } from './utils/methods.js';
-// import cors from 'cors';
 
 import axios from 'axios';
 
-const productEndpoint = axios.create({baseURL: 'http://localhost:3000/products', headers: {'Access-Control-Allow-Origin': true}})
+const productEndpoint = axios.create({ baseURL: 'http://localhost:3000/products', headers: { 'Access-Control-Allow-Origin': true } })
 
+const RelatedProductsAndOutfit = (props) => {
 
-const RelatedProductsAndOutfit = () => {
-
-
-  let [currentProduct, setCurrentProduct] = useState(fakeProductList[0]); //not using this
-  let [currentProductId, setCurrentProductId] = useState(61594)
+  let { updateGlobalId, productId } = props
+  console.log(props, 'rekated priooksefgrdgnfhfds')
+  let [currentProduct, setCurrentProduct] = useState(); //not using this
+  let [currentProductId, setCurrentProductId] = useState(props.productId);
   let [relatedProducts, setRelatedProducts] = useState([]);
   let [userOutfit, setUserOutfit] = useState(retrieveLocalOutfit());
   let [modal, setModal] = useState(false);
 
-  useEffect(() => {
-    productEndpoint.get(`/related/all/${currentProductId}`)
+  useEffect((productId) => {
+    setCurrentProductId = productId
+    productEndpoint.get(`/related/all/${productId}`)
       .then(results => setRelatedProducts(results.data))
       .catch(() => setRelatedProducts(fakeProductList))
-  }, []);
+  }, [currentProductId]);
 
   // Fix second argument
 
-  
   let toggle = () => setModal(modal = !modal);
 
   var methods = {
@@ -51,9 +48,9 @@ const RelatedProductsAndOutfit = () => {
     }
   };
 
-  let RelatedProductsCarousel = Wrapper(Carousel, relatedProducts, { method: methods, label: 'related', title: 'Related Products', list: relatedProducts, utils: relatedProps });
+  let RelatedProductsCarousel = Wrapper(Carousel, relatedProducts, { method: methods, label: 'related', title: 'Related Products', list: relatedProducts, utils: relatedProps, update: updateGlobalId });
 
-  let UserOutfitCarousel = Wrapper(Carousel, userOutfit, { method: methods, label: 'outfit', title: 'Create Your Outfit', list: userOutfit, utils: outfitProps });
+  let UserOutfitCarousel = Wrapper(Carousel, userOutfit, { method: methods, label: 'outfit', title: 'Create Your Outfit', list: userOutfit, utils: outfitProps, update: updateGlobalId });
 
   let ComparisonModal = Wrapper(Modal, modal, { toggle: toggle });
 
