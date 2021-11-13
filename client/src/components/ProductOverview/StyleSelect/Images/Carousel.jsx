@@ -40,7 +40,7 @@ var Carousel = () => {
     moveSelection(nextTargetIndex, imageGallery, visibleThumbnails, updateVisibleThumbnails, updateSelected);
   };
 
-  var [leftButtonDisplay, rightButtonDisplay] = sharedHelpers.setButtonDisplay(selected, imageGallery);
+  var [leftButtonDisplay, rightButtonDisplay] = sharedHelpers.setButtonDisplay(selected, imageGallery, 'display');
 
   return (
     <div id="carousel">

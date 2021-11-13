@@ -37,7 +37,7 @@ var CartOptions = () => {
         <SelectQty sizeSelected={sizeSelected} qtyList={qtyList} />
       </div>
       <AddToCart sizeSelected={sizeSelected} sizesObject={sizesObject}/>
-      <p id="reminder-to-select-size"></p>
+
     </div>
   );
 };

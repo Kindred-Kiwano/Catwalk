@@ -21,7 +21,7 @@ var GalleryImage = (props) => {
   }
 
 
-  return expand ? <span className={'placeholder-dot ' + selectedStatus} onClick={selectNewImage}>{'•'} </span> :
+  return expand ? <span className={'placeholder-dot ' + selectedStatus} onClick={selectNewImage}>{' '} </span> :
     <img className={'gallery-image ' + selectedStatus} onClick={selectNewImage} src={props.imageObject.thumbnail_url} />;
 
 };
