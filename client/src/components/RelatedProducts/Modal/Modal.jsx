@@ -28,6 +28,7 @@ const Modal = (props) => {
       { visible ?
         <div id={'modal'} onClick={toggle}>
           <header>
+            <button><i class="fas fa-compress" onClick={toggle}></i></button>
             <h3>COMPARING</h3>
           </header>
           <main className={'modal'}><br/>

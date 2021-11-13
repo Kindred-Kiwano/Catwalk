@@ -12,22 +12,19 @@ export const saveLocalOutfit = (id) => {
 
 export const templatePrices = ({ price, sale }) => {
 
+  price = `$${price.split('.')[0]}`;
 
-  // console.log(props, 'price template')
-  price = { price, className: 'price' };
-
-  let Prices = React.createElement('span', price, sale);
-
-  if (sale) {
-    let Sale = React.createElement('span', { sale, className: 'price sale' });
-
-    Prices = React.createElement(
-      'span',
-      { price, className: 'price original' },
-      <Sale />
-    );
-  }
-
-  return Prices;
+  return (
+    <span className='card prices'>
+      { sale ?
+        <>
+          <span className='card prices sale'>{`$${sale} `}</span>{`  |  `}
+          <span className='card prices original-price'>{price}</span>
+        </>
+        :
+        <span className='card prices price'> {price}</span>
+      }
+    </span>
+  )
 };
 

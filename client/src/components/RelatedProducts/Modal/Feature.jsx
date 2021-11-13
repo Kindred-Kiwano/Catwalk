@@ -4,7 +4,6 @@ import React from 'react';
 const Feature = (props) => {
   let {feature, value} = props;
 
-
   let sample = {feature: 'Satisfaction Guaranteed', value: 'ok'};
 
 
@@ -16,5 +15,6 @@ const Feature = (props) => {
     </li>
   );
 };
+
 
 export default Feature;

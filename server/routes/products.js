@@ -49,8 +49,8 @@ products.get('/related/all/:id', async (req, res) => {
     var styles = await Promise.allSettled(
       ids.data.map(async (id) => {
         var info = await getProductInfo(id);
-        var style = await getStyles(id);
-        var formattedStyles = await formatStyles(style.data); //works
+        var styles = await getStyles(id);
+        var formattedStyles = await formatStyles(styles.data); //works
         var formattedInfo = await formatInfo(info.data);
         var extended = await extendStyleToProduct(formattedStyles, formattedInfo)
         return extended
@@ -58,7 +58,25 @@ products.get('/related/all/:id', async (req, res) => {
     );
     var result = await styles.map((settledPromise) => settledPromise.value);
     res.status(200).send(result);
-    console.log(result, 'Success');
+    console.log(result, '\nSuccess');
+
+  } catch (error) {
+    res.status(404).send('Invalid Product ID');
+  }
+});
+
+products.get('/all/:id', async (req, res) => {
+  // Returns an array of aggregated styles for all ids related to the requested id
+
+  try {
+    var { id } = req.params;
+    var info = await getProductInfo(id);
+    var styles = await getStyles(id);
+    var formattedStyles = await formatStyles(styles.data); //works
+    var formattedInfo = await formatInfo(info.data);
+    var extended = await extendStyleToProduct(formattedStyles, formattedInfo)
+    res.status(200).send(extended);
+    console.log(extended, '\nSuccess');
 
   } catch (error) {
     res.status(404).send('Invalid Product ID');
@@ -66,7 +84,6 @@ products.get('/related/all/:id', async (req, res) => {
 });
 
 products.get('/info/:id', async (req, res) => {
-  // Returns basic info for one product w/ Features for Modal
 
   try {
     var { id } = req.params;

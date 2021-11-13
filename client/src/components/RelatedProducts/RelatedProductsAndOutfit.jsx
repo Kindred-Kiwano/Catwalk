@@ -15,22 +15,33 @@ const productEndpoint = axios.create({ baseURL: 'http://localhost:3000/products'
 
 const RelatedProductsAndOutfit = (props) => {
 
-  let { updateGlobalId, productId } = props
-  console.log(props, 'rekated priooksefgrdgnfhfds')
-  let [currentProduct, setCurrentProduct] = useState(); //not using this
+  let { updateGlobalId, productId } = props;
   let [currentProductId, setCurrentProductId] = useState(props.productId);
   let [relatedProducts, setRelatedProducts] = useState([]);
-  let [userOutfit, setUserOutfit] = useState(retrieveLocalOutfit());
+  let [userOutfitIds, setUserOutfitIds] = useState(retrieveLocalOutfit());
+  let [userOutfit, setUserOutfit] = useState([]);
   let [modal, setModal] = useState(false);
 
   useEffect((productId) => {
-    setCurrentProductId = productId
+    setCurrentProductId(productId)
     productEndpoint.get(`/related/all/${productId}`)
       .then(results => setRelatedProducts(results.data))
-      .catch(() => setRelatedProducts(fakeProductList))
+      .then(console.log)
+      .catch(() => setRelatedProducts(fakeProductList));
   }, [currentProductId]);
 
-  // Fix second argument
+  let updateOutfit = (product) => {
+    setUserOutfit([...userOutfit, product])
+    setUserOutfitIds([...userOutfitIds, product.id])
+  }
+
+  if (userOutfitIds.length) {
+    useEffect(userOutfitIds.map(id => {
+      productEndpoint.get(`/all/${id}`)
+        .then(results => updateOutfit(resuts.data))
+    }), [currentProductId]);
+  }
+
 
   let toggle = () => setModal(modal = !modal);
 
@@ -43,7 +54,8 @@ const RelatedProductsAndOutfit = (props) => {
     },
     addToOutfit: {
       click: (product) => {
-        setUserOutfit([...userOutfit, product]);
+        setUserOutfit([...userOutfit, product.id]);
+        saveLocalOutfit(userOutfit.map(product => product.id)) //not being used
       }
     }
   };
@@ -55,10 +67,6 @@ const RelatedProductsAndOutfit = (props) => {
   let ComparisonModal = Wrapper(Modal, modal, { toggle: toggle });
 
   let initialState = {
-    currentProduct,
-    setCurrentProduct,
-    currentProductId,
-    setCurrentProductId,
     userOutfit,
     setUserOutfit,
     relatedProducts,
