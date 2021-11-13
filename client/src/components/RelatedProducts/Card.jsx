@@ -17,16 +17,18 @@ const Card = (props) => {
   // console.log(props, 'card props')
   let { product, label, click, update } = props;
   let { setUserOutfit, userOutfit} = React.useContext(UserContext);
+
   const addProductToOutfit = (product) => {
     setUserOutfit(userOutfit = [product, ...userOutfit])
-  }
-  // console.log(click)
-  let { img, images, name, price, sale, thumbnails, description, category, id } = product;
+  };
+
+  let { img, images, name, price, sale, thumbnails, description, slogan, category, id } = product;
 
   return (
-    <div className={`card ${label}`}>
+    <div className={`card ${label}`}
+      aria-description={description}
+      title={slogan} >
       <header className='card'>
-        {/* <CardButton buttonText={'★'} click={click.click} id={id}/> */}
         <CardButton buttonText={'★'} click={() => addProductToOutfit(product)} id={id}/>
         {
           img ?

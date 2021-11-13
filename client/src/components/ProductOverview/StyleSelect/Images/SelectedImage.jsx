@@ -41,12 +41,10 @@ var SelectedImage = () => {
   var containerStyle = {
     height: height
   };
-  containerStyle['border-radius'] = expand ? '10px' : undefined;
+  containerStyle['borderRadius'] = expand ? '10px' : undefined;
 
   var cursor = expand ? 'zoom-out' : 'zoom-in';
 
-  console.log('selected image is: ', selected.index);
-  console.log('selected url is: ', selected.url);
   return (
     <div className='selected-container' style={containerStyle} >
       <div className="main-arrow-container-left">
