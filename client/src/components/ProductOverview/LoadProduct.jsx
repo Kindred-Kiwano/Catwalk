@@ -37,9 +37,7 @@ var LoadProduct = () => {
 
     // 61588
     return (
-      <p>
-        Loading product details...
-      </p>
+      <></>
     );
 
   } else {
