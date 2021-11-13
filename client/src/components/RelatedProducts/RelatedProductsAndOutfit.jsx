@@ -26,6 +26,7 @@ const RelatedProductsAndOutfit = (props) => {
     setCurrentProductId(productId)
     productEndpoint.get(`/related/all/${productId}`)
       .then(results => setRelatedProducts(results.data))
+      .then(console.log)
       .catch(() => setRelatedProducts(fakeProductList));
   }, [currentProductId]);
 
@@ -33,7 +34,7 @@ const RelatedProductsAndOutfit = (props) => {
     setUserOutfit([...userOutfit, product])
     setUserOutfitIds([...userOutfitIds, product.id])
   }
-  console.log(userOutfitIds)
+
   if (userOutfitIds.length) {
     useEffect(userOutfitIds.map(id => {
       productEndpoint.get(`/all/${id}`)

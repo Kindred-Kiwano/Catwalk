@@ -73,12 +73,33 @@ header button.card-btn {
   background: none;
   position: absolute;
   font-size: 40px;
-  color: white;
+  color: rgba(255,255,255,0.7);
   position: absolute;
   padding: 20px;
   top: 0;
   right: 0;
   z-index: 20;
+}
+
+i.fas {
+  color: rgb(200,200,200);
+  visibility: hidden;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 40px;
+  padding: 20px;
+}
+
+div.card:hover
+i.fas {
+  transition: 350ms ease-in-out;
+  visibility: visible;
+}
+
+i.fas:hover {
+  color: orangered;
+  transform: scale(1.1);
 }
 
 div.card:hover,
@@ -88,7 +109,11 @@ header > button {
   transform: scale(1.02);
   color: orangered;
   box-shadow: 12.5px 8.5px 10px rgba(0, 0, 0, 0.042),
-    60px 80px 80px rgba(0, 0, 0, 0.151);
+  60px 80px 80px rgba(0, 0, 0, 0.151);
+}
+
+header button:hover {
+  transform: scale(1.1);
 }
 
 header.card {
@@ -101,6 +126,10 @@ header.card img {
   height: 40vh;
   width: 40vh;
   object-fit: cover;
+}
+
+#addToOutfit {
+  font-size: 120px;
 }
 
 footer.card-info {
@@ -151,3 +180,4 @@ footer div.rating {
   color: rgb(214, 167, 0);
   font-size: large;
 }
+

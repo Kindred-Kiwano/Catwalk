@@ -12,7 +12,7 @@ import { relatedProps, outfitProps, addToOutfitProps } from './utils/props.js';
 
 
 const Card = (props) => {
-  // console.log(props, 'card props')
+
   let { product, label, click, update } = props;
   let { setUserOutfit, userOutfit} = React.useContext(UserContext);
 
@@ -36,6 +36,7 @@ const Card = (props) => {
         }
       </header>
       <CardInfo product={product} {...update}/>
+      <i class="fas fa-expand"></i>
     </div>
   );
 };

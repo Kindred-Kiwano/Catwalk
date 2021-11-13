@@ -9,12 +9,15 @@ import Card from './Card.jsx';
 import './styles/carouselStyle.css';
 
 const Carousel = (props) => {
-
+  console.log(props)
   let { list, data, label, title, method, update } = props;
   let click = method[label];
 
+  let renderedList = data.map(prod =>
+    <Card product={prod} label={label} key={prod.id} click={click} update={update} /> )
+
   if (label === 'outfit') {
-    // list = [...list];
+    // renderedList = [<Card />, ...renderedList];
   }
 
   return (
@@ -22,8 +25,7 @@ const Carousel = (props) => {
       <header className='carousel'><h2>{title}</h2></header>
       <main className='carousel' id={label + '-carousel'} title={title}>
         {
-          data.map(prod =>
-            <Card product={prod} label={label} key={prod.id} click={click} update={update} /> )
+          renderedList
         }
       </main>
     </>
