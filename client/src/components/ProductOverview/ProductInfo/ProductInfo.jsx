@@ -1,5 +1,3 @@
-// head of ProductInfo subcomponent
-
 import React from 'react';
 import Header from './Header.jsx';
 import Description from './Description.jsx';

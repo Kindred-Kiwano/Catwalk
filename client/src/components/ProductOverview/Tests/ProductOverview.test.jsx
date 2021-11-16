@@ -1,10 +1,8 @@
-// test suite
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import ProductTest from './ProductTest.jsx';
-
 
 describe('Basic content rendering', () => {
   test('should render text to the page', () => {
@@ -43,9 +41,7 @@ describe('component-specific tests', () => {
     userEvent.click(right_button);
     var afterImageSource = document.querySelector('.selected').src;
     expect(beforeImageSource).not.toBe(afterImageSource);
-
   });
-
 
   test('clicking a new style renders a new display image', () => {
     render(<ProductTest />);
@@ -54,31 +50,5 @@ describe('component-specific tests', () => {
     userEvent.click(newStyle);
     var afterImageSource = document.querySelector('.selected').src;
     expect(beforeImageSource).not.toBe(afterImageSource);
-
   });
-
-  // test('clicking add to cart before selecting a size should not add anything to the cart', () => {
-  //   render(<ProductTest />);
-  //   waitFor(() => {
-  //     var addToCart = screen.getByTestId()
-  //   })
-  // });
-
-  // test('clicking add to cart after selecting a size should add to cart')
-
-
-
 });
-
-
-// methods of use:
-  // getByTestId
-  //
-
-
-
-
-  // to test:
-    // import and render <Gallery/> make sure only 7 images render to the carousel at a time (need to actually fix that)
-  // test components that take props - pass in props in the render() method to see if they appear in the expect block
-

@@ -41,13 +41,10 @@
   color: black;
   padding: 4px;
   margin: 20px;
-  /* border: 1px solid firebrick;
-  border-radius: 5px; */
 }
 
 #description {
   flex: 3 0 0;
-
 }
 
 #share {
@@ -121,8 +118,6 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  /* border: 1px solid whitesmoke;
-  border-radius: 4px; */
   width: fit-content;
   padding-top: 3px;
   padding-bottom: 3px;
@@ -156,7 +151,6 @@
 }
 
 
-
 /* STYLE-SELECTION PANEL */
 
 #style-select {
@@ -185,13 +179,6 @@
 #thumbnails {
   margin-bottom: 2em;
 }
-
-/* #thumbnail-container > hr {
-  width: 96%;
-  background-color: black;
-  height: 1px;
-  margin-bottom: 5px;
-} */
 
 .row {
   display: flex;
@@ -222,7 +209,6 @@
 }
 
 
-
 /* CHECK-OUT PANEL */
 
 #check-out, #add-to-cart-container {
@@ -243,12 +229,9 @@
   border-radius: 6px;
 }
 
-
 #add-to-cart-container {
   width: 60%;
 }
-
-
 
 #add-to-cart {
   margin-top: 20px;
@@ -259,11 +242,3 @@
 #reminder-to-select-size {
   color: darkred;
 }
-
-
-/* some ideas:
-border radius and slight shaddow on image thumbnails
-look into z-index for hovering one element over the other (when image grows to expandedview)
-*/
-
-/* place carousel onto .selected-container */

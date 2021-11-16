@@ -1,6 +1,5 @@
 import React from 'react';
 import { Style } from '../ProductOverview.jsx';
-import '../styles.css';
 
 var Price = () => {
   var [style, updateStyle] = React.useContext(Style);
@@ -11,7 +10,6 @@ var Price = () => {
   );
 };
 
-// formats strike thru for items on sale
 var getPrice = (style) => {
   var regular = style.original_price;
   var discounted = style.sale_price;
@@ -20,15 +18,12 @@ var getPrice = (style) => {
   } else {
     return (
       <p id="price">
-
         <span className="discount-price">${discounted}</span>
         &nbsp;
         <span className="former-price">${regular}</span>
       </p>
     );
   }
-
 };
-
 
 export default Price;

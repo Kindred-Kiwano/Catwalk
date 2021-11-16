@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles.css';
 import CategoryAndName from './CategoryAndName/CategoryAndName.jsx';
 import ProductInfo from './ProductInfo/ProductInfo.jsx';
 import StyleSelect from './StyleSelect/StyleSelect.jsx';
@@ -35,18 +36,13 @@ var ProductOverview = (props) => {
   var [expand, updateExpand] = React.useState(false);
 
   React.useEffect(() => {
-    console.log('CALLING USEEFFECT TO UPDATE PRODUCT');
-    console.log('The current product ID:', props.productState.info.id);
     updateProduct(props.productState);
     updateStyle(props.productState.styles.results[0]);
   }, [props.productState.info.id]);
 
-  console.log('THE STYLE PHOTOS', style.photos[0].url, style.photos[0].thumbnail_url);
-
-
   return (
     <div>
-      <FakeProduct.Provider value={[product, updateProduct]}>
+      <FakeProduct.Provider value={[product, updateProduct]} >
         <Style.Provider value={[style, updateStyle]} >
           <ExpandedView.Provider value={[expand, updateExpand]} >
             <div id="main-block" >
@@ -64,4 +60,3 @@ var ProductOverview = (props) => {
 };
 
 export default ProductOverview;
-
