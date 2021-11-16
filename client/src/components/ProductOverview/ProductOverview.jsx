@@ -47,7 +47,7 @@ var ProductOverview = (props) => {
 
   return (
     <div>
-      <FakeProduct.Provider value={[product, updateProduct]}>
+      <FakeProduct.Provider value={[product, updateProduct]} >
         <Style.Provider value={[style, updateStyle]} >
           <ExpandedView.Provider value={[expand, updateExpand]} >
             <div id="main-block" >
@@ -65,4 +65,3 @@ var ProductOverview = (props) => {
 };
 
 export default ProductOverview;
-
