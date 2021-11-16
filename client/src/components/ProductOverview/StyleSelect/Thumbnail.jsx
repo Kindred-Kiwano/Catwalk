@@ -19,15 +19,12 @@ var Thumbnail = (props) => {
 
   var changeStyle = (event) => {
     if (style.style_id !== props.styleObject.style_id) {
-      console.log('*** you clicked a new style ***');
-
       updateStyle(props.styleObject);
       var newSelected = props.styleObject.photos[selected.index];
       if (!newSelected) {
         newSelected = props.styleObject.photos[imageGallery.length - 1];
       }
       updateSelected(newSelected);
-      console.log('updated to: ', props.styleObject.name);
     }
   };
 

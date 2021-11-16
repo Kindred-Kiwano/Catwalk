@@ -13,7 +13,6 @@ var Images = () => {
   var [visibleThumbnails, updateVisibleThumbnails] = React.useState(visiblePhotos);
 
   React.useEffect(() => {
-    console.log('called useEffect to update visible thumbnails');
     updateVisibleThumbnails(visiblePhotos);
   }, [JSON.stringify(visiblePhotos)]);
 

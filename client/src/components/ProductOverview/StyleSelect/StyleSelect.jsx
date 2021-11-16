@@ -19,20 +19,16 @@ var StyleSelect = () => {
   var [imageGallery, updateImageGallery] = React.useState(photosArray);
 
   React.useEffect(() => {
-    console.log('called useEffect to update the WHOLE GALLERY');
     updateImageGallery(photosArray);
   }, [JSON.stringify(photosArray)]);
 
   var [selected, updateSelected] = React.useState(imageGallery[0]);
 
   React.useEffect(() => {
-    console.log('called useEffect to update the SELECTED PHOTO');
     updateSelected(imageGallery[selected.index]);
   }, [JSON.stringify(imageGallery)]);
 
   React.useEffect(() => {
-    console.log('calling useEffect to reset selection to first');
-    console.log('THE UPDATED PRODUCT ID: ', product.info.id);
     updateSelected(imageGallery[0]);
   }, [product.info.id]);
 

@@ -8,7 +8,6 @@ var GalleryImage = (props) => {
   var [selected, updateSelected] = React.useContext(CurrentlySelectedImage);
   var selectNewImage = (event) => {
     if (selected.url !== props.imageObject.url) {
-      console.log('updating selected!');
       updateSelected(props.imageObject);
     }
   };

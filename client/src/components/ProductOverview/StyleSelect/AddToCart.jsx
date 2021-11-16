@@ -10,14 +10,11 @@ var AddToCart = (props) => {
       document.getElementById('reminder-to-select-size').innerHTML = 'Please select a size';
     } else {
       var selected_sku_id = props.sizesObject[props.sizeSelected].sku_id;
-      console.log('adding skuID to cart: ', selected_sku_id);
       addToCart(selected_sku_id)
         .then((response) => {
-          console.log('post successful! ', response);
           alert('Added to cart!');
         })
         .catch((err) => {
-          console.log('Error adding to cart');
           throw err;
         });
     }
