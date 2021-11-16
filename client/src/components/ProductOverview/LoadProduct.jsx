@@ -41,7 +41,6 @@ var LoadProduct = () => {
     );
 
   } else {
-    console.log('product', productState);
     return (
       <>
         <ProductOverview productState={productState} />
