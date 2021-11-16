@@ -42,7 +42,6 @@ var StyleSelect = () => {
     <div id="images-and-styles" style={{'gridTemplateColumns': proportions}}>
       <ImagesOfSelectedStyle.Provider value={[imageGallery, updateImageGallery]}>
         <CurrentlySelectedImage.Provider value={[selected, updateSelected]}>
-          {/* has id="all-images" */}
           <Images />
           { expand ? <></> :
             <div id="style-select">
