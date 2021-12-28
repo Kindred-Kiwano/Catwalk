@@ -1,7 +1,7 @@
-### Catwalk
+# Catwalk
 A user interface for fashion retail
 
-# Dependencies ⚙️
+### Dependencies ⚙️
 axios
 react
 react-dom
@@ -15,12 +15,12 @@ babel-loader
 nodemon
 jest
 
-# Authentication 🔐
+### Authentication 🔐
 To use our API, you must create a GitHub API Token and attach it in every request as an "Authorization" header.
 
 ### user components ###
 
-# Product Overview 🖼️
+### Product Overview 🖼️
 1. Header:
 - Description
 - Amount in stock*
@@ -43,7 +43,7 @@ To use our API, you must create a GitHub API Token and attach it in every reques
 * - determined by selected style
 
 
-# Related products and user outfit 👗
+### Related products and user outfit 👗
 1. Carousel to view all products related to currently selected
   Each tile includes:
   - Product category and name
@@ -60,7 +60,7 @@ To use our API, you must create a GitHub API Token and attach it in every reques
   - Lists comparisons between characteristics of current product vs. the clicked related product
 
 
-# Reviews ⭐
+### Reviews ⭐
 Displays first two by default, load more on request
 Sort options:
   - Newest
