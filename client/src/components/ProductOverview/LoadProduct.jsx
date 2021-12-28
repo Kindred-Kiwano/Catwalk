@@ -28,7 +28,6 @@ var LoadProduct = () => {
       })
       .catch((err) => {
         console.log('error getting product(s) and/or details');
-        throw err;
       });
   };
 

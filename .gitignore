@@ -1,7 +1,7 @@
 node_modules
 config.js
 coverage
-*bundle.js
+*bundle.*
 *Dummy*
 *eslint*
 .DS_Store
