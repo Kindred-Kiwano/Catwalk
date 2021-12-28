@@ -41,7 +41,7 @@ To use our API, you must create a GitHub API Token and attach it in every reques
 - Carousel of thumbnails
 - Navigation buttons
 
-* -> determined by selected style
+\* \- determined by selected style
 
 
 ### Related products and user outfit &nbsp; 👗
