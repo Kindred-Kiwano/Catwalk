@@ -34,7 +34,6 @@ var LoadProduct = () => {
   if (productState === null) {
     changeProduct(61579);
 
-    // 61588
     return (
       <></>
     );

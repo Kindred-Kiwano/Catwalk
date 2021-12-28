@@ -3,7 +3,7 @@ import Images from './Images/Images.jsx';
 import Price from './Price.jsx';
 import Thumbnails from './Thumbnails.jsx';
 import CartOptions from './CartOptions.jsx';
-import { FakeProduct, Style, ExpandedView } from '../ProductOverview.jsx';
+import { CurrentProduct, Style, ExpandedView } from '../ProductOverview.jsx';
 import decorate from '../methods/decorate.js';
 
 export var ImagesOfSelectedStyle = React.createContext();
@@ -11,7 +11,7 @@ export var CurrentlySelectedImage = React.createContext();
 
 var StyleSelect = () => {
 
-  var [product, updateProduct] = React.useContext(FakeProduct);
+  var [product, updateProduct] = React.useContext(CurrentProduct);
   var [style, updateStyle] = React.useContext(Style);
   var [expand, updateExpand] = React.useContext(ExpandedView);
 
