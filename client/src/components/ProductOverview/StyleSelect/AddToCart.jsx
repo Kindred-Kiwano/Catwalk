@@ -15,7 +15,7 @@ var AddToCart = (props) => {
           alert('Added to cart!');
         })
         .catch((err) => {
-          throw err;
+          console.error(err);
         });
     }
   };
