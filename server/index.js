@@ -1,4 +1,3 @@
-// serve static files
 const express = require('express');
 const products = require('./routes/products.js');
 const path = require('path');
@@ -12,7 +11,7 @@ app.use('/products', products);
 
 
 app.listen(PORT, () => {
-  console.log(`Serving static files at http://localhost:${PORT}`);
+  console.log(`Now listening at http://localhost:${PORT}`);
 });
 
 app.get('/', (req, res) => {

@@ -1,8 +1,8 @@
 import React from 'react';
-import { FakeProduct } from '../ProductOverview.jsx';
+import { CurrentProduct } from '../ProductOverview.jsx';
 
 var Description = () => {
-  var [product, updateProduct] = React.useContext(FakeProduct);
+  var [product, updateProduct] = React.useContext(CurrentProduct);
   return (
     <div id="description">
       <p>{product.info.description}</p>

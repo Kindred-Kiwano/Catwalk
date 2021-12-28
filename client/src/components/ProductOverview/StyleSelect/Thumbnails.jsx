@@ -1,10 +1,10 @@
 import React from 'react';
 import Thumbnail from './Thumbnail.jsx';
-import { FakeProduct, Style } from '../ProductOverview.jsx';
+import { CurrentProduct, Style } from '../ProductOverview.jsx';
 import decorate from '../methods/decorate.js';
 
 var Thumbnails = () => {
-  var [product, updateProduct] = React.useContext(FakeProduct);
+  var [product, updateProduct] = React.useContext(CurrentProduct);
   var [style, updateStyle] = React.useContext(Style);
 
   return (

@@ -1,8 +1,5 @@
 import axios from 'axios';
-
 var API_KEY = 'FILL_THIS_IN';
-
-// ADD config.js TO YOUR .gitignore !!!
 
 const CONFIG = {
   headers: { 'Authorization': API_KEY },

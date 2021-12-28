@@ -5,7 +5,7 @@ import ProductInfo from './ProductInfo/ProductInfo.jsx';
 import StyleSelect from './StyleSelect/StyleSelect.jsx';
 import { postClickTracking } from '../../../../Shared/makeRequest.js';
 
-export var FakeProduct = React.createContext();
+export var CurrentProduct = React.createContext();
 export var Style = React.createContext();
 export var ExpandedView = React.createContext();
 
@@ -42,7 +42,7 @@ var ProductOverview = (props) => {
 
   return (
     <div>
-      <FakeProduct.Provider value={[product, updateProduct]} >
+      <CurrentProduct.Provider value={[product, updateProduct]} >
         <Style.Provider value={[style, updateStyle]} >
           <ExpandedView.Provider value={[expand, updateExpand]} >
             <div id="main-block" >
@@ -54,7 +54,7 @@ var ProductOverview = (props) => {
             </div>
           </ExpandedView.Provider>
         </Style.Provider>
-      </FakeProduct.Provider>
+      </CurrentProduct.Provider>
     </div>
   );
 };

@@ -1,7 +1,5 @@
 import axios from '../config/config.js';
 
-
-//GET all products
 export const getAllProducts = (params = { count: 5 }) => {
   axios.get('/products')
     .then(list => console.log(list.data))
@@ -41,9 +39,3 @@ export const getReviews = (productId, count, sortBy) => {
 export const getReviewsMeta = (productId) => {
   return axios.get(`/reviews/meta?product_id=${productId}`);
 };
-
-// for checking certain edgecases
-// none in stock:
-  // product_id 61584
-// more than 7 thumbnails for style:
-  // product_id 61579

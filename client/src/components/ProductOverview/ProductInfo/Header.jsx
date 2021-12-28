@@ -1,6 +1,6 @@
 import React from 'react';
 import Price from '../StyleSelect/Price.jsx';
-import { FakeProduct, Style } from '../ProductOverview.jsx';
+import { CurrentProduct, Style } from '../ProductOverview.jsx';
 import getStock from '../methods/getStock.js';
 import DisplayStarRating from '../../../../../Shared/DisplayStarRating.jsx';
 
@@ -11,7 +11,7 @@ var scrollToReviews = (event) => {
 };
 
 var Header = (props) => {
-  var [product, updateProduct] = React.useContext(FakeProduct);
+  var [product, updateProduct] = React.useContext(CurrentProduct);
   var [style, updateStyle] = React.useContext(Style);
   var numberOfReviews = product.reviews.results.length;
 

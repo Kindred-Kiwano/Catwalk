@@ -12,5 +12,3 @@ const CONFIG = {
 
 // Exports an instance of the Axios object with presets
 module.exports = axios.create( CONFIG );
-
-// import/export statements weren't working with the server - switched to modules
