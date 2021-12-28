@@ -18,7 +18,7 @@ A user interface for fashion retail
 ### Authentication &nbsp; 🔐
 To use our API, you must create a GitHub API Token and attach it in every request as an "Authorization" header.
 
-<br>
+<br/>
 # User Components:
 
 ### Product Overview &nbsp; 🖼️
@@ -43,7 +43,7 @@ To use our API, you must create a GitHub API Token and attach it in every reques
 
 \* \- determined by selected style
 
-<br>
+<br/>
 ### Related products and user outfit &nbsp; 👗
 #### 1. Carousel to view all products related to currently selected
   Each tile includes:
@@ -60,7 +60,7 @@ To use our API, you must create a GitHub API Token and attach it in every reques
 #### 3. Comparison modal
   - Lists comparisons between characteristics of current product vs. the clicked related product
 
-<br>
+<br/>
 ### Reviews &nbsp; ⭐
 #### 1. Review list:
   - Displays the first two by default, loads more on request
