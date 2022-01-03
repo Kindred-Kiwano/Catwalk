@@ -30,12 +30,12 @@ To use our API, you must create a GitHub API Token and attach it in every reques
 - Add/remove items to a custom-built user outfit
 
 #### Ratings and Reviews
-* Sort by newest, helpful or relevant
-* Mark as helpful or report
-* Add a review:
--   Attach photos
--   Rate product
--   Rate fit, comfort and other specs
+- Sort by newest, helpful or relevant
+- Mark as helpful or report
+- Add a review:
+    - Attach photos
+    - Rate product
+    - Rate fit, comfort and other specs
 
 
 
