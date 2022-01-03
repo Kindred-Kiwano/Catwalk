@@ -9,7 +9,7 @@ A user interface for fashion retail
 ### Authentication &nbsp; 🔐
 To use our API, you must create a GitHub API Token and attach it in every request as an "Authorization" header.
 
-### User Components 👥
+### User Components &nbsp; 👥
 #### Product Overview
 - Browse available styles for selected item
 - View photos associated with products, built-in scroll zoom
