@@ -1,19 +1,10 @@
 # Catwalk
 A user interface for fashion retail
 
-### Dependencies &nbsp; ⚙️
-- axios
-- react
-- react-dom
-- jquery
-- webpack
-- webpack-cli
-- @babel/presets-env
-- @babel/presets-react
-- @babel/core
-- babel-loader
-- nodemon
-- jest
+### Built with &nbsp; ⚙️
+- React
+- Node/Express
+- Axios
 
 ### Authentication &nbsp; 🔐
 To use our API, you must create a GitHub API Token and attach it in every request as an "Authorization" header.
@@ -32,7 +23,7 @@ To use our API, you must create a GitHub API Token and attach it in every reques
 #### Ratings and Reviews
 - Sort by newest, helpful or relevant
 - Mark as helpful or report
-- Add a review:
+- Add a review
     - Attach photos
     - Rate product
     - Rate fit, comfort and other specs
