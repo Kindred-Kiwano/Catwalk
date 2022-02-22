@@ -6,8 +6,22 @@ A user interface for fashion retail
 - Node/Express
 - Axios
 
-### Authentication &nbsp; 🔐
-To use our API, you must create a GitHub API Token and attach it in every request as an "Authorization" header.
+### Setup &nbsp; 🔧
+If not using an external API, you may rewire the fetches to render content from `fakeData/`. <br />
+You will need Node.js installed to serve the app (reccomended version ≥ 14).
+Run the following commands from the root directory:
+```shell
+$ npm install
+```
+to install the dependency packages
+```shell
+$ npm run build
+```
+to compile the React app and re-compile on save
+```shell
+$ npm start
+```
+in a separate terminal window to serve the app at `http://localhost:3000`
 
 ### User Components &nbsp; 👥
 #### Product Overview
