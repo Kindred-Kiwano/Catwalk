@@ -13,7 +13,3 @@ app.use('/products', products);
 app.listen(PORT, () => {
   console.log(`Now listening at http://localhost:${PORT}`);
 });
-
-app.get('/', (req, res) => {
-  res.send('Hello World');
-});
