@@ -8,7 +8,7 @@ A user interface for fashion retail
 
 ### Setup &nbsp; 🔧
 If not using an external API, you may rewire the fetches to render content from `fakeData/`. <br />
-You will need Node.js installed to serve the app (reccomended version ≥ 14).
+You will need <a href="https://nodejs.org/en/" >Node.js</a> installed to serve the app (reccomended version ≥ 14).
 Run the following commands from the root directory:
 ```shell
 $ npm install
