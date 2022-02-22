@@ -21,7 +21,7 @@ to compile the React app and re-compile on save
 ```shell
 $ npm start
 ```
-in a separate terminal window to serve the app at `http://localhost:3000`
+in a separate terminal window to serve the app at `http://localhost:3000`.
 
 ### User Components &nbsp; 👥
 #### Product Overview
